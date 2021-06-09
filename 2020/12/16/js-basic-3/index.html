@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 3.表达式与操作符 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="这篇内容有 JS 表达式，操作符，逻辑表达式，短路计算...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 3.表达式与操作符</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 3.表达式与操作符</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 16, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4883</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-表达式和操作符"><a href="#1-表达式和操作符" class="headerlink" title="1 表达式和操作符"></a>1 表达式和操作符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> + <span class="number">3</span> <span class="comment">// 5+3 整体是一个表达式</span></span><br><span class="line"><span class="comment">// 5 是操作数</span></span><br><span class="line"><span class="comment">// + 是运算符</span></span><br><span class="line"><span class="comment">// 3 是操作数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-表达式种类"><a href="#2-表达式种类" class="headerlink" title="2 表达式种类"></a>2 表达式种类</h3><ol>
+<li>算术</li>
+<li>关系</li>
+<li>逻辑</li>
+<li>赋值</li>
+<li>综合</li>
+</ol>
+<h3 id="3-算术运算符"><a href="#3-算术运算符" class="headerlink" title="3 算术运算符"></a>3 算术运算符</h3><table>
+<thead>
+<tr>
+<th align="center">意义</th>
+<th align="center">运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">加</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">减</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">乘</td>
+<td align="center">*</td>
+</tr>
+<tr>
+<td align="center">除</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">取余</td>
+<td align="center">%</td>
+</tr>
+</tbody></table>
+<h4 id="3-1-加减乘除"><a href="#3-1-加减乘除" class="headerlink" title="3.1 加减乘除"></a>3.1 加减乘除</h4><p>加减的符号和数学一致，乘法是 <code>*</code> 号，除法是 <code>/</code> 。默认情况下，乘除法的<strong>优先级</strong>要高于加法和减法；必要时可以使用<strong>圆括号</strong>来改变运算的顺序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> * <span class="number">3</span>; <span class="comment">//7</span></span><br><span class="line">(<span class="number">1</span> + <span class="number">2</span>) * <span class="number">3</span>; <span class="comment">// 9</span></span><br><span class="line"><span class="number">1</span> + <span class="number">2</span>/<span class="number">4</span> <span class="comment">// 1.5</span></span><br><span class="line">((<span class="number">1</span> + <span class="number">2</span>) * <span class="number">3</span> + <span class="number">4</span> ) / <span class="number">2</span> <span class="comment">// 6.5</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-加号的两种作用"><a href="#3-2-加号的两种作用" class="headerlink" title="3.2 加号的两种作用"></a>3.2 加号的两种作用</h4><p>加号有 <strong>加法</strong> 和 <strong>连字符</strong> 两种作用。如果加号两边的操作数都是数字，则为 <strong>加法</strong> ,否则为 <strong>连字符</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> <span class="comment">// 3</span></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;2&#x27;</span> <span class="comment">//&#x27;12&#x27;</span></span><br><span class="line"><span class="string">&#x27;1&#x27;</span> + <span class="string">&#x27;2&#x27;</span> <span class="comment">//&#x27;12&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-取余运算"><a href="#3-3-取余运算" class="headerlink" title="3.3 取余运算"></a>3.3 取余运算</h4><p>取余运算也叫做“”求模运算“，用百分号 ”%” 表示。<code>a % b</code> 表示求 <code>a </code> 除以 <code>b</code> 的余数，它不关心整数部分，只关心余数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">11</span> % <span class="number">4</span>; <span class="comment">// 3</span></span><br><span class="line"><span class="number">20</span> % <span class="number">6</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">12</span> % <span class="number">3</span>; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-隐式类型转换"><a href="#4-隐式类型转换" class="headerlink" title="4 隐式类型转换"></a>4 隐式类型转换</h3><p>如果<strong>参与数学运算</strong>的某操作数<strong>不是数字型</strong>，那么 JavaScript 会<strong>自动</strong> 将此操作数<strong>转为数字型</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> * <span class="string">&#x27;3&#x27;</span> <span class="comment">//6 </span></span><br></pre></td></tr></table></figure>
+
+<p>隐式类型转换的本质是内部调用 <code>Number()</code> 函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> + <span class="literal">true</span> <span class="comment">//2</span></span><br><span class="line"><span class="literal">false</span> + <span class="number">2</span> <span class="comment">// 2</span></span><br><span class="line"><span class="number">3</span> * <span class="string">&#x27;2天&#x27;</span> <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-有关-IEEE754"><a href="#5-有关-IEEE754" class="headerlink" title="5 有关 IEEE754"></a>5 有关 IEEE754</h3><p>在 JavaScript 中，有些小数的数学运算不是很精准。JavaScript 使用了 IEEE754 二进制浮点数算术标准，这会使一些个别的小数运算产生“丢失精度”问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> <span class="comment">// 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<p>解决办法：在进行小数运算的时候，调用数字的 <code>toFixed()</code> 方法保留指定的小数位数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.30000000000000004</span>.toFixed(<span class="number">2</span>)</span><br><span class="line"><span class="string">&quot;0.30&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-幂和开根号"><a href="#6-幂和开根号" class="headerlink" title="6 幂和开根号"></a>6 幂和开根号</h3><p>JavaScript 中没有提供幂计算，开根号的运算符。需要使用Math 对象的相关方法进行计算。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">3</span>) <span class="comment">// 8</span></span><br><span class="line"><span class="built_in">Math</span>.pow(<span class="number">3</span>,<span class="number">2</span>) <span class="comment">//9</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">81</span>) <span class="comment">//9</span></span><br><span class="line"><span class="built_in">Math</span>.sqrt(-<span class="number">81</span>) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-向上取整和向下取整"><a href="#7-向上取整和向下取整" class="headerlink" title="7 向上取整和向下取整"></a>7 向上取整和向下取整</h3><p><code>Math.ceil()</code> 向上取整；<code>Math.floor()</code> 向下取整</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">2.4</span>) <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">Math</span>.floor(<span class="number">2.4</span>) <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.ceil(-<span class="number">2.4</span>) <span class="comment">//-2</span></span><br><span class="line"><span class="built_in">Math</span>,floor(-<span class="number">2.4</span>) <span class="comment">//-3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.ceil(<span class="number">2</span>) <span class="comment">//2</span></span><br><span class="line"><span class="built_in">Math</span>.flooe(<span class="number">2</span>) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-关系运算符"><a href="#8-关系运算符" class="headerlink" title="8 关系运算符"></a>8 关系运算符</h3><table>
+<thead>
+<tr>
+<th align="center">意义</th>
+<th align="center">运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">大于</td>
+<td align="center">&gt;</td>
+</tr>
+<tr>
+<td align="center">小于</td>
+<td align="center">&lt;</td>
+</tr>
+<tr>
+<td align="center">大于或等于</td>
+<td align="center">&gt;=</td>
+</tr>
+<tr>
+<td align="center">小于或等于</td>
+<td align="center">&lt;=</td>
+</tr>
+<tr>
+<td align="center">等于</td>
+<td align="center">==</td>
+</tr>
+<tr>
+<td align="center">不等于</td>
+<td align="center">!=</td>
+</tr>
+<tr>
+<td align="center">全等于</td>
+<td align="center">===</td>
+</tr>
+<tr>
+<td align="center">不全等于</td>
+<td align="center">!==</td>
+</tr>
+</tbody></table>
+<h4 id="8-1-大于和小于"><a href="#8-1-大于和小于" class="headerlink" title="8.1 大于和小于"></a>8.1 大于和小于</h4><p>大于 <code>&gt;</code> , 小于 <code>&lt;</code> 两个符号和数学相同。”大于等于”运算符是<code>&gt;=</code>, “小于等于x”运算符是 <code>&lt;=</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> &gt; <span class="number">5</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">7</span> &lt; <span class="number">4</span> <span class="comment">// false</span></span><br><span class="line"><span class="number">8</span> &gt;= <span class="number">7</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">8</span> &lt;= <span class="number">8</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">8</span> &lt;= <span class="number">11</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-2-判断是否全等"><a href="#8-2-判断是否全等" class="headerlink" title="8.2 判断是否全等"></a>8.2 判断是否全等</h4><p>如果想比较两个值是否全等，此时应该使用 <code>==</code> 运算符。JavaScript 中等号 <code>=</code> 表示赋值，而不是相等。判断相等应该使用 <code>==</code> 运算符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> == <span class="number">3</span> <span class="comment">// true</span></span><br><span class="line"><span class="number">3</span> === <span class="number">3</span> <span class="comment">// true</span></span><br><span class="line"><span class="number">3</span> = <span class="number">3</span> <span class="comment">//错误语句</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-3-相等和全等"><a href="#8-3-相等和全等" class="headerlink" title="8.3 相等和全等"></a>8.3 相等和全等</h4><ol>
+<li><p>两个等号 <code>==</code> 运算符 <strong>不比较值的类型</strong>，它会进行隐式转换后比较值是否相等。</p>
+</li>
+<li><p>三个等号 <code>===</code> 运算符，<strong>不仅仅比较值是否相同，也比较类型是否相同。</strong></p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> == <span class="string">&#x27;5&#x27;</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">5</span> === <span class="string">&#x27;5&#x27;</span> <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> == <span class="literal">true</span> <span class="comment">// true</span></span><br><span class="line"><span class="number">1</span> === <span class="literal">true</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == <span class="literal">false</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">0</span> === <span class="literal">false</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> === <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span> <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-4-NaN-不自等"><a href="#8-4-NaN-不自等" class="headerlink" title="8.4 NaN 不自等"></a>8.4 NaN 不自等</h4><p>NaN 作为一个特殊的数字类型值，它在用 <code>==</code> 比较的时候也有特殊的结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-5-如何判断某变量值为-NaN"><a href="#8-5-如何判断某变量值为-NaN" class="headerlink" title="8.5 如何判断某变量值为 NaN"></a>8.5 如何判断某变量值为 NaN</h4><p><code>isNaN()</code> 函数可以用来判断变量值是否为 <code>NaN</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="number">5</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>但 <code>isNaN()</code> 也不好用，它的机理是：只要该变量传入 <code>Number() </code> 的执行结果是 <code>NaN</code>, 则 <code>isNaN()</code> 函数都会得到 <code>true</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="literal">undefined</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="string">&#x27;3天&#x27;</span>) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="literal">null</span>) <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-6-不相等和不全等"><a href="#8-6-不相等和不全等" class="headerlink" title="8.6 不相等和不全等"></a>8.6 不相等和不全等</h4><p><code>!=</code> 表示不相等，<code>!==</code> 表示不全等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> != <span class="number">6</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">5</span> !== <span class="number">6</span> <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> != <span class="string">&#x27;5&#x27;</span> <span class="comment">//false</span></span><br><span class="line"><span class="number">5</span> !== <span class="string">&#x27;5&#x27;</span> <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="9-逻辑表达式"><a href="#9-逻辑表达式" class="headerlink" title="9 逻辑表达式"></a>9 逻辑表达式</h3><p>逻辑运算符</p>
+<table>
+<thead>
+<tr>
+<th>意义</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非</td>
+<td>！</td>
+</tr>
+<tr>
+<td>与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>或</td>
+<td>||</td>
+</tr>
+</tbody></table>
+<h4 id="9-1-非运算"><a href="#9-1-非运算" class="headerlink" title="9.1 非运算"></a>9.1 非运算</h4><p><code>！</code> 表示 “非”，也可以称为 <strong>“置反运算”</strong>。<code>!</code> 是一个 <strong>“单目运算符”</strong>，只要一个操作数，置反运算的结果一定是布尔值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">!<span class="literal">true</span>  <span class="comment">//false</span></span><br><span class="line">!<span class="literal">false</span> <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">!<span class="number">0</span> <span class="comment">//true</span></span><br><span class="line">!<span class="literal">undefined</span> <span class="comment">//true</span></span><br><span class="line">!<span class="string">&#x27;&#x27;</span> <span class="comment">//true</span></span><br><span class="line">!<span class="string">&#x27;abc&#x27;</span> <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">!!<span class="literal">true</span><span class="comment">//true</span></span><br><span class="line">!!<span class="number">0</span><span class="comment">//false</span></span><br><span class="line">!!<span class="string">&#x27;&#x27;</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="string">&#x27;abc&#x27;</span> <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-2-与运算"><a href="#9-2-与运算" class="headerlink" title="9.2 与运算"></a>9.2 与运算</h4><p><code>&amp;&amp;</code> 表示 并且，称为“与运算”，口诀：<strong>都真才真</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span> <span class="comment">//true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span> <span class="comment">//false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span> <span class="comment">//false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">false</span> <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-3-或运算"><a href="#9-3-或运算" class="headerlink" title="9.3 或运算"></a>9.3 或运算</h4><p><code>||</code>表示“或者”，称为 “或运算”，口诀：有真就真。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> || <span class="literal">true</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span> <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="9-4-短路计算"><a href="#9-4-短路计算" class="headerlink" title="9.4 短路计算"></a>9.4 短路计算</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &amp;&amp; b <span class="comment">//都真才真</span></span><br><span class="line"><span class="comment">// 真 ，b 真总结果才真，b假，总结果就假</span></span><br><span class="line"><span class="comment">// 假 不用看 b了，被“短路”</span></span><br></pre></td></tr></table></figure>
+
+<p><code>a &amp;&amp; b</code> 运算符中 ：a 真，表达式值为 b； a假，表达式为a。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> &amp;&amp; <span class="number">6</span> <span class="comment">//6</span></span><br><span class="line"><span class="literal">undefined</span> &amp;&amp; <span class="number">15</span> <span class="comment">//undefined</span></span><br><span class="line"><span class="number">15</span> &amp;&amp; <span class="literal">undefined</span> <span class="comment">//undefined</span></span><br><span class="line"><span class="literal">null</span> &amp;&amp; <span class="number">2</span> <span class="comment">//null</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span> &amp;&amp; <span class="number">16</span> <span class="comment">// &#x27;&#x27;</span></span><br><span class="line"><span class="literal">NaN</span> &amp;&amp; <span class="literal">undefined</span> <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a || b <span class="comment">// 有真就真</span></span><br><span class="line"><span class="comment">// 真。 不用看 b了。被”短路“</span></span><br><span class="line"><span class="comment">// 假。b 真，总结过就真，b假 总结过就假。</span></span><br></pre></td></tr></table></figure>
+
+<p><code>a || b</code> 运算符中 ：a 真，表达式值为 a； a假，表达式为b。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> || <span class="number">6</span> <span class="comment">//3</span></span><br><span class="line"><span class="number">0</span> || <span class="number">6</span> <span class="comment">// 6</span></span><br><span class="line"><span class="literal">null</span> || <span class="literal">undefined</span> <span class="comment">// undefined</span></span><br><span class="line"><span class="string">&#x27;a&#x27;</span> || <span class="string">&#x27;b&#x27;</span> <span class="comment">//&#x27;a&#x27;</span></span><br><span class="line"><span class="literal">NaN</span> || <span class="literal">null</span> <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-5-逻辑运算顺序"><a href="#9-5-逻辑运算顺序" class="headerlink" title="9.5 逻辑运算顺序"></a>9.5 逻辑运算顺序</h4><p>逻辑运算的优先级是：非 -&gt; 与-&gt;或</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">! <span class="literal">true</span> || <span class="literal">true</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">3</span> &amp;&amp; <span class="number">4</span> || <span class="number">5</span> &amp;&amp; <span class="number">6</span> <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-6-赋值运算符"><a href="#9-6-赋值运算符" class="headerlink" title="9.6 赋值运算符"></a>9.6 赋值运算符</h4><table>
+<thead>
+<tr>
+<th>意义</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>赋值</td>
+<td>=</td>
+</tr>
+<tr>
+<td>快捷赋值</td>
+<td>+=<br />-=<br />*=<br />/=<br />%=</td>
+</tr>
+<tr>
+<td>自增运算</td>
+<td>++</td>
+</tr>
+<tr>
+<td>自减运算</td>
+<td>–</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>JS 中，<code>=</code> 表示赋值，<code>==</code>判断是否相等（不判断类型），<code>===</code>判断是否全等。</p>
+</li>
+<li><p>赋值运算符会将等号右边的数值，赋予等号左边的变量。<code>var a = 5;</code></p>
+</li>
+</ol>
+<p>赋值运算也产生值，等号后面的值将作为**”赋值运算的值”**</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a = <span class="number">4</span>); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<p>这就意味着，可以连续使用赋值运算符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b,c;</span><br><span class="line">a = b = c = <span class="number">15</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-7-快捷赋值"><a href="#9-7-快捷赋值" class="headerlink" title="9.7 快捷赋值"></a>9.7 快捷赋值</h4><p>快捷赋值运算符表示<strong>在原数值基础上</strong>进一步进行运算</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">a += <span class="number">5</span>; <span class="comment">//等价于 a = a + 5;</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">16</span>;</span><br><span class="line">c %= <span class="number">3</span>; <span class="comment">//等价于 c = c % 3</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-8-自增-自减运算符"><a href="#9-8-自增-自减运算符" class="headerlink" title="9.8 自增/自减运算符"></a>9.8 自增/自减运算符</h4><p><code>++</code> 和 <code>--</code> 是自增/自减运算符，表示在<strong>在自身基础上加1或减1</strong>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">a++;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-9-a-和-a-的区别"><a href="#9-9-a-和-a-的区别" class="headerlink" title="9.9 a++ 和 ++a 的区别"></a>9.9 a++ 和 ++a 的区别</h4><p><code>a++</code> 先用再加；<code>++a</code> 先加再用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> b = a++;</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> d = a++;</span><br><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//4</span></span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="10-综合表达式"><a href="#10-综合表达式" class="headerlink" title="10. 综合表达式"></a>10. 综合表达式</h3><p>综合运算的运算顺序</p>
+<p>运算顺序：非运算-&gt; 数学运算-&gt; 关系运算 -&gt; 逻辑运算</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> &lt; <span class="number">3</span> +<span class="number">3</span> <span class="comment">//true</span></span><br><span class="line"><span class="number">3</span> &gt; <span class="number">2</span> &amp;&amp; <span class="number">8</span> &gt; <span class="number">3</span>+<span class="number">4</span> <span class="comment">// true </span></span><br><span class="line"><span class="number">3</span>&gt;<span class="number">2</span>&amp;&amp; <span class="number">8</span>&gt;<span class="number">3</span>+<span class="number">5</span> <span class="comment">//false</span></span><br><span class="line">!<span class="number">13</span> &lt; <span class="number">5</span> - <span class="number">3</span> <span class="comment">//true</span></span><br><span class="line">!<span class="number">13</span> &lt; <span class="number">5</span>-<span class="number">5</span> <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="10-1-变量的范围表示"><a href="#10-1-变量的范围表示" class="headerlink" title="10.1 变量的范围表示"></a>10.1 变量的范围表示</h4><p>验证变量 <code>a</code> 是否介于 5 到 12 之间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &gt;= <span class="number">5</span> &amp;&amp; a &lt;= <span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="10-2-闰年判断"><a href="#10-2-闰年判断" class="headerlink" title="10.2 闰年判断"></a>10.2 闰年判断</h4><p>闰年的计算公式：满足下面之间的一个即可</p>
+<ol>
+<li>能被 4 整除并且不能被 100 整除。</li>
+<li>能被 100 整除并且能被 400 整除。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> year = prompt(<span class="string">&#x27;请输入年份&#x27;</span>);</span><br><span class="line">alert(year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span> || year % <span class="number">100</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">400</span> == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/16/js-basic-3/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;16&#x2F;js-basic-3&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;16&#x2F;js-basic-3&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/19/js-basic-4/"><i class="iconfont iconleft"></i>JS 4.流程控制语句</a>
+    <a href="/2020/12/15/js-basic-2/">JS 2.基本数据类型<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">1 表达式和操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%A7%8D%E7%B1%BB"><span class="toc-text">2 表达式种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3 算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">4 隐式类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%9C%89%E5%85%B3-IEEE754"><span class="toc-text">5 有关 IEEE754</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%B9%82%E5%92%8C%E5%BC%80%E6%A0%B9%E5%8F%B7"><span class="toc-text">6 幂和开根号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4%E5%92%8C%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4"><span class="toc-text">7 向上取整和向下取整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">8 关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E9%80%BB%E8%BE%91%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">9 逻辑表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E7%BB%BC%E5%90%88%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">10. 综合表达式</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

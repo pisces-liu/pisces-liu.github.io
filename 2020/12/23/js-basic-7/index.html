@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 7.DOM - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="内容简介：节点的创建，移除和克隆。DOM事件：事件监听...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 7.DOM</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 7.DOM</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 23, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>11004</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="DOM-使-JS-操作-HTML-变得优雅"><a href="#DOM-使-JS-操作-HTML-变得优雅" class="headerlink" title="DOM 使 JS 操作 HTML 变得优雅"></a>DOM 使 JS 操作 HTML 变得优雅</h3><p>比如下面的 HTML 结构，现在想用 JavaScript 在 “牛奶” 后面插入一个 <code>p</code> 标签对，内容是“可乐”。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>牛奶<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>咖啡<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>果汁<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	使用节点思维</span></span><br><span class="line"><span class="comment">	div 是一个节点，它内部原有3个子节点。现在我们要做的就是新创建一个 p 节点，然后插入到原有 0 号节点后面</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM-简介"><a href="#DOM-简介" class="headerlink" title="DOM 简介"></a>DOM 简介</h3><p>DOM（Document Object Model，文档对象模型）是 JavaScript操作 HTML 文档的接口，使文档操作变得非常优雅，简便。DOM 最大的特点就是将文档表示为<strong>节点树</strong>。</p>
+<h3 id="nodeType-常用属性值"><a href="#nodeType-常用属性值" class="headerlink" title="nodeType 常用属性值"></a>nodeType 常用属性值</h3><p>节点的 <code>nodeType</code> 属性可以显示这个节点具体的类型。</p>
+<table>
+<thead>
+<tr>
+<th>nodeType值</th>
+<th>节点类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>元素节点，例如 <code>&lt;p&gt;</code> 和<code>&lt;div&gt;</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>文字节点</td>
+</tr>
+<tr>
+<td>8</td>
+<td>注释节点</td>
+</tr>
+<tr>
+<td>9</td>
+<td>document节点</td>
+</tr>
+<tr>
+<td>10</td>
+<td>DTD节点</td>
+</tr>
+</tbody></table>
+<h3 id="访问元素节点"><a href="#访问元素节点" class="headerlink" title="访问元素节点"></a>访问元素节点</h3><p>所谓“访问”元素节点，就是指“得到”，“获取”页面上的元素节点。假如我们要对节点进行操作，第一步就是要得到它。访问元素节点主要依靠<code>document</code>对象。</p>
+<h3 id="认识-document-对象"><a href="#认识-document-对象" class="headerlink" title="认识 document 对象"></a>认识 document 对象</h3><ol>
+<li><p><code>document</code> 对象是 DOM 中最重要的东西，几乎所有 <strong>DOM的功能都封装在了 <code>document</code> 对象中</strong>.</p>
+</li>
+<li><p><code>document</code> 对象也表示<strong>整个HTML文档</strong>，它是DOM节点树的根。</p>
+</li>
+<li><p><code>document</code> 对象的**<code>nodeType</code>属性值是9**。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="built_in">document</span></span><br><span class="line"><span class="string">&quot;object&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.nodeType</span><br><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="访问元素节点的常用方法"><a href="#访问元素节点的常用方法" class="headerlink" title="访问元素节点的常用方法"></a>访问元素节点的常用方法</h3><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">功能</th>
+<th align="center">兼容性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">document.getElementById()</td>
+<td align="center">通过<strong>id</strong>得到元素</td>
+<td align="center">IE6</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByTagName()</td>
+<td align="center">通过<strong>标签名</strong>得到元素数组</td>
+<td align="center">IE6</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByClassName()</td>
+<td align="center">通过<strong>类名</strong>得到元素数组</td>
+<td align="center">IE9</td>
+</tr>
+<tr>
+<td align="center">document.querySelector()</td>
+<td align="center">通过<strong>选择器</strong>得到元素</td>
+<td align="center">IE8部分兼容 <br /> IE9完全兼容</td>
+</tr>
+<tr>
+<td align="center">document.querySelectorAll()</td>
+<td align="center">通过<strong>选择器</strong>得到元素数组</td>
+<td align="center">IE8部分兼容<br />IE9完全兼容</td>
+</tr>
+</tbody></table>
+<h4 id="getElementById"><a href="#getElementById" class="headerlink" title="getElementById()"></a>getElementById()</h4><p><code>document.getElementById()</code>功能是<strong>通过id得到元素节点</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span>我是一个盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;para&quot;</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);<span class="comment">//参数就是元素节点的id，注意不要写#号</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> para = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;para&#x27;</span>);</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li>如果页面上<strong>有相同id的元素，则只能得到第一个</strong>。</li>
+<li>不管元素藏的位置有多深，都能通过id把它找到。</li>
+</ol>
+<h4 id="延迟运行"><a href="#延迟运行" class="headerlink" title="延迟运行"></a>延迟运行</h4><p>在测试 DOM 代码时，<strong>通常 JS 代码一定要写道 HTML 节点的后面</strong>，否则 JS 无法找到相应HTML节点。但是可以使用<code>window.onload = function()&#123;&#125;</code> 事件，使页面加载完毕后，再执行指定的代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 给 window 对象添加 onload 事件监听。onload 表示页面都加载完毕了。</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> para = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;para&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(box);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(para);</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span>我是一个盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;para&quot;</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="getElementsByTagName"><a href="#getElementsByTagName" class="headerlink" title="getElementsByTagName()"></a>getElementsByTagName()</h4><p><code>getElementsByTagName()</code> 方法的功能是<strong>通过标签名得到节点数组</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> ps = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;p&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ps); <span class="comment">// HTMLCollection(4) [p, p, p, p]</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h4><ol>
+<li>数组方便遍历，从而可以<strong>批量操控元素节点</strong></li>
+<li>即使页面上只有一个指定标签名的节点，也将得到<strong>长度为1的数组</strong>。</li>
+<li><strong>任何一个节点元素也可以调用 <code>getElementsByTagName()</code> 方法</strong>，从而得到其内部的某种类的元素节点。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 先得到 box1</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box1&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 得到 box1 中的p标签的数组</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> inner_ps = box1.getElementsByTagName(<span class="string">&#x27;p&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(inner_ps); <span class="comment">// HTMLCollection(4) [p, p, p, p]</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="getElementsByClassName"><a href="#getElementsByClassName" class="headerlink" title="getElementsByClassName()"></a>getElementsByClassName()</h4><p><code>getElementsByClassName()</code> 方法的功能<strong>是通过类名得到节点数组</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> spec_divs = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;spec&#x27;</span>);<span class="comment">//注意不要写.号</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(spec_divs);<span class="comment">//HTMLCollection(3) [div.spec, div.spec, div.spec]</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li><code>getElementsByClassName()</code> 方法<strong>从 IE9 开始兼容</strong></li>
+<li><strong>某个节点元素也可以调用<code>getElementsByClassName()</code>方法</strong>，从而得到其内部的某个类名的元素节点。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box1&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> spec_divs = box1.getElementsByClassName(<span class="string">&#x27;spec&#x27;</span>);<span class="comment">//注意不要写.号</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(spec_divs);<span class="comment">//HTMLCollection(3) [div.spec, div.spec, div.spec]</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="querySelector"><a href="#querySelector" class="headerlink" title="querySelector()"></a>querySelector()</h4><p><code>querySelector()</code> 方法的<strong>功能是通过选择器得到元素</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box1 = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#box1 .spec&#x27;</span>);<span class="comment">// #box1 选择器</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box1);</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h5><ol>
+<li><code>querySelector()</code>方法<strong>只能得到页面上一个元素</strong>，如果有多个元素符合条件，则只能得到第一个元素。</li>
+<li><code>querySelector()</code> 方法从 IE8 开始兼容，但从<strong>IE9开始支持 CSS3 的选择器</strong>，如 <code>nth-child()</code>,<code>:[src^=&#39;dog&#39;]</code>等 CSS3选择器形式都支持良好。</li>
+</ol>
+<h4 id="querySelectorAll"><a href="#querySelectorAll" class="headerlink" title="querySelectorAll()"></a>querySelectorAll()</h4><p><code>querySelectorAll()</code> 方法的功能是通过选择器得到元素<strong>数组</strong>，即使页面上只有一个符合选择器的节点，也将得到长度为1的数组。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spec&quot;</span>&gt;</span>我是盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box1 = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;#box1 .spec&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box1);<span class="comment">//NodeList(3) [div.spec, div.spec, div.spec]</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="节点的关系"><a href="#节点的关系" class="headerlink" title="节点的关系"></a>节点的关系</h3><table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">考虑所有节点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">子节点</td>
+<td align="center">childNodes</td>
+</tr>
+<tr>
+<td align="center">父节点</td>
+<td align="center">parentNode</td>
+</tr>
+<tr>
+<td align="center">第一个子节点</td>
+<td align="center">firstChild</td>
+</tr>
+<tr>
+<td align="center">最后一个子节点</td>
+<td align="center">lastChild</td>
+</tr>
+<tr>
+<td align="center">前一个兄弟节点</td>
+<td align="center">previousSibling</td>
+</tr>
+<tr>
+<td align="center">后一个兄弟节点</td>
+<td align="center">nextSibling</td>
+</tr>
+</tbody></table>
+<h4 id="注意：文本节点也属于节点"><a href="#注意：文本节点也属于节点" class="headerlink" title="注意：文本节点也属于节点"></a>注意：文本节点也属于节点</h4><p>DOM 中，文本节点也属于节点，在使用节点的关系时一点要注意。<strong>在标准的W3C规范中，空白文本节点也应该算作节点</strong>但是在IE8及以前的浏览器中会有一定的兼容性问题，它们不把空文本节点当作节点。</p>
+<h3 id="排除文本节点的干扰"><a href="#排除文本节点的干扰" class="headerlink" title="排除文本节点的干扰"></a>排除文本节点的干扰</h3><p>从 IE9 开始支持一些<strong>只考虑元素节点</strong>的属性。</p>
+<table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">考虑所有节点</th>
+<th align="center">只考虑元素节点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">子节点</td>
+<td align="center">childNodes</td>
+<td align="center">children</td>
+</tr>
+<tr>
+<td align="center">父节点</td>
+<td align="center">parentNode</td>
+<td align="center">parentNode</td>
+</tr>
+<tr>
+<td align="center">第一个子节点</td>
+<td align="center">firstChild</td>
+<td align="center">firstElementChild</td>
+</tr>
+<tr>
+<td align="center">最后一个子节点</td>
+<td align="center">lastChild</td>
+<td align="center">lastElementChild</td>
+</tr>
+<tr>
+<td align="center">前一个兄弟节点</td>
+<td align="center">previousSibling</td>
+<td align="center">previousElementSibling</td>
+</tr>
+<tr>
+<td align="center">后一个兄弟节点</td>
+<td align="center">nextSibling</td>
+<td align="center">nextElementSibling</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落A<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;para&quot;</span>&gt;</span>我是段落B<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落C<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> para = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;para&#x27;</span>);</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 所有子节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.childNodes); <span class="comment">//NodeList(7) [text, p, text, p#para, text, p, text]</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 所有的元素子节点（IE9开始兼容）</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.children);<span class="comment">// HTMLCollection(3) [p, p#para, p, para: p#para]</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 第一个子节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.firstChild); <span class="comment">//#text</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.firstChild.nodeType);<span class="comment">//3</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 第一个元素子节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.firstElementChild);<span class="comment">//&lt;p&gt;我是段落A&lt;/p&gt;</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 最后一个子节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.lastChild);<span class="comment">//#text</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.lastChild.nodeType);<span class="comment">//3</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 最后一个元素子节点（IE9开始兼容）</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.lastElementChild);<span class="comment">//&lt;p&gt;我是段落C&lt;/p&gt;</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 父元素</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(para.parentNode);<span class="comment">//&lt;div id=&#x27;box&#x27;&gt;...&lt;/div&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 前一个兄弟节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(para.previousSibling);<span class="comment">//#text</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 前一个元素兄弟节点（IE9开始兼容）</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(para.previousElementSibling);<span class="comment">//&lt;p&gt;我是段落A&lt;/p&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 后一个兄弟节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(para.nextSibling);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 后一个元素兄弟节点（IE9开始兼容）//#text</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(para.nextElementSibling);<span class="comment">//&lt;p&gt;我是段落C&lt;/p&gt;</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="书写常见的节点关系函数"><a href="#书写常见的节点关系函数" class="headerlink" title="书写常见的节点关系函数"></a>书写常见的节点关系函数</h3><ol>
+<li>书写 IE6 也兼容的“寻找所有元素子节点”函数以及“寻找前一个元素兄弟节点”函数。</li>
+<li>编写获取某元素的所有的兄弟节点。</li>
+</ol>
+<h3 id="改变元素节点中的内容"><a href="#改变元素节点中的内容" class="headerlink" title="改变元素节点中的内容"></a>改变元素节点中的内容</h3><ol>
+<li>改变元素节点中的内容可以使用两个相关的属性：<code>innerText</code> <code>innerHTML</code></li>
+<li><code>innerHTML</code> 属性能<strong>以HTML语法</strong>设置节点的内容。</li>
+<li><code>innerText</code> 属性只能<strong>以纯文本的形式</strong>设置节点中的内容。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    box.innerHTML = <span class="string">&quot;&lt;a href=&#x27;#&#x27;&gt;链接&lt;/a&gt;&quot;</span></span></span><br><span class="line"><span class="javascript">    box.innerText = <span class="string">&#x27;我是文本&#x27;</span></span></span><br><span class="line"><span class="javascript">    box.innerText = <span class="string">&#x27;&lt;p&gt;我是文本&lt;/p&gt;&#x27;</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="改变元素节点的CSS样式"><a href="#改变元素节点的CSS样式" class="headerlink" title="改变元素节点的CSS样式"></a>改变元素节点的CSS样式</h3><p>改变元素节点的CSS样式需要使用这样的语句：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oBox<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = &#x27;red&#x27;; <span class="comment">/*CSS属性要写成”驼峰“形式*/</span></span><br><span class="line">oBox<span class="selector-class">.style</span><span class="selector-class">.backgroundImage</span> = &#x27;url(image/<span class="number">1</span><span class="selector-class">.ipg</span>)&#x27;;<span class="comment">/*CSS属性要设置成完整形式*/</span></span><br><span class="line">oBox<span class="selector-class">.style</span><span class="selector-class">.fontSize</span> = &#x27;<span class="number">32px</span>&#x27;;<span class="comment">/*注意数值的单位*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    box.style.width = <span class="string">&#x27;200px&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    box.style.height = <span class="string">&#x27;200px&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    box.style.backgroundColor = <span class="string">&#x27;darkCyan&#x27;</span>;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="改变元素节点的HTML属性"><a href="#改变元素节点的HTML属性" class="headerlink" title="改变元素节点的HTML属性"></a>改变元素节点的HTML属性</h3><p>标准 W3C 属性，如 <code>src</code> ，<code>href</code> 等等，只需要直接打点进行更改即可。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oImg<span class="selector-class">.src</span> = &#x27;images/<span class="number">2</span><span class="selector-class">.jpg</span>&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>不符合W3C标准的属性，要使用<code>setAttribute()</code> 和<code>getAttribute()</code> 来设置，读取。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    box.setAttribute(<span class="string">&#x27;data-n&#x27;</span>, <span class="number">10</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> n = box.getAttribute(<span class="string">&#x27;data-n&#x27;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(n); <span class="comment">//10</span></span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="节点的创建"><a href="#节点的创建" class="headerlink" title="节点的创建"></a>节点的创建</h3><p><code>document.createElement()</code>方法用于创建一个指定的 <code>tagname</code> 的HTML元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="孤儿节点"><a href="#孤儿节点" class="headerlink" title="孤儿节点"></a>孤儿节点</h4><p>新创建出的节点是“孤儿节点”，这意味着它<strong>并没有被挂载到DOM树上</strong>，我们无法看到它。必须继续使用**<code>appendChild()</code> 或<code>insertBefore()</code>方法**将孤儿节点插入到DOM树上。</p>
+<h4 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h4><p>任何已经在DOM树上的节点，都可以调用<code>appendChild()</code> 方法，它可以将孤儿节点挂载到它的内部，<strong>成为它的最后一个子节点</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父节点.appendChild(孤儿节点);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="insertBefore"><a href="#insertBefore" class="headerlink" title="insertBefore()"></a>insertBefore()</h4><p>任何已经在DOM树上的节点，都可以调用<code>insertBefore()</code> 方法，它可以将孤儿节点挂载到它的内部，<strong>成为它的”标杆子节点”之前的节点</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父节点.insertBefore(孤儿节点，标杆节点);</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落0<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> ps = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;p&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> new_p = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> new_p1 = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    new_p.innerText = <span class="string">&#x27;我是新的段落&#x27;</span></span></span><br><span class="line"><span class="javascript">    new_p1.innerText = <span class="string">&#x27;我是新的段落1&#x27;</span></span></span><br><span class="line"><span class="javascript">    oBox.appendChild(new_p)</span></span><br><span class="line"><span class="javascript">    oBox.insertBefore(new_p1, ps[<span class="number">2</span>])</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h4><ol>
+<li>动态创建出一个20行12列的表格</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> table = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;table&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> tr = <span class="built_in">document</span>.createElement(<span class="string">&#x27;tr&#x27;</span>)</span></span><br><span class="line"><span class="javascript">      table.appendChild(tr);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">12</span>; j++) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> td = <span class="built_in">document</span>.createElement(<span class="string">&#x27;td&#x27;</span>)</span></span><br><span class="line"><span class="javascript">        tr.appendChild(td)</span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>制作一个九九乘法表</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> table = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;table&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> tr = <span class="built_in">document</span>.createElement(<span class="string">&#x27;tr&#x27;</span>)</span></span><br><span class="line"><span class="javascript">      table.appendChild(tr);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> td = <span class="built_in">document</span>.createElement(<span class="string">&#x27;td&#x27;</span>)</span></span><br><span class="line"><span class="javascript">        td.innerText = j + <span class="string">&#x27;x&#x27;</span> + i + <span class="string">&#x27;=&#x27;</span> + i * j</span></span><br><span class="line"><span class="javascript">        tr.appendChild(td)</span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="移动节点"><a href="#移动节点" class="headerlink" title="移动节点"></a>移动节点</h3><p>如果将已经挂载到DOM树上的节点成为 <code>appendChild()</code> 或者<code>insertBefore()</code> 的参数，这个<strong>节点将会被移动</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新父节点.appendChild(已经有父亲的节点);</span><br><span class="line">新父节点.insertBefore(已经有父亲的节点,标杆子节点);</span><br></pre></td></tr></table></figure>
+
+<p>这意味着一个节点不能同时处于DOM树的两个位置。</p>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/23/js-basic-7/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;23&#x2F;js-basic-7&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;23&#x2F;js-basic-7&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/24/vue3-basic-1/"><i class="iconfont iconleft"></i>Vue3.0 basic</a>
+    <a href="/2020/12/21/js-basic-6/">JS 6.函数<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-%E4%BD%BF-JS-%E6%93%8D%E4%BD%9C-HTML-%E5%8F%98%E5%BE%97%E4%BC%98%E9%9B%85"><span class="toc-text">DOM 使 JS 操作 HTML 变得优雅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-%E7%AE%80%E4%BB%8B"><span class="toc-text">DOM 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodeType-%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">nodeType 常用属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9"><span class="toc-text">访问元素节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86-document-%E5%AF%B9%E8%B1%A1"><span class="toc-text">认识 document 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">访问元素节点的常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">节点的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E9%99%A4%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E7%9A%84%E5%B9%B2%E6%89%B0"><span class="toc-text">排除文本节点的干扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A6%E5%86%99%E5%B8%B8%E8%A7%81%E7%9A%84%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB%E5%87%BD%E6%95%B0"><span class="toc-text">书写常见的节点关系函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">改变元素节点中的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84CSS%E6%A0%B7%E5%BC%8F"><span class="toc-text">改变元素节点的CSS样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84HTML%E5%B1%9E%E6%80%A7"><span class="toc-text">改变元素节点的HTML属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">节点的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%8A%82%E7%82%B9"><span class="toc-text">移动节点</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

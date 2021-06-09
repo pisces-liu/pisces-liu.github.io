@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 1.语法与变量 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="本篇包含 JavaScript 的历史与简介。
+
+
+J...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 1.语法与变量</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 1.语法与变量</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 14, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1669</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="JavaScript的简介"><a href="#JavaScript的简介" class="headerlink" title="JavaScript的简介"></a>JavaScript的简介</h2><h3 id="JavaScript的历史"><a href="#JavaScript的历史" class="headerlink" title="JavaScript的历史"></a>JavaScript的历史</h3><p>1995年由 Brendan Eich（布兰登·艾奇）发明，前身是 LiveScript.</p>
+<h3 id="ECMAScript-是-JavaScript-的标准"><a href="#ECMAScript-是-JavaScript-的标准" class="headerlink" title="ECMAScript 是 JavaScript 的标准"></a>ECMAScript 是 JavaScript 的标准</h3><p><strong>1997年，欧洲计算机制造商协会（ECMA）</strong> 设置了JavaScript的标准，命名为  <code>ECMAScript</code> 。<br>ECMAScript 规范了 JavaScript，同样 JavaScript 实现了 ECMAScript。</p>
+<h3 id="JavaScript-体系"><a href="#JavaScript-体系" class="headerlink" title="JavaScript 体系"></a>JavaScript 体系</h3><p>完整的 <code>JavaScript</code> 包含：</p>
+<ol>
+<li>语言核心（ECMAScript5，6，7，8，9）</li>
+<li>DOM</li>
+<li>BOM</li>
+</ol>
+<h3 id="JavaScript-的语言风格和特性"><a href="#JavaScript-的语言风格和特性" class="headerlink" title="JavaScript 的语言风格和特性"></a>JavaScript 的语言风格和特性</h3><ol>
+<li>类 C 语言的风格，简单好学。</li>
+<li>弱类型，易编写。</li>
+</ol>
+<h2 id="JavaScript-的基础使用"><a href="#JavaScript-的基础使用" class="headerlink" title="JavaScript 的基础使用"></a>JavaScript 的基础使用</h2><h3 id="JavaScript-的书写位置"><a href="#JavaScript-的书写位置" class="headerlink" title="JavaScript 的书写位置"></a>JavaScript 的书写位置</h3><ol>
+<li>在 <code>&lt;body&gt;</code> 中的 <code>&lt;script&gt;</code> 标签内部书写 JavaScript 代码。</li>
+<li>将代码单独储存为 <code>.js</code> 格式文件，然后在 HTML 文件中使用 <code>&lt;script src=&quot;&quot;&gt;&lt;/script&gt;</code> 这样的形式将 <code>js</code> 文件引入。</li>
+</ol>
+<p>在 HTML4 中使用 <code>&lt;script&gt;</code> 标签时，会有<code>type</code> 属性： <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 但在 HTML5 中可以忽略这种写法。</p>
+<h3 id="认识输出语句"><a href="#认识输出语句" class="headerlink" title="认识输出语句"></a>认识输出语句</h3><ol>
+<li><code>alert()</code> –弹出警告框。</li>
+<li><code>console.log()</code> –控制台输出。</li>
+</ol>
+<h3 id="处理报错信息"><a href="#处理报错信息" class="headerlink" title="处理报错信息"></a>处理报错信息</h3><p>常见的报错信息有：</p>
+<ol>
+<li>Uncaught SyntaxError: Invalid or unexpected token 未捕获的语法错误:不合法或错误的符号</li>
+<li>Uncaught ReferenceError: a is not defined 未捕获的引用错误:a 没有被定义.</li>
+</ol>
+<h3 id="REPL-环境"><a href="#REPL-环境" class="headerlink" title="REPL 环境"></a>REPL 环境</h3><p>控制台也是一个 REPL 环境，可以使用它临时测试表达式的值。</p>
+<ol>
+<li>read 读</li>
+<li>eval 执行</li>
+<li>print 打印</li>
+<li>loop 循环</li>
+</ol>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量是计算机语言中能储存计算结果或能表示值抽象概念。变量不是数值本身，它们仅仅是一个用于存储数值的容器</p>
+<h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><p>要想使用变量，第一件事就是声明它，并给它赋值: <code>var a = 5;</code> ，使用 <code>var</code> 关键字定义变量，等号表示赋值。<br>当变量被赋值后，就可以使用了: <code>console.log(a);</code></p>
+<h3 id="改变变量的值"><a href="#改变变量的值" class="headerlink" title="改变变量的值"></a>改变变量的值</h3><p>变量的值是可以被改变的，这个时候不需要使用 <code>var</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">// 定义变量a 并赋初始值为10</span></span><br><span class="line">a = <span class="number">18</span>; <span class="comment">// 更改变量a的值为 18</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量的合法命名"><a href="#变量的合法命名" class="headerlink" title="变量的合法命名"></a>变量的合法命名</h3><p>标识符的命名规则，函数，类名，对象的属性等也要遵守这个规则：</p>
+<ol>
+<li>只能是数字，字母，下划线，$ 组成，并且<strong>不能以数字开头</strong>。</li>
+<li>不能是关键字或者保留字</li>
+<li>变量名大小写敏感，a 和 A 两个是不同的变量。</li>
+</ol>
+<h3 id="变量的常见错误"><a href="#变量的常见错误" class="headerlink" title="变量的常见错误"></a>变量的常见错误</h3><p>不用 <code>var</code> 定义，而直接将值赋予它，虽不会引发错误，但会<strong>产生作用域问题</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 不会输出 10，只会输出 undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="同时输出多个变量"><a href="#同时输出多个变量" class="headerlink" title="同时输出多个变量"></a>同时输出多个变量</h3><p>使用逗号同时声明和初始化两个变量: <code>var a = 0, b= 0;</code></p>
+<h3 id="变量声明提升"><a href="#变量声明提升" class="headerlink" title="变量声明提升"></a>变量声明提升</h3><p>变量声明的提升: 你可以<strong>提前使用一个稍后才声明的变量</strong>，而不会引发异常。在执行所有代码前， JS 有预解析阶段，会预先解读所有的变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量声明提升只提升定义，不提升值。</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 先使用变量，输出 undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">12</span>; <span class="comment">// 后定义变量</span></span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ol>
+<li>变量声明的提升是JavaScript的特性， 所以经常出面试题。</li>
+<li>在实际开发时，不要刻意使用变量声明提升特性。一定要先定义并给变量赋初值，然后再使用变量。</li>
+</ol>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/14/js-basic-1/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;14&#x2F;js-basic-1&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;14&#x2F;js-basic-1&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/15/js-basic-2/"><i class="iconfont iconleft"></i>JS 2.基本数据类型</a>
+    <a href="/2020/12/11/CSS3-basic-2/">CSS3基础(第二周内容)<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">JavaScript的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-text">JavaScript的历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ECMAScript-%E6%98%AF-JavaScript-%E7%9A%84%E6%A0%87%E5%87%86"><span class="toc-text">ECMAScript 是 JavaScript 的标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E4%BD%93%E7%B3%BB"><span class="toc-text">JavaScript 体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E7%9A%84%E8%AF%AD%E8%A8%80%E9%A3%8E%E6%A0%BC%E5%92%8C%E7%89%B9%E6%80%A7"><span class="toc-text">JavaScript 的语言风格和特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript-%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-text">JavaScript 的基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E7%9A%84%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="toc-text">JavaScript 的书写位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">认识输出语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF"><span class="toc-text">处理报错信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REPL-%E7%8E%AF%E5%A2%83"><span class="toc-text">REPL 环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-text">定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC"><span class="toc-text">改变变量的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%90%88%E6%B3%95%E5%91%BD%E5%90%8D"><span class="toc-text">变量的合法命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-text">变量的常见错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%97%B6%E8%BE%93%E5%87%BA%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="toc-text">同时输出多个变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87"><span class="toc-text">变量声明提升</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

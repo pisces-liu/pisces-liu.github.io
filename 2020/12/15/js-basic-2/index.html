@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 2.基本数据类型 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="内容简介：数据类型简介和检测，基本数据类型，数据类型的...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 2.基本数据类型</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 2.基本数据类型</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 15, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5819</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="JavaScript-中两大数据类型"><a href="#JavaScript-中两大数据类型" class="headerlink" title="JavaScript 中两大数据类型"></a>JavaScript 中两大数据类型</h3><ol>
+<li>基本数据类型</li>
+<li>复杂数据类型</li>
+</ol>
+<h3 id="typeof-运算符"><a href="#typeof-运算符" class="headerlink" title="typeof 运算符"></a>typeof 运算符</h3><p>使用 <code>typeof</code> 运算符可以检测值或者变量的类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">5</span>; <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">&#x27;javascript&#x27;</span>; <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>5钟基本数据类型的 <code>typeof</code> 检测结果</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型名</th>
+<th align="center">typeof 检测结果</th>
+<th align="center">值举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数字类型</td>
+<td align="center">number</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">字符串类型</td>
+<td align="center">string</td>
+<td align="center">“java”</td>
+</tr>
+<tr>
+<td align="center">布尔类型</td>
+<td align="center">boolean</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">undefined类型</td>
+<td align="center">undefined</td>
+<td align="center">undefined</td>
+</tr>
+<tr>
+<td align="center">null类型</td>
+<td align="center">Object</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+<h3 id="Number（数字）类型"><a href="#Number（数字）类型" class="headerlink" title="Number（数字）类型"></a>Number（数字）类型</h3><p>所有的数字不分大小，不分整浮，不分正负，都是数字类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">925</span>; <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> -<span class="number">6</span>; <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">9.25</span>; <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="小数中0可以忽略"><a href="#小数中0可以忽略" class="headerlink" title="小数中0可以忽略"></a>小数中0可以忽略</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">.5</span>; <span class="comment">// 0.5</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">.5</span>; <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h3><p>较大数或者较小数（绝对值较小）可以写成科学计数法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3e8</span>; <span class="comment">//300000000</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">3e8</span>; <span class="comment">// number</span></span><br><span class="line"></span><br><span class="line"><span class="number">3e-4</span>; <span class="comment">//0.0003</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">3e-4</span>; <span class="comment">//number</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不同进制的数字"><a href="#不同进制的数字" class="headerlink" title="不同进制的数字"></a>不同进制的数字</h3><ol>
+<li><p>二进制数值以 0b 开头</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0b10</span> <span class="comment">//2</span></span><br><span class="line"><span class="number">0b1111</span> <span class="comment">// 15</span></span><br></pre></td></tr></table></figure></li>
+<li><p>八进制数值以0开头</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">017</span> <span class="comment">//15</span></span><br></pre></td></tr></table></figure></li>
+<li><p>十六进制数字以0x开头</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0xf</span> <span class="comment">//15</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="一个特殊的数字类型-NaN"><a href="#一个特殊的数字类型-NaN" class="headerlink" title="一个特殊的数字类型 NaN"></a>一个特殊的数字类型 NaN</h3><ol>
+<li>NaN是英语“not a number” 的意思，即“不是一个数”，但它是一个数字类型的值</li>
+</ol>
+<p><code>typeof NaN;//number</code></p>
+<ol start="2">
+<li><p>0除以0的结果就是NaN，事实上，在数学运算中，如若结果不能得到数字，其结果往往都是 NaN。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;我&#x27;</span> - <span class="string">&#x27;你&#x27;</span>; <span class="comment">//NaN</span></span><br><span class="line"><span class="string">&#x27;我&#x27;</span> * <span class="string">&#x27;你&#x27;</span>; <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure></li>
+<li><p> NaN有一个奇怪的性质：不自等。</p>
+</li>
+</ol>
+<h2 id="String-字符串-类型"><a href="#String-字符串-类型" class="headerlink" title="String(字符串) 类型"></a>String(字符串) 类型</h2><p>字符串就是“人类的自然语言”，字符串要用引号包裹，双引号或者单引号均可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">&#x27;好好学习&#x27;</span>; <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">&quot;好好学习&quot;</span>; <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串的拼接"><a href="#字符串的拼接" class="headerlink" title="字符串的拼接"></a>字符串的拼接</h3><p>加号可以用来拼接多个字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;imo&#x27;</span>+<span class="string">&#x27;oc&#x27;</span>; <span class="comment">// &#x27;imooc&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字符串和变量的拼接"><a href="#字符串和变量的拼接" class="headerlink" title="字符串和变量的拼接"></a>字符串和变量的拼接</h3><p>将一个变量的值“插入”到字符串中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> year = <span class="number">2020</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;今年是&#x27;</span> + year +<span class="string">&#x27;年&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="空字符串"><a href="#空字符串" class="headerlink" title="空字符串"></a>空字符串</h3><p>一些时候需要使用空字符串，直接书写闭合的引号对即可：<code>var str = &#39;&#39;;</code></p>
+<h3 id="字符串的-length-属性"><a href="#字符串的-length-属性" class="headerlink" title="字符串的 length  属性"></a>字符串的 length  属性</h3><p>字符串的 length 属性表示字符串的长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;学习JS&#x27;</span>.length; <span class="comment">// 4</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span>.length <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串的常用方法"><a href="#字符串的常用方法" class="headerlink" title="字符串的常用方法"></a>字符串的常用方法</h3><p>“方法”就是能够通过打点调用的函数，字符串有丰富的方法。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">charAt()</td>
+<td align="center">得到指定位置字符</td>
+</tr>
+<tr>
+<td align="center">substring()</td>
+<td align="center">提取子串</td>
+</tr>
+<tr>
+<td align="center">substr()</td>
+<td align="center">提取子串</td>
+</tr>
+<tr>
+<td align="center">slice()</td>
+<td align="center">提取子串</td>
+</tr>
+<tr>
+<td align="center">toUpperCase()</td>
+<td align="center">将字符串变为大写</td>
+</tr>
+<tr>
+<td align="center">toLowerCase()</td>
+<td align="center">将字符串变为小写</td>
+</tr>
+<tr>
+<td align="center">indexOf()</td>
+<td align="center">检索字符串</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// charAt() 方法</span></span><br><span class="line"> <span class="keyword">var</span> str = <span class="string">&#x27;海上生明月，天涯共此时。&#x27;</span>;</span><br><span class="line"> <span class="comment">// charAt()方法可以得到指定位置的字符</span></span><br><span class="line"> <span class="built_in">console</span>.log(str.charAt(<span class="number">0</span>)); <span class="comment">//海</span></span><br><span class="line"> <span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>)); <span class="comment">//明</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// substring(a,b) 方法得到从a开始到b结束（不包括b处）的子串</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">3</span>,<span class="number">5</span>)); <span class="comment">// 明月</span></span><br><span class="line"><span class="comment">// substring(a,b) 方法如果省略第二个参数，返回的子串会一直到字符串的结尾</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">6</span>)); <span class="comment">// 天涯共此时。</span></span><br><span class="line"><span class="comment">// subString(a,b) 中，a可以大于 b，数字顺序将自动调整为小数在前</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">6</span>,<span class="number">2</span>)); <span class="comment">//生明月，</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// substr(a,b)中，将得到从a开始的长度为b的字串</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">3</span>,<span class="number">2</span>));<span class="comment">//明月</span></span><br><span class="line"><span class="comment">// substr(a,b) 方法如果省略第二个参数，返回的子串会一直到字符串的结尾</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">6</span>));<span class="comment">//天涯共此时。</span></span><br><span class="line"><span class="comment">// substr(a,b) 中，a可以是负数，表示倒数位置</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substr(-<span class="number">4</span>,<span class="number">2</span>)); <span class="comment">//共此</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// slice(a,b) 方法得到从 a 开始到b 结束(不包括b处)的子串</span></span><br><span class="line"><span class="built_in">console</span>.log(str.slice(<span class="number">3</span>,<span class="number">6</span>)); <span class="comment">//明月，</span></span><br><span class="line"><span class="comment">// slice(a,b) 的参数a可以是负数</span></span><br><span class="line"><span class="built_in">console</span>.log(str.slice(-<span class="number">4</span>,-<span class="number">1</span>)); <span class="comment">//共此时</span></span><br><span class="line"><span class="comment">// slice(a,b)中，参数a必须小于参数b</span></span><br><span class="line"><span class="built_in">console</span>.log(str.slice(<span class="number">5</span>,<span class="number">2</span>)); <span class="comment">// &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a>对比总结</h3><p>substring(), substr(), slice() 对比总结</p>
+<ol>
+<li>substring(a,b) 和 slice(a,b) 功能基本一致，都是从a开始到b结束（不包括b）的子串，区别：<ol>
+<li>substring() 可以自动交换两个参数位置，而 slice() 不行</li>
+<li>slice() 的参数a 可以是负数，而 substring() 不行</li>
+</ol>
+</li>
+<li>substr(a,b) 中参数 b 是子串长度，而不是位置编号。</li>
+</ol>
+<h3 id="toUpperCase-和-toLowerCase"><a href="#toUpperCase-和-toLowerCase" class="headerlink" title="toUpperCase() 和 toLowerCase()"></a>toUpperCase() 和 toLowerCase()</h3><ol>
+<li>toUpperCase() 转为大写</li>
+<li>toLowerCase() 转为小写</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;i love you&#x27;.toUpperCase(); //I LOVE YOU</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p><code>indexOf()</code> 方法返回某个指定的字符串在字符串中首次出现的位置，如果要检索的字符串值没有出现，则该返回 -1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str111 = <span class="string">&#x27;abcdef&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str111.indexOf(<span class="string">&#x27;a&#x27;</span>)); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(str111.indexOf(<span class="string">&#x27;d&#x27;</span>)); <span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(str111.indexOf(<span class="string">&#x27;m&#x27;</span>)); <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>布尔（Boole·George）英国19世纪数学家及逻辑学家。人们为了纪念他，以他的名字命名布尔值。</p>
+<p>布尔值只有两个： <code>true</code> 和 <code>false</code> .分别表示真和假。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">false</span>;  <span class="comment">// boolean</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="undefined-类型"><a href="#undefined-类型" class="headerlink" title="undefined 类型"></a>undefined 类型</h2><p>一个没有被赋值的变量的默认值是 <code>undefined</code> ,而 <code>undefined</code> 的类型也是 <code>undefined</code> 。即：undefined 又是值，又是一种数据类型，这种数据类型只有它自己。<code>typeof undefined; //undefined</code></p>
+<h2 id="null-类型"><a href="#null-类型" class="headerlink" title="null 类型"></a>null 类型</h2><p><code>null</code> 代表空，它是“空对象”。当我们需要将对象销毁，数组销毁或者删除事件监听时，通常将它们设置为 <code>null</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box.onclick = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="用-typeof-检测-null-结果是-object"><a href="#用-typeof-检测-null-结果是-object" class="headerlink" title="用 typeof 检测 null 结果是 object"></a>用 typeof 检测 null 结果是 object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串 -&gt; 数字</span></span><br><span class="line"><span class="comment">// 纯数字字符串能变为数字，不是纯数字的字符串转为 NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(Numer(<span class="string">&#x27;123&#x27;</span>)); <span class="comment">//123</span></span><br><span class="line"><span class="built_in">console</span>.log(Numer(<span class="string">&#x27;123.4&#x27;</span>)); <span class="comment">//123.4</span></span><br><span class="line"><span class="built_in">console</span>.log(Numer(<span class="string">&#x27;123年&#x27;</span>)); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(Numer(<span class="string">&#x27;2e3&#x27;</span>)); <span class="comment">//2000</span></span><br><span class="line"><span class="built_in">console</span>.log(Numer(<span class="string">&#x27;&#x27;</span>)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 布尔值 -&gt; 数字</span></span><br><span class="line"><span class="comment">// true 变为 1，false 变为 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">true</span>)); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">false</span>)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 和 null -&gt; 数字</span></span><br><span class="line"><span class="comment">// undefined 变为 NaN，null 变为 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">undefined</span>)); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">null</span>));<span class="comment">//0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// parseInt() 函数</span></span><br><span class="line"><span class="comment">// parseInt() 函数的功能是将字符串转为整数</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">&#x27;2.14&#x27;</span>)); <span class="comment">//2 parseInt() 将自动截去第一个非数字字符之后的所有字符</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">&#x27;3.14是圆周率&#x27;</span>)); <span class="comment">//3 所有的文字都被去掉</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">&#x27;圆周率是3,14&#x27;</span>)); <span class="comment">//NaN 如果第一个字符不是以数字开头，则转为 NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">&#x27;9.99&#x27;</span>)); <span class="comment">//9 不会四舍五入</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// parseFloat() 函数</span></span><br><span class="line"><span class="comment">// parseFloat() 函数的功能是将字符串转为浮点数</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">&#x27;2.14&#x27;</span>)); <span class="comment">//2.14 将小数字符串转换为小数 </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">&#x27;3.14是圆周率&#x27;</span>)); <span class="comment">//3.14 小数后的非数字都被去掉</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">&#x27;圆周率是3,14&#x27;</span>)); <span class="comment">//NaN 如果第一个字符不是以数字开头，则转为 NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">&#x27;9.99&#x27;</span>)); <span class="comment">//9。99 不会四舍五入</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 String() 函数</span></span><br><span class="line"><span class="comment">// 数字 -&gt; 字符串 </span></span><br><span class="line"><span class="comment">// 变为长度相同的字符串，科学计数法和非10进制数字会转为 10 进制的值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">123</span>)); <span class="comment">//&#x27;123&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">123.4</span>)); <span class="comment">//&#x27;123.4&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">2e3</span>));<span class="comment">// &#x27;2000&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">NaN</span>));<span class="comment">//&#x27;NaN&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">Infinity</span>)); <span class="comment">// &#x27;Infinity&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">0xf</span>)); <span class="comment">// &#x27;15&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 布尔值 -&gt; 字符串</span></span><br><span class="line"><span class="comment">// 变为“长度相同”的字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">true</span>)); <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">false</span>)); <span class="comment">// &#x27;0&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 和 null -&gt; 字符串</span></span><br><span class="line"><span class="comment">// 变为相同长度的字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">undefined</span>)); <span class="comment">// &#x27;undefined&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">null</span>)); <span class="comment">// &#x27;null&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean()"></a>Boolean()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Boolean() </span></span><br><span class="line"><span class="comment">// 数字 -&gt; 布尔值</span></span><br><span class="line"><span class="comment">// 0 和 NaN 转为 false ，其他数字都转为 true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">123</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">0</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">Infinity</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(-<span class="literal">Infinity</span>));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 布尔值 -&gt; 布尔值</span></span><br><span class="line"><span class="comment">// 空字符串变为 false ，其他转为 true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">&#x27;&#x27;</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">&#x27;abc&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">&#x27;false&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined和null -&gt; 布尔值</span></span><br><span class="line"><span class="comment">// 转为 false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/15/js-basic-2/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;15&#x2F;js-basic-2&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;15&#x2F;js-basic-2&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/16/js-basic-3/"><i class="iconfont iconleft"></i>JS 3.表达式与操作符</a>
+    <a href="/2020/12/14/js-basic-1/">JS 1.语法与变量<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E4%B8%AD%E4%B8%A4%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">JavaScript 中两大数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">typeof 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Number%EF%BC%88%E6%95%B0%E5%AD%97%EF%BC%89%E7%B1%BB%E5%9E%8B"><span class="toc-text">Number（数字）类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0%E4%B8%AD0%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5"><span class="toc-text">小数中0可以忽略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95"><span class="toc-text">科学计数法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%BF%9B%E5%88%B6%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">不同进制的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B-NaN"><span class="toc-text">一个特殊的数字类型 NaN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%B1%BB%E5%9E%8B"><span class="toc-text">String(字符串) 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%BC%E6%8E%A5"><span class="toc-text">字符串的拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%8F%98%E9%87%8F%E7%9A%84%E6%8B%BC%E6%8E%A5"><span class="toc-text">字符串和变量的拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">空字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84-length-%E5%B1%9E%E6%80%A7"><span class="toc-text">字符串的 length  属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">字符串的常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-text">对比总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toUpperCase-%E5%92%8C-toLowerCase"><span class="toc-text">toUpperCase() 和 toLowerCase()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#indexOf"><span class="toc-text">indexOf()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined-%E7%B1%BB%E5%9E%8B"><span class="toc-text">undefined 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null-%E7%B1%BB%E5%9E%8B"><span class="toc-text">null 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-typeof-%E6%A3%80%E6%B5%8B-null-%E7%BB%93%E6%9E%9C%E6%98%AF-object"><span class="toc-text">用 typeof 检测 null 结果是 object</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Number"><span class="toc-text">Number()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#parseInt"><span class="toc-text">parseInt()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#parseFloat"><span class="toc-text">parseFloat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String"><span class="toc-text">String()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boolean"><span class="toc-text">Boolean()</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1180 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5基础学习 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="大三放寒假了，准备把前端基础的知识点重新学习一遍。这个...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">HTML5基础学习</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">HTML5基础学习</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 05, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>7045</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="一-HTML-语法与基础标签"><a href="#一-HTML-语法与基础标签" class="headerlink" title="一. HTML 语法与基础标签"></a>一. HTML 语法与基础标签</h1><h2 id="前端开发主要技术介绍"><a href="#前端开发主要技术介绍" class="headerlink" title="前端开发主要技术介绍"></a>前端开发主要技术介绍</h2><ol>
+<li>HTML5： 搭建网页结构的语言，增加了很多的移动端的支持，简单好学。</li>
+<li>CSS3： 样式表，美化网页的语言，增加了很多动画，过渡等新特性，要记的单词非常多，不过非常有意思。</li>
+<li>JavaScript：前端开发工程师最重要的“看家语言”，JS 功底的好坏，决定了职业高度，学习的时候需要下苦功夫。</li>
+<li>Vue.js / React.js: 从 2016 年前后开始流行的前端框架，采用模块化开发，数据驱动，声明式编程，只要前期“马步扎稳”，后面“武功招式”随便学。</li>
+</ol>
+<h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><ol>
+<li>HTP协议（Hypertext Transfer Protocol, 超文本传输协议）是互联网数据传输的常见协议。</li>
+<li>一次 HTTP 事勿是由“HTTP请求”和“HTTP响应”构成。</li>
+<li>网址前的 http:// 就表示用 http 协议请求页面。</li>
+</ol>
+<h2 id="认识-HTML5-骨架"><a href="#认识-HTML5-骨架" class="headerlink" title="认识 HTML5 骨架"></a>认识 HTML5 骨架</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>&lt;!DOCTYPE html&gt; </code>  文档类型声明 DTD</p>
+<p><code>&lt;html&gt;&lt;/html&gt;</code> <code>&lt;head&gt;&lt;/head&gt;</code> <code>&lt;body&gt;&lt;/body&gt;</code> 标签对儿</p>
+<h3 id="文档类型声明-DTD"><a href="#文档类型声明-DTD" class="headerlink" title="文档类型声明 DTD"></a>文档类型声明 DTD</h3><ol>
+<li>HTML 文件第一行必须是 DTD(Document Type Definition, 文档类型声明)</li>
+<li>不写 DTD 会引发浏览器的一些兼容问题。</li>
+<li>不同版本的 HTML 有不同的 DTD 写法。</li>
+</ol>
+<h3 id="不同版本的-HTML-的-DTD"><a href="#不同版本的-HTML-的-DTD" class="headerlink" title="不同版本的 HTML 的 DTD"></a>不同版本的 HTML 的 DTD</h3><table>
+<thead>
+<tr>
+<th>HTML版本</th>
+<th>DTD写法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTML5</td>
+<td><!DOCTYPE html></td>
+</tr>
+<tr>
+<td>HTML4.01严格版</td>
+<td><!DOCTYPE html PUBLIC "-//W3C//DTD 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"></td>
+</tr>
+<tr>
+<td>HTML4.01过渡版</td>
+<td><!DOCTYPE html PUBLIC "-//W3C//DTD 4.01 Transitionan//EN" "http://www.w3.org/TR/html4/loose.dtd"></td>
+</tr>
+<tr>
+<td>HTML4.01框架版</td>
+<td><!DOCTYPE html PUBLIC "-//W3C//DTD 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"></td>
+</tr>
+</tbody></table>
+<h2 id="W3C-组织"><a href="#W3C-组织" class="headerlink" title="W3C 组织"></a>W3C 组织</h2><p>W3C（The World Wide Web Consortium，万维网联合会）是万维网的主要国际标准组织。该联盟成立于1994年，负责定制 web 标准，主要是 HTML 和 CSS。</p>
+<h4 id="认识-和-标签对儿"><a href="#认识-和-标签对儿" class="headerlink" title="认识   和 标签对儿"></a>认识 <head>  和<body> 标签对儿</h4><head> 和<body> 标签都是写在 <html></html> 标签里面的。
+
+ <head></head>标签对儿是网页的配置，不要认为时网页的头部。
+
+<body></body>标签对儿中写网页的内容，包括网页的头部，主要内容，页脚等各个部分。
+
+<h2 id="字符集设置"><a href="#字符集设置" class="headerlink" title="字符集设置"></a>字符集设置</h2><meta charset="UTF-8">
+
+<p><code>meta</code> 是元标签，表示网页的基础配置，<code>charset </code>表示字符集， <code>UTF-8 </code>是一种字符集。</p>
+<h4 id="两种字符集介绍"><a href="#两种字符集介绍" class="headerlink" title="两种字符集介绍"></a>两种字符集介绍</h4><p>UTF-8 和 gb2312</p>
+<table>
+<thead>
+<tr>
+<th>字符集</th>
+<th>涵盖字符</th>
+<th>1个汉字字节数</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UTF-8</td>
+<td>涵盖全球所有国家，民族的文字和大量图形字符。</td>
+<td>3</td>
+<td>制作有非汉字文字的网页</td>
+</tr>
+<tr>
+<td>gb2312</td>
+<td>收录所有汉字字符（包含简体，繁体）和英语，少量韩文，日语和少量图形字符</td>
+<td>2</td>
+<td>制作只有汉语和英语的网页，由于1个汉字仅占2字节，网页文件尺寸明显减少。</td>
+</tr>
+</tbody></table>
+<h4 id="更改网页的字符集"><a href="#更改网页的字符集" class="headerlink" title="更改网页的字符集"></a>更改网页的字符集</h4><p>更改网页字符集的时候，不仅仅要更改 <code>&lt;meta charst=&quot;UTF-8&quot;&gt;</code>里面的 <code>charset</code> 属性值，还要更改该网页的字符编码设置。不然会造成乱码。</p>
+<h2 id="title-标签"><a href="#title-标签" class="headerlink" title="title 标签"></a>title 标签</h2><h4 id="title设置出现的位置"><a href="#title设置出现的位置" class="headerlink" title="title设置出现的位置"></a>title设置出现的位置</h4><p>   &lt; title&gt;网页的标题</title></p>
+<h4 id="title-的用途"><a href="#title-的用途" class="headerlink" title="title 的用途"></a>title 的用途</h4><p>title 是搜索引擎收录网站时显示的标题，为了吸引用户点击，应该合理的设置 title。</p>
+<h2 id="网页关键词和页面描述"><a href="#网页关键词和页面描述" class="headerlink" title="网页关键词和页面描述"></a>网页关键词和页面描述</h2><ol>
+<li><p>合理设置网页的关键词和页面描述，也是SEO的重要手段。</p>
+</li>
+<li><p>SEO (Search Engine Optimization, 搜索引擎优化)利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名，让网站在搜索引|擎的结果中内占据领先地位，获得品牌收益。</p>
+</li>
+</ol>
+<h4 id="网页关键词和页面描述-1"><a href="#网页关键词和页面描述-1" class="headerlink" title="网页关键词和页面描述"></a>网页关键词和页面描述</h4><p>使用 <code>meta</code> 标签设置网页关键词和描述，<code>name</code> 属性非常关键,用来设置<code>meta</code>的具体功能</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot; Keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot; 慕课网，imooc， JAVA， 前端,Python，大数据&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>= <span class="string">&quot;Description&quot;</span> <span class="attr">content</span>=<span class="string">&quot; 慕课网(IM0OC) 是IT技能学习平台。慕课网(IM00C)课程涉及JAVA、前端、Python、 大数据等60类主流技术语言，覆盖了面试就业、职业成长、自我提升等需求场景，帮助用户实现从技能提升到岗位提升的能力闭环。&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="认识标签对儿"><a href="#认识标签对儿" class="headerlink" title="认识标签对儿"></a>认识标签对儿</h2><p>标签通常成对儿出现</p>
+<p> &lt; p&gt;不负韶华，只争朝夕</p> .</p>
+<p>其中<p>起始标签  </p>是结束标签</p>
+<h4 id="不同功能的标签有不同的功能"><a href="#不同功能的标签有不同的功能" class="headerlink" title="不同功能的标签有不同的功能"></a>不同功能的标签有不同的功能</h4><p>p标签表示段落<p>不负韶华， 只争朝夕</p></p>
+<p>h1标签表示一级标题<h1>不负韶华，只争朝夕</h1></p>
+<p>标签可以给文字设置不同的“语义”</p>
+<h4 id="单标签"><a href="#单标签" class="headerlink" title="单标签"></a>单标签</h4><p>有的标签不是成对儿的，而是只有起始标签,称为单标签</p>
+<meta charset="UTF-8">
+
+<p>在HTML4代， 单标签必须写-一个结尾的反斜杠，HTML5不用写</p>
+<meta charset="UTF-8" />
+
+<h4 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h4><p>h系列标签表示”标题”语义，h是headline的意思</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h1</td>
+<td>一级标题</td>
+</tr>
+<tr>
+<td>h2</td>
+<td>二级标题</td>
+</tr>
+<tr>
+<td>h3</td>
+<td>三级标题</td>
+</tr>
+<tr>
+<td>h4</td>
+<td>四级标题</td>
+</tr>
+<tr>
+<td>h5</td>
+<td>五级标题</td>
+</tr>
+<tr>
+<td>h6</td>
+<td>六级标题</td>
+</tr>
+</tbody></table>
+<h4 id="标题标签-1"><a href="#标题标签-1" class="headerlink" title="标题标签"></a>标题标签</h4><p>搜索引擎非常看重<h1></h1>标签的内容，应该将重点内容放到<h1></h1>中，比如网页的<code>logo</code>等</p>
+<p>◆<h1></h1>标签- 般只能放置-一个，否则会被搜索引擎视为作弊</p>
+<p>提示:实际开发中,也会出现多个<h1>标签的情况,只是不推荐</p>
+<h4 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h4><p>◆<p></p>标签表示段落标签， p是英语paragraph的意思</p>
+<p>◆任何段落都要放到<p></p>标签中， 因为HTML中即使代码换行了，页面显示效果也不会换行，必须写到<p></p>中</p>
+<p>◆<p>&lt;/ p&gt;标签中不能嵌套h系列标签和其他p标签</p>
+<p>◆div是英语division”分割”的缩写，顾名思义,<div></div>标签对用来将相关的内容组合到一起，以和其他内容分割，使文档结构更清晰</p>
+<p>比如，网页的头部要放到- -个<div></div>标签对中，轮播图也要放到一个<div></div>标签对中，文章内容也要放到- -个<div></div>标签对中</p>
+<p>◆<div></div> 是最常见的HTML标签,因为它可以结合CSS使用，实现网页的布局，这种布局形式叫做”DIV+CSS”</p>
+<p>◆<div></div>像是一 个容器，什么都可以容纳，因此工程师也习惯称呼<div></div>为“盒子”</p>
+<h2 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h2><p>文字和文字之间的多个空格、换行会被折叠成一个空格。标签“内壁”和文字之间的空格会被忽略</p>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>常见转义字符(字符实体) :</p>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;lt ;</td>
+<td>小于号</td>
+</tr>
+<tr>
+<td>&amp;gt ;</td>
+<td>大于号</td>
+</tr>
+<tr>
+<td>&amp;nbsp ;</td>
+<td>空格（不会被折叠）</td>
+</tr>
+<tr>
+<td>&amp;copy ;</td>
+<td>版权符号&copy;</td>
+</tr>
+</tbody></table>
+<h2 id="HTML-注释"><a href="#HTML-注释" class="headerlink" title="HTML 注释"></a>HTML 注释</h2><p>在 html 中使用 <!----> 注释。在 IDE 中也可以使用 ctrl + / 进行注释。</p>
+<h2 id="div的常见类名"><a href="#div的常见类名" class="headerlink" title="div的常见类名"></a>div的常见类名</h2><div>标签可以添加class属性表示 “类名”，类名服务于CSS
+
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>类名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>页头</td>
+<td>header</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>logo</td>
+</tr>
+<tr>
+<td>导航条</td>
+<td>nav</td>
+</tr>
+<tr>
+<td>横幅</td>
+<td>banner</td>
+</tr>
+<tr>
+<td>内容区域</td>
+<td>content</td>
+</tr>
+<tr>
+<td>页脚</td>
+<td>footer</td>
+</tr>
+</tbody></table>
+<h1 id="二-列表标签"><a href="#二-列表标签" class="headerlink" title="二. 列表标签"></a>二. 列表标签</h1><h2 id="0-三种列表"><a href="#0-三种列表" class="headerlink" title="0.三种列表"></a>0.三种列表</h2><table>
+<thead>
+<tr>
+<th align="center">标签</th>
+<th align="center">语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><ul></ul></td>
+<td align="center">无序列表</td>
+</tr>
+<tr>
+<td align="center"><ol></ol></td>
+<td align="center">有序列表</td>
+</tr>
+<tr>
+<td align="center"><dl></dl></td>
+<td align="center">定义列表</td>
+</tr>
+</tbody></table>
+<p>无序列表是“没有刻意顺序”的列表</p>
+<h2 id="1-lt-ul-gt-和-lt-li-gt-标签"><a href="#1-lt-ul-gt-和-lt-li-gt-标签" class="headerlink" title="1.  &lt;ul&gt; 和 &lt;li&gt;  标签"></a>1.  <code>&lt;ul&gt; </code>和 <code>&lt;li&gt;</code>  标签</h2><ol>
+<li><p>无序列表使用<code>&lt;ul&gt;&lt;/ul&gt;</code>标签，每个列表项都是<code>&lt;li&gt;&lt;/li&gt;</code> 标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--unorderd list--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--list item--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛奶<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>鸡蛋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>无序列表是一个父子组合标签，上阵父子兵，不能单独出现。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--父标签--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--子标签--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛奶<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>鸡蛋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>当 HTML 标签写成嵌套，必须注意代码的缩进（Tab键）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛奶<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>鸡蛋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>&lt;li&gt;</code> 不能单独使用</p>
+<ol>
+<li><code>&lt;li&gt;</code> 标签不能单独使用，它必须放到<code>&lt;ul&gt;</code> 或者 <code>&lt;ol&gt;</code> 中使用</li>
+</ol>
+<p><code>&lt;ul&gt;</code> 的子标签只能是<code>&lt;li&gt;</code></p>
+<ol>
+<li><p>HTML 规定，<code>&lt;ul&gt;</code> 的子标签只能是 <code>&lt;li&gt;</code>, 绝对不能出现其他任何标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--这种写法是错误的。--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>购物清单<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛奶<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>鸡蛋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>&lt;li&gt;</code> 中可以放任何标签</p>
+<ol>
+<li><p><code>&lt;li&gt;</code> 标签是容器，内部可以放任何其他标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛奶</span><br><span class="line">    	<span class="tag">&lt;<span class="name">p</span>&gt;</span>要脱脂奶粉还是全脂奶粉？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>鸡蛋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>列表的嵌套</p>
+<ol>
+<li><p>一定要记住：</p>
+<ol>
+<li>li 不能散着放</li>
+<li>ul 的子标签只能是 li</li>
+<li>li 里面可以放任何东西</li>
+</ol>
+</li>
+</ol>
+<p>无序列表的 <code>type</code> 属性</p>
+<p>无序列表有 <code>type</code> 属性，可以定义前导符号的样式，但是在 HTML5 中已经被废弃，建议使用 CSS 替代</p>
+<table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">disc</td>
+<td align="center">默认值，实心圆。</td>
+</tr>
+<tr>
+<td align="center">circle</td>
+<td align="center">空心圆</td>
+</tr>
+<tr>
+<td align="center">square</td>
+<td align="center">实心方块</td>
+</tr>
+</tbody></table>
+<h2 id="2-lt-ol-gt-标签和-lt-li-gt-标签"><a href="#2-lt-ol-gt-标签和-lt-li-gt-标签" class="headerlink" title="2. &lt;ol&gt; 标签和 &lt;li&gt; 标签"></a>2. <code>&lt;ol&gt;</code> 标签和 <code>&lt;li&gt;</code> 标签</h2><p>有序列表使用<code>&lt;ol&gt;&lt;/ol&gt;</code> 标签，每个列表项都是 <code>&lt;li&gt;&lt;/li&gt;</code> 标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--ordered list 有序列表--&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--list item 列表项--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小慕<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小红<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小强<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>&lt;ol&gt;</code> 标签注意事项</p>
+<ol>
+<li><code>&lt;li&gt;</code> 标签不能散着放，它必须是<code>&lt;ol&gt;</code> 标签或者<code>&lt;ul&gt;</code>标签的子标签。</li>
+<li><code>&lt;ol&gt;</code> 的子标签只能是<code>&lt;li&gt;</code> 标签。</li>
+<li><code>&lt;li&gt;</code> 标签中可以放任何东西。</li>
+</ol>
+<p><code>&lt;ol&gt;</code> 标签的 <code>type</code> 属性</p>
+<p><code>&lt;ol&gt;</code> 标签可以设置 <code>type</code> 属性，用来设置编号的类型</p>
+<table>
+<thead>
+<tr>
+<th align="center">type属性值</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a</td>
+<td align="center">表示小写英文字母编号</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">表示大写英文字母编号</td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td align="center">表示小写罗马数字编号</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">表示大写罗马数字编号</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">表示数字编号(默认)</td>
+</tr>
+</tbody></table>
+<p><code>&lt;ol&gt;</code> 标签的 <code>start</code> 属性</p>
+<ol>
+<li><p><code>start</code> 属性值必须是一个整数，指定了列表编号的起始值。</p>
+</li>
+<li><p>此属性值应为<strong>阿拉伯数字</strong>，尽管列表条目的编号类型 <code>type</code> 属性可能指定为罗马数字编号等其他类型的编号。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">&quot;A&quot;</span> <span class="attr">start</span>=<span class="string">&quot;5&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>小米<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>&lt;ol&gt;</code> 标签的 <code>reversed</code> 属性</p>
+<ol>
+<li><p><code>reversed</code> 属性指定列表中的条目是否倒序排列的。</p>
+</li>
+<li><p><code>reversed</code> 属性不需要值，只需要写 reversed 单词即可，这是 HTML5 的全新特性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">reversed</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>小米<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="3-定义列表"><a href="#3-定义列表" class="headerlink" title="3. 定义列表"></a>3. 定义列表</h2><ol>
+<li><p>需要逐条给出定义描述的列表，就是定义列表。</p>
+</li>
+<li><p><code>&lt;dl&gt;</code> 是定义列表标签，内容交替出现 <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> 标签。</p>
+</li>
+</ol>
+<p>定义列表的示例代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- definition list 定义列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- data term 数据项 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- data definition 数据定义。数据定义对数据项起着解释说明的作用 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>我国首都，政治中心，文化中心<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>国际经济，金融，科技创新中心<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>经济特区，国际化都市<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>哪里应该使用定义列表</p>
+<ol>
+<li>使用什么标签，不应该看样式，而是应该看语义。</li>
+<li>只要语义上有“解释说明”含义的文字，且为列表形态，应该使用定义列表。</li>
+</ol>
+<h1 id="三-多媒体与语义化标签"><a href="#三-多媒体与语义化标签" class="headerlink" title="三. 多媒体与语义化标签"></a>三. 多媒体与语义化标签</h1><h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0.目录"></a>0.目录</h2><ol>
+<li>图片与超链接标签<ol>
+<li>图片标签</li>
+<li>超级链接</li>
+</ol>
+</li>
+<li>音频和视频</li>
+<li>大纲与语义化标签</li>
+</ol>
+<h2 id="1-图片标签"><a href="#1-图片标签" class="headerlink" title="1. 图片标签"></a>1. 图片标签</h2><h3 id="lt-img-gt-标签用来在网页中插入图片"><a href="#lt-img-gt-标签用来在网页中插入图片" class="headerlink" title="&lt;img&gt; 标签用来在网页中插入图片"></a><code>&lt;img&gt;</code> 标签用来在网页中插入图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/gugong.jpg&quot;</span>&gt;</span></span><br><span class="line">img 是 image（图片）的缩写，src是 source（来源）的缩写，src的属性值是图片的储存目录和完整文件名</span><br></pre></td></tr></table></figure>
+
+<h3 id="lt-img-gt-标签的-alt-属性"><a href="#lt-img-gt-标签的-alt-属性" class="headerlink" title="&lt;img&gt; 标签的 alt 属性"></a><code>&lt;img&gt;</code> 标签的 <code>alt</code> 属性</h3><ol>
+<li><p><code>alt</code> 属性是 <code>alternate 替代品</code> 的缩写，它是对图像的文本描述，不是强制性的</p>
+<p><code>&lt;img src=&quot;images/gugong.jpg&quot; alt=&quot;故宫角楼&quot;&gt;</code></p>
+</li>
+<li><p>如果由于某种原因无法加载图像，浏览器会在首页上显示 <code>alt</code> 属性中的备用文本。</p>
+</li>
+<li><p>供视力不方便的朋友使用的网页朗读器，也会朗读 <code>alt</code> 中的文本。</p>
+</li>
+</ol>
+<h3 id="lt-img-gt-标签的-width，height属性"><a href="#lt-img-gt-标签的-width，height属性" class="headerlink" title="&lt;img&gt; 标签的 width，height属性"></a><code>&lt;img&gt;</code> 标签的 width，height属性</h3><ol>
+<li><p>width，height属性分别设置宽度和高度，单位是像素，但是不需要写单位。</p>
+<p><code>&lt;img src=&quot;images/gugong.jpg&quot; alt=&quot;故宫角楼&quot; width=&quot;300&quot;&gt;</code></p>
+</li>
+<li><p>如果省略其中的一个属性，则表示按照原始比例缩放图片。</p>
+</li>
+</ol>
+<h3 id="网页上支持的图片格式"><a href="#网页上支持的图片格式" class="headerlink" title="网页上支持的图片格式"></a>网页上支持的图片格式</h3><table>
+<thead>
+<tr>
+<th>格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.bmp</td>
+<td>windows 画图软件默认保存的格式，位图</td>
+</tr>
+<tr>
+<td>.gif</td>
+<td>支持动画（比如表情包）</td>
+</tr>
+<tr>
+<td>.jpeg(.jpg)</td>
+<td>有损压缩图片，用于照片</td>
+</tr>
+<tr>
+<td>.png</td>
+<td>便携式网络图像，用于 logo，背景图形等，支持透明和半透明</td>
+</tr>
+<tr>
+<td>.svg</td>
+<td>矢量图片</td>
+</tr>
+<tr>
+<td>.webp</td>
+<td>最新的压缩算法非常优秀的图片格式。</td>
+</tr>
+</tbody></table>
+<h2 id="2-超级链接"><a href="#2-超级链接" class="headerlink" title="2. 超级链接"></a>2. 超级链接</h2><p>超级链接是将网页和网页连接到一起的方法，是互联网成“网”的原因。</p>
+<h3 id="lt-a-gt-标签"><a href="#lt-a-gt-标签" class="headerlink" title="&lt;a&gt; 标签"></a><code>&lt;a&gt;</code> 标签</h3><p>block元素有自己的宽和高，会独占一行。inline–行内元素，多个inline会在同一行里面排列，没有固定的顺序，没有固定的宽和高，也设置不了宽和高。inline-block：具有inline和loack的共同特点，多个inline-block元素可以同时在一行显示，仍然有固定的宽和高，可设置他们的宽和高</p>
+<p>包含关系a可以包含div，a在html5中是透明的。所以可以包含div，但是p不可以包含div，是不合法的。</p>
+<p>HTML也是有样式的，并不是从body开始才有样式</p>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/05/html5-basic/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;05&#x2F;html5-basic&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;05&#x2F;html5-basic&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/07/CSS3-basic-1/"><i class="iconfont iconleft"></i>CSS3基础(第一周内容)</a>
+    <a href="/2020/12/04/Life-02/">秦风·无衣<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-HTML-%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%9F%BA%E7%A1%80%E6%A0%87%E7%AD%BE"><span class="toc-text">一. HTML 语法与基础标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">前端开发主要技术介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-%E5%8D%8F%E8%AE%AE"><span class="toc-text">HTTP 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86-HTML5-%E9%AA%A8%E6%9E%B6"><span class="toc-text">认识 HTML5 骨架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E-DTD"><span class="toc-text">文档类型声明 DTD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84-HTML-%E7%9A%84-DTD"><span class="toc-text">不同版本的 HTML 的 DTD</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#W3C-%E7%BB%84%E7%BB%87"><span class="toc-text">W3C 组织</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%BE%E7%BD%AE"><span class="toc-text">字符集设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#title-%E6%A0%87%E7%AD%BE"><span class="toc-text">title 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E5%85%B3%E9%94%AE%E8%AF%8D%E5%92%8C%E9%A1%B5%E9%9D%A2%E6%8F%8F%E8%BF%B0"><span class="toc-text">网页关键词和页面描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E6%A0%87%E7%AD%BE%E5%AF%B9%E5%84%BF"><span class="toc-text">认识标签对儿</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">不负韶华，只争朝夕</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">标签的情况,只是不推荐
+段落标签◆标签表示段落标签， p是英语paragraph的意思
+◆任何段落都要放到标签中， 因为HTML中即使代码换行了，页面显示效果也不会换行，必须写到中
+◆&lt;&#x2F; p&gt;标签中不能嵌套h系列标签和其他p标签
+◆div是英语division”分割”的缩写，顾名思义,标签对用来将相关的内容组合到一起，以和其他内容分割，使文档结构更清晰
+比如，网页的头部要放到- -个标签对中，轮播图也要放到一个标签对中，文章内容也要放到- -个标签对中
+◆ 是最常见的HTML标签,因为它可以结合CSS使用，实现网页的布局，这种布局形式叫做”DIV+CSS”
+◆像是一 个容器，什么都可以容纳，因此工程师也习惯称呼为“盒子”
+空白折叠现象文字和文字之间的多个空格、换行会被折叠成一个空格。标签“内壁”和文字之间的空格会被忽略
+转义字符常见转义字符(字符实体) :
+
+
+
+转义字符
+意义
+
+
+
+&amp;lt ;
+小于号
+
+
+&amp;gt ;
+大于号
+
+
+&amp;nbsp ;
+空格（不会被折叠）
+
+
+&amp;copy ;
+版权符号©
+
+
+HTML 注释在 html 中使用  注释。在 IDE 中也可以使用 ctrl + &#x2F; 进行注释。
+div的常见类名标签可以添加class属性表示 “类名”，类名服务于CSS
+
+
+
+
+区域
+类名
+
+
+
+页头
+header
+
+
+logo
+logo
+
+
+导航条
+nav
+
+
+横幅
+banner
+
+
+内容区域
+content
+
+
+页脚
+footer
+
+
+二. 列表标签0.三种列表
+
+
+标签
+语义
+
+
+
+
+无序列表
+
+
+
+有序列表
+
+
+
+定义列表
+
+
+无序列表是“没有刻意顺序”的列表
+1.  &lt;ul&gt; 和 &lt;li&gt;  标签
+无序列表使用&lt;ul&gt;&lt;&#x2F;ul&gt;标签，每个列表项都是&lt;li&gt;&lt;&#x2F;li&gt; 标签
+1
+2
+3
+4
+5
+6
+7
+&lt;!--unorderd list--&gt;
+&lt;ul&gt;
+    &lt;!--list item--&gt;
+    &lt;li&gt;面包&lt;&#x2F;li&gt;
+    &lt;li&gt;牛奶&lt;&#x2F;li&gt;
+    &lt;li&gt;鸡蛋&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+无序列表是一个父子组合标签，上阵父子兵，不能单独出现。
+1
+2
+3
+4
+5
+6
+7
+&lt;!--父标签--&gt;
+&lt;ul&gt;
+    &lt;!--子标签--&gt;
+    &lt;li&gt;面包&lt;&#x2F;li&gt;
+    &lt;li&gt;牛奶&lt;&#x2F;li&gt;
+    &lt;li&gt;鸡蛋&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+当 HTML 标签写成嵌套，必须注意代码的缩进（Tab键）
+1
+2
+3
+4
+5
+&lt;ul&gt;
+    &lt;li&gt;面包&lt;&#x2F;li&gt;
+    &lt;li&gt;牛奶&lt;&#x2F;li&gt;
+    &lt;li&gt;鸡蛋&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+
+&lt;li&gt; 不能单独使用
+
+&lt;li&gt; 标签不能单独使用，它必须放到&lt;ul&gt; 或者 &lt;ol&gt; 中使用
+
+&lt;ul&gt; 的子标签只能是&lt;li&gt;
+
+HTML 规定，&lt;ul&gt; 的子标签只能是 &lt;li&gt;, 绝对不能出现其他任何标签。
+1
+2
+3
+4
+5
+6
+7
+&lt;ul&gt;
+	&lt;!--这种写法是错误的。--&gt;
+	&lt;h3&gt;购物清单&lt;&#x2F;h3&gt;
+    &lt;li&gt;面包&lt;&#x2F;li&gt;
+    &lt;li&gt;牛奶&lt;&#x2F;li&gt;
+    &lt;li&gt;鸡蛋&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+
+&lt;li&gt; 中可以放任何标签
+
+&lt;li&gt; 标签是容器，内部可以放任何其他标签。
+1
+2
+3
+4
+5
+6
+7
+&lt;ul&gt;
+    &lt;li&gt;面包&lt;&#x2F;li&gt;
+    &lt;li&gt;牛奶
+    	&lt;p&gt;要脱脂奶粉还是全脂奶粉？&lt;&#x2F;p&gt;
+    &lt;&#x2F;li&gt;
+    &lt;li&gt;鸡蛋&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+
+列表的嵌套
+
+一定要记住：
+
+li 不能散着放
+ul 的子标签只能是 li
+li 里面可以放任何东西
+
+
+
+无序列表的 type 属性
+无序列表有 type 属性，可以定义前导符号的样式，但是在 HTML5 中已经被废弃，建议使用 CSS 替代
+
+
+
+值
+描述
+
+
+
+disc
+默认值，实心圆。
+
+
+circle
+空心圆
+
+
+square
+实心方块
+
+
+2. &lt;ol&gt; 标签和 &lt;li&gt; 标签有序列表使用&lt;ol&gt;&lt;&#x2F;ol&gt; 标签，每个列表项都是 &lt;li&gt;&lt;&#x2F;li&gt; 标签
+1
+2
+3
+4
+5
+6
+7
+8
+&lt;!--ordered list 有序列表--&gt; 
+&lt;ol&gt;
+    &lt;!--list item 列表项--&gt;
+    &lt;li&gt;小慕&lt;&#x2F;li&gt;
+    &lt;li&gt;小明&lt;&#x2F;li&gt;
+    &lt;li&gt;小红&lt;&#x2F;li&gt;
+    &lt;li&gt;小强&lt;&#x2F;li&gt;
+  &lt;&#x2F;ol&gt;
+
+
+&lt;ol&gt; 标签注意事项
+
+&lt;li&gt; 标签不能散着放，它必须是&lt;ol&gt; 标签或者&lt;ul&gt;标签的子标签。
+&lt;ol&gt; 的子标签只能是&lt;li&gt; 标签。
+&lt;li&gt; 标签中可以放任何东西。
+
+&lt;ol&gt; 标签的 type 属性
+&lt;ol&gt; 标签可以设置 type 属性，用来设置编号的类型
+
+
+
+type属性值
+意义
+
+
+
+a
+表示小写英文字母编号
+
+
+A
+表示大写英文字母编号
+
+
+i
+表示小写罗马数字编号
+
+
+I
+表示大写罗马数字编号
+
+
+1
+表示数字编号(默认)
+
+
+&lt;ol&gt; 标签的 start 属性
+
+start 属性值必须是一个整数，指定了列表编号的起始值。
+
+此属性值应为阿拉伯数字，尽管列表条目的编号类型 type 属性可能指定为罗马数字编号等其他类型的编号。
+1
+2
+3
+&lt;ol type&#x3D;&quot;A&quot; start&#x3D;&quot;5&quot;&gt;
+	&lt;li&gt;小米&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+
+
+&lt;ol&gt; 标签的 reversed 属性
+
+reversed 属性指定列表中的条目是否倒序排列的。
+
+reversed 属性不需要值，只需要写 reversed 单词即可，这是 HTML5 的全新特性。
+1
+2
+3
+&lt;ol reversed&gt;
+	&lt;li&gt;小米&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+
+
+3. 定义列表
+需要逐条给出定义描述的列表，就是定义列表。
+
+&lt;dl&gt; 是定义列表标签，内容交替出现 &lt;dt&gt;, &lt;dd&gt; 标签。
+
+
+定义列表的示例代码
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;!-- definition list 定义列表 --&gt;
+&lt;dl&gt;
+  &lt;!-- data term 数据项 --&gt;
+  &lt;dt&gt;北京&lt;&#x2F;dt&gt;
+  &lt;!-- data definition 数据定义。数据定义对数据项起着解释说明的作用 --&gt;
+  &lt;dd&gt;我国首都，政治中心，文化中心&lt;&#x2F;dd&gt;
+  &lt;dt&gt;上海&lt;&#x2F;dt&gt;
+  &lt;dd&gt;国际经济，金融，科技创新中心&lt;&#x2F;dd&gt;
+  &lt;dt&gt;深圳&lt;&#x2F;dt&gt;
+  &lt;dd&gt;经济特区，国际化都市&lt;&#x2F;dd&gt;
+&lt;&#x2F;dl&gt;
+
+
+
+
+哪里应该使用定义列表
+
+使用什么标签，不应该看样式，而是应该看语义。
+只要语义上有“解释说明”含义的文字，且为列表形态，应该使用定义列表。
+
+三. 多媒体与语义化标签0.目录
+图片与超链接标签
+图片标签
+超级链接
+
+
+音频和视频
+大纲与语义化标签
+
+1. 图片标签&lt;img&gt; 标签用来在网页中插入图片1
+2
+&lt;img src&#x3D;&quot;images&#x2F;gugong.jpg&quot;&gt;
+img 是 image（图片）的缩写，src是 source（来源）的缩写，src的属性值是图片的储存目录和完整文件名
+
+
+&lt;img&gt; 标签的 alt 属性
+alt 属性是 alternate 替代品 的缩写，它是对图像的文本描述，不是强制性的
+&lt;img src&#x3D;&quot;images&#x2F;gugong.jpg&quot; alt&#x3D;&quot;故宫角楼&quot;&gt;
+
+如果由于某种原因无法加载图像，浏览器会在首页上显示 alt 属性中的备用文本。
+
+供视力不方便的朋友使用的网页朗读器，也会朗读 alt 中的文本。
+
+
+&lt;img&gt; 标签的 width，height属性
+width，height属性分别设置宽度和高度，单位是像素，但是不需要写单位。
+&lt;img src&#x3D;&quot;images&#x2F;gugong.jpg&quot; alt&#x3D;&quot;故宫角楼&quot; width&#x3D;&quot;300&quot;&gt;
+
+如果省略其中的一个属性，则表示按照原始比例缩放图片。
+
+
+网页上支持的图片格式
+
+
+格式
+说明
+
+
+
+.bmp
+windows 画图软件默认保存的格式，位图
+
+
+.gif
+支持动画（比如表情包）
+
+
+.jpeg(.jpg)
+有损压缩图片，用于照片
+
+
+.png
+便携式网络图像，用于 logo，背景图形等，支持透明和半透明
+
+
+.svg
+矢量图片
+
+
+.webp
+最新的压缩算法非常优秀的图片格式。
+
+
+2. 超级链接超级链接是将网页和网页连接到一起的方法，是互联网成“网”的原因。
+&lt;a&gt; 标签block元素有自己的宽和高，会独占一行。inline–行内元素，多个inline会在同一行里面排列，没有固定的顺序，没有固定的宽和高，也设置不了宽和高。inline-block：具有inline和loack的共同特点，多个inline-block元素可以同时在一行显示，仍然有固定的宽和高，可设置他们的宽和高
+包含关系a可以包含div，a在html5中是透明的。所以可以包含div，但是p不可以包含div，是不合法的。
+HTML也是有样式的，并不是从body开始才有样式
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E7%99%BD%E6%8A%98%E5%8F%A0%E7%8E%B0%E8%B1%A1"><span class="toc-text">空白折叠现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E6%B3%A8%E9%87%8A"><span class="toc-text">HTML 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E7%9A%84%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%90%8D"><span class="toc-text">div的常见类名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-text">二. 列表标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E4%B8%89%E7%A7%8D%E5%88%97%E8%A1%A8"><span class="toc-text">0.三种列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-lt-ul-gt-%E5%92%8C-lt-li-gt-%E6%A0%87%E7%AD%BE"><span class="toc-text">1.  &lt;ul&gt; 和 &lt;li&gt;  标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-lt-ol-gt-%E6%A0%87%E7%AD%BE%E5%92%8C-lt-li-gt-%E6%A0%87%E7%AD%BE"><span class="toc-text">2. &lt;ol&gt; 标签和 &lt;li&gt; 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%9A%E4%B9%89%E5%88%97%E8%A1%A8"><span class="toc-text">3. 定义列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-text">三. 多媒体与语义化标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E7%9B%AE%E5%BD%95"><span class="toc-text">0.目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE"><span class="toc-text">1. 图片标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-img-gt-%E6%A0%87%E7%AD%BE%E7%94%A8%E6%9D%A5%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-text">&lt;img&gt; 标签用来在网页中插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-img-gt-%E6%A0%87%E7%AD%BE%E7%9A%84-alt-%E5%B1%9E%E6%80%A7"><span class="toc-text">&lt;img&gt; 标签的 alt 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-img-gt-%E6%A0%87%E7%AD%BE%E7%9A%84-width%EF%BC%8Cheight%E5%B1%9E%E6%80%A7"><span class="toc-text">&lt;img&gt; 标签的 width，height属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%94%AF%E6%8C%81%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F"><span class="toc-text">网页上支持的图片格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%B6%85%E7%BA%A7%E9%93%BE%E6%8E%A5"><span class="toc-text">2. 超级链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-a-gt-%E6%A0%87%E7%AD%BE"><span class="toc-text">&lt;a&gt; 标签</span></a></li></ol></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 6.函数 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="内容简介：1.函数的基本使用，2.函数算法题，3.递归...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 6.函数</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 6.函数</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 21, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>10557</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="函数的基本使用"><a href="#函数的基本使用" class="headerlink" title="函数的基本使用"></a>函数的基本使用</h2><h3 id="什么是函数"><a href="#什么是函数" class="headerlink" title="什么是函数"></a>什么是函数</h3><p>假如我们要分别计算1到10，5到12，14到35的整数和。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>, sum = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">	sum += i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">5</span>, sum = <span class="number">0</span>; i &lt;= <span class="number">12</span>; i++) &#123;</span><br><span class="line">	sum += i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
+
+<p>如果只能通过上面的方法得到结果的话，那就太麻烦了。</p>
+<p>下面来介绍函数：</p>
+<ol>
+<li>函数就是语句的封装，可以让这些代码方便地被使用。</li>
+<li>函数具有“一次定义，多次调用”的优点。</li>
+<li>使用函数，可以简化代码，让代码更具有可读性。</li>
+</ol>
+<h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><p>和变量类似，函数<strong>必须先定义然后才能被使用</strong>，使用**<code>function</code> 关键字**定义函数，function是“功能”的意思。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function 表示定义函数</span></span><br><span class="line"><span class="comment">// name 是函数名，可以自己定义。函数名必须符合 JS 标识符的命名规则。</span></span><br><span class="line"><span class="comment">// () 圆括号中是形式参数，即使没有形式参数，也必须书写圆括号。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义匿名函数</span></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数体语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p>执行函数体中的所有语句，就称为“调用函数”。调用函数非常简单，只需在函数名字后书写圆括号即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义函数，定义函数是不会直接执行的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;你好&#x27;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;今天天气真好！&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 函数必须要等到调用的时候才会被执行</span></span><br><span class="line">fun(); <span class="comment">// 调用函数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="语句执行顺序"><a href="#语句执行顺序" class="headerlink" title="语句执行顺序"></a>语句执行顺序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数不调用，内部的语句就不会被执行。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数声明的提升"><a href="#函数声明的提升" class="headerlink" title="函数声明的提升"></a>函数声明的提升</h3><p>和变量声明提升类似，函数声明也可以被提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在预解析阶段会被提升</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;函数被执行&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数表达式不能提升"><a href="#函数表达式不能提升" class="headerlink" title="函数表达式不能提升"></a>函数表达式不能提升</h3><p>如果函数是用函数表达式的写法定义的，则没有提升特性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun(); <span class="comment">// 引发错误</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;函数被执行&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数优先提升"><a href="#函数优先提升" class="headerlink" title="函数优先提升"></a>函数优先提升</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 变量声明提升，无法覆盖提升的函数</span></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数优先提升</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun();<span class="comment">//&#x27;A&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>参数是函数内的一些<strong>特定值</strong>，在调用函数时，必须传入这些参数的<strong>具体值</strong>。函数的<strong>参数可多可少</strong>，函数可以没有参数，也可以有多个参数，多个参数之间需要用逗号隔开。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 圆括号中定义“形式参数”</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> sum = a + b;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;两个数字的和是&#x27;</span> + sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数时传入“实际参数”</span></span><br><span class="line">add(<span class="number">3</span>, <span class="number">5</span>);<span class="comment">//8</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="形参和实参个数不同的情况"><a href="#形参和实参个数不同的情况" class="headerlink" title="形参和实参个数不同的情况"></a>形参和实参个数不同的情况</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> sum = a + b;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;两个数字的和是&#x27;</span> + sum);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>); <span class="comment">// 8. 参数 “8” 没有形参接受它</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数 c，没有收到实际参数，值为 undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = a + b + c; <span class="comment">// undefined 进行任何值运算结果都是NaN</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;两个数字的和是&#x27;</span> + sum);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">3</span>, <span class="number">5</span>); <span class="comment">// undefined</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="解决最开始的问题"><a href="#解决最开始的问题" class="headerlink" title="解决最开始的问题"></a>解决最开始的问题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = a, sum = <span class="number">0</span>; i &lt;= b; i++) &#123;</span><br><span class="line">		sum += i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(a + <span class="string">&#x27;~&#x27;</span> + b + <span class="string">&#x27;的结果是&#x27;</span> + sum);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><ul>
+<li><p>函数内 <code>arguments</code> 表示它接收到的实际参数，它是一个类数组对象。</p>
+</li>
+<li><p>类数组对象：所有属性均为从0开始的自然数序列，并且有 <code>length</code> 属性，和数组类似可以用方括号书写下标访问对象的某个属性值，但是不能调用数组的方法。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, sum = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">		sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(sum);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>, <span class="number">100</span>);<span class="comment">//101</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>函数体内可以使用 <code>return</code> 关键字表示<strong>“函数的返回值”</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b;<span class="comment">//函数的返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = sum(<span class="number">3</span>, <span class="number">5</span>);<span class="comment">//函数的返回值可以被变量接收</span></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<p>调用一个有返回值的函数，<strong>可以被当作一个普通值</strong>，从而可以出现在任何可以书写值的地方。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = sum(<span class="number">3</span>, <span class="number">4</span>) * sum(<span class="number">2</span>, <span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 56</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="遇到-return-即退出函数"><a href="#遇到-return-即退出函数" class="headerlink" title="遇到 return 即退出函数"></a>遇到 return 即退出函数</h4><p>调用函数时，<strong>一旦遇见<code>return</code>语句则会立即退出函数</strong>，将执行权交还给调用者。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;C&#x27;</span>); <span class="comment">// 这条语句不会被执行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> char = fun();</span><br><span class="line"><span class="built_in">console</span>.log(char);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1  A B 2</span></span><br></pre></td></tr></table></figure>
+
+<p>结合 <code>if</code> 语句的时候，往往不需要写 <code>else</code> 分支了。比如有个题目：编写一个函数，判断一个数字是否是偶数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = isEven(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="寻找喇叭花数"><a href="#寻找喇叭花数" class="headerlink" title="寻找喇叭花数"></a>寻找喇叭花数</h4><p>题目：喇叭花数是这样的三位数：其中每一位数字的阶乘之和恰好等于它本身。即 <code>abc = a! + b! + c!</code> ，其中 <code>abc</code> 表示一个三位数。尝试寻找所有的喇叭花数。</p>
+<p>思路：将计算某个数字的阶乘封装成函数，这样可以让问题简化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        result *= i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">100</span>; i &lt;= <span class="number">999</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// a 表示百位，b 表示十位，c 表示个位</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">Number</span>(i.toString()[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Number</span>(i.toString()[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">var</span> c = <span class="built_in">Number</span>(i.toString()[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">if</span> (i == fun(a) + fun(b) + fun(c)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="JavaScript-内置-sort-方法"><a href="#JavaScript-内置-sort-方法" class="headerlink" title="JavaScript 内置 sort() 方法"></a>JavaScript 内置 sort() 方法</h3><p>数组排序可以使用 <code>sort()</code> 方法，这个方法的参数又是一个函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">33</span>, <span class="number">22</span>, <span class="number">55</span>, <span class="number">11</span>];</span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这个函数中的 <code>a, b</code> 分别表示数组中靠前和靠后的项，如果需要将他们交换位置，则返回任意整数，否则就返回负数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">33</span>, <span class="number">22</span>, <span class="number">55</span>, <span class="number">11</span>];</span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序，函数是 JS 中的一等公民，它可以当作参数传入另外一个函数</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b-a;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><ol>
+<li>函数的内部语句可以<strong>调用这个函数自身</strong>，从而发起对函数的<strong>一次迭代</strong>。在新的迭代中，又会执行调用函数自身的语句，从而又产生一次迭代。当函数执行到某一次时，不再进行新的迭代，函数被一层一层返回，函数被递归。</li>
+<li>递归是一种较为<strong>高级的编程技巧</strong>，它把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题求解。</li>
+</ol>
+<h4 id="递归的要素"><a href="#递归的要素" class="headerlink" title="递归的要素"></a>递归的要素</h4><ol>
+<li>边界条件：确定递归到何时终止，也称为<strong>递归出口</strong>。</li>
+<li>递归模式：大问题是如何分解为小问题的，也称为<strong>递归体</strong>。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 书写一个函数，这个函数内部自己会调用自己，从而形成递归。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 函数的功能是计算 n 的阶乘，n! 不就是 n * (n-1)! 吗？</span></span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> n * factorial(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res = factorial(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h4><p>斐波那契数列是这样的数列：1，1，2，3，5，8，13，21…..数列下标为0和1的项的值都是1，从下标为2的项开始，每项等于前面两项的和。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 数列的下标为0的项，和下标为1的项值是1.</span></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span> || n == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 斐波那契数列的本质特征就是每一项，都等于前面两项的和。</span></span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 书写一个循环语句，计算斐波那契数列的前15项</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">15</span>; i++) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(fib(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="实现深克隆"><a href="#实现深克隆" class="headerlink" title="实现深克隆"></a>实现深克隆</h3><p>使用<strong>递归思想</strong>，整体思路和浅克隆类似，但稍微进行了一些改动，如果遍历到项是基本类型值，则直接推入结果数组；如果遍历到的项又是数组，则重复浅克隆的操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  原数组</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">11</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数，这个数组会被递归</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 结果数组</span></span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line"><span class="comment">// 遍历数组的每一项</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line"><span class="comment">// 类型判断，如果遍历到的象是数组，就进行递归</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[i])) &#123;</span><br><span class="line"><span class="comment">// 递归</span></span><br><span class="line">result.push(deepClone(arr[i]));</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">// 如果遍历到的项不是数组，是基本类型，就直接推入到结果数组中</span></span><br><span class="line"><span class="comment">// 相当于是递归的出口</span></span><br><span class="line">result.push(arr[i])</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> new_arr = deepClone(arr1);</span><br><span class="line"><span class="built_in">console</span>.log(new_arr == arr1);<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(new_arr[<span class="number">4</span>] == arr1[<span class="number">4</span>]);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>JavaScript 是<strong>函数级作用域</strong>编程语言：<strong>变量只在其定义时所在的 <code>function</code> 内部有意义</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 变量 a 是在 fun 函数内被定义的，所以变量 a 只在 fun 函数内部有定义， fun 函数就是 a 的“作用域”，变量 a 被称为 局部变量</span></span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>如果不将变量定义在任何函数的内部，此时这个变量就是<strong>全局变量</strong>，它在任何函数内都可以被访问和更改。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">// 变量 a 没有定义在任何函数内部，它是“全局变量”</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	a++;</span><br><span class="line">	<span class="built_in">console</span>.log(a);<span class="comment">// 输出 11</span></span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// 输出11</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="遮蔽效应"><a href="#遮蔽效应" class="headerlink" title="遮蔽效应"></a>遮蔽效应</h3><p>如果函数中也定义了和全局同名的变量，则函数内的变量会将全局的变量“遮蔽”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">5</span>;<span class="comment">//局部变量 a 将全部变量a“遮蔽”了。</span></span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">// 输出 6</span></span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// 输出10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="注意考虑变量声明提升的情况"><a href="#注意考虑变量声明提升的情况" class="headerlink" title="注意考虑变量声明提升的情况"></a>注意考虑变量声明提升的情况</h3><p>这个程序的运行结果是什么呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    a++; <span class="comment">// 局部变量 a 被自增 1，a 此时是 undefined，自增 1 结果是 NaN。</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">5</span>; <span class="comment">// 重新将 a 赋值为 5</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">// 输出 5</span></span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// 输出10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="形参也是局部变量"><a href="#形参也是局部变量" class="headerlink" title="形参也是局部变量"></a>形参也是局部变量</h3><p>这个程序的运行结果是什么呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 形参 a 也是函数内部的局部变量。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">// 输出 8</span></span><br><span class="line">&#125;</span><br><span class="line">fun(<span class="number">7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// 输出10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>先来认识函数的嵌套：一个函数内部也可以定义一个函数。和局部变量类似，定义在一个函数内部的函数是局部函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 局部函数</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;你好&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      inner(); <span class="comment">//调用内部函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(); <span class="comment">// 调用外部函数</span></span><br></pre></td></tr></table></figure>
+
+<p>在函数嵌套中，变量会从内岛外逐层寻找它的定义。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> c = <span class="number">30</span>;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">40</span>;</span><br><span class="line">        <span class="keyword">var</span> d = <span class="number">50</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(a, b, c, d);<span class="comment">// 使用变量时，JS会从当前层开始，逐层向上寻找定义</span></span><br><span class="line">      &#125;</span><br><span class="line">      inner();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fun(); </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不加-var-将定义全局变量"><a href="#不加-var-将定义全局变量" class="headerlink" title="不加 var 将定义全局变量"></a>不加 var 将定义全局变量</h3><p>在初次给变量赋值时，如果没有加 <code>var</code> ，则将定义全局变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	a = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a).<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="从一个题目开始"><a href="#从一个题目开始" class="headerlink" title="从一个题目开始"></a>从一个题目开始</h3><p>这个程序的运行结果是什么呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> name = <span class="string">&#x27;JavaScript&#x27;</span>;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">innerFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(name);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> innerFun;<span class="comment">// 返回了内部函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> inn = fun();<span class="comment">// 内部函数被移动到了外部执行</span></span><br><span class="line">inn();<span class="comment">// JavaScript</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>JavaScript 中函数会产生<strong>闭包（closure）</strong>。闭包是<strong>函数本身</strong>和<strong>该函数声明时所处的环境状态</strong>的组合。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">局部变量a</span><br><span class="line">局部变量b</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">局部变量<span class="title">c</span></span></span><br><span class="line"><span class="function">局部变量<span class="title">d</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>函数能够“记忆住”其定义时所处的环境</strong>，即使函数不在其定义的环境中被调用，也能访问定义时所处环境的变量。</p>
+<h3 id="观察闭包现象"><a href="#观察闭包现象" class="headerlink" title="观察闭包现象"></a>观察闭包现象</h3><p>在 JavaScript 中，<strong>每次创建函数时都会创建闭包</strong>。但是，闭包特性往往需要将函数<strong>换一个地方执行</strong>，才能被观察出来。</p>
+<h3 id="闭包非常实用"><a href="#闭包非常实用" class="headerlink" title="闭包非常实用"></a>闭包非常实用</h3><p>闭包很有用，因为<strong>它允许我们将数据与操作该数据的函数关联起来</strong>。闭包的功能：记忆性，模拟私有变量。</p>
+<h3 id="闭包的用途1-记忆性"><a href="#闭包的用途1-记忆性" class="headerlink" title="闭包的用途1-记忆性"></a>闭包的用途1-记忆性</h3><p>当闭包产生时，函数所处环境的状态<strong>会始终保存在内存中，不会在外层函数调用后被自动清除</strong>。这就是闭包的<strong>记忆性</strong>。</p>
+<p>举例：创建体温检测函数 <code>checkTemp(n)</code>，可以检测体温n是否正常，函数会返回布尔值。</p>
+<p>但是不同的小区有不同的体温检测标准，比如A小区体温检测合格线是37.1℃，而B小区体温合格线是37.3℃，应该怎么编程呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCheckTemp</span>(<span class="params">standardTemp</span>) </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">checkTemp</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= standardTemp) &#123;</span><br><span class="line">          alert(<span class="string">&#x27;你的体温正常&#x27;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          alert(<span class="string">&#x27;你的体温偏高&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> checkTemp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> checkTemp_A = createCheckTemp(<span class="number">37.1</span>);</span><br><span class="line"><span class="keyword">var</span> checkTemp_B = createCheckTemp(<span class="number">37.3</span>);</span><br><span class="line">checkTemp_A(<span class="number">37.2</span>)</span><br><span class="line">checkTemp_B(<span class="number">37.2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="闭包用途2-模拟私有变量"><a href="#闭包用途2-模拟私有变量" class="headerlink" title="闭包用途2-模拟私有变量"></a>闭包用途2-模拟私有变量</h3><p>题目：请定义一个变量<code>a</code>,<strong>要求是能保证这个<code>a</code> 只能被进行指定操作</strong>（如加1，乘2），而不能进行其他操作，应该怎么编程呢？</p>
+<p>在 Java，C++等语言中，有私有属性的概念，但是 JavaScript中只能用闭包来模拟。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装一个函数，这个函数的功能就是私有化变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 定义一个局部变量 a</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line"><span class="attr">getA</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> a;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">add</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">a++;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">pow</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">a *= <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = fun();</span><br><span class="line"><span class="built_in">console</span>.log(obj.getA());<span class="comment">//0</span></span><br><span class="line">obj.add()</span><br><span class="line"><span class="built_in">console</span>.log(obj.getA());<span class="comment">//1</span></span><br><span class="line">obj.pow()</span><br><span class="line"><span class="built_in">console</span>.log(obj.getA());<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用闭包的注意点"><a href="#使用闭包的注意点" class="headerlink" title="使用闭包的注意点"></a>使用闭包的注意点</h3><p><strong>不能滥用闭包</strong>，否则会造成网页的性能问题，严重时可能导致<strong>内存泄漏</strong>。内存泄漏就是指程序中已动态分配的内存由于某种原因未释放或无法释放。</p>
+<h3 id="闭包的一道面试题"><a href="#闭包的一道面试题" class="headerlink" title="闭包的一道面试题"></a>闭包的一道面试题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		count = count + <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(count);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun1 = addCount();</span><br><span class="line"><span class="keyword">var</span> fun2 = addCount();</span><br><span class="line">fun1();<span class="comment">//1</span></span><br><span class="line">fun2();<span class="comment">//1</span></span><br><span class="line">fun2();<span class="comment">//2</span></span><br><span class="line">fun1();<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h2><p>IIFE（Immediately Invoked Function Expression， <strong>立即调用函数表达式）</strong> 是一种特殊的 JavaScript 函数写法，<strong>一旦被定义，就立即被调用</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ()圆括号的作用；将函数变为表达式。</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="形成-IIFE-的方法"><a href="#形成-IIFE-的方法" class="headerlink" title="形成 IIFE 的方法"></a>形成 IIFE 的方法</h3><ol>
+<li>函数不能直接加圆括号被调用</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="number">1</span>)</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>函数必须转为<strong>“函数表达式”</strong>才能被调用。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 虽然下面三种方式都可以将函数转为函数表达式，但是第一种使用最多。</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="number">1</span>)</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="number">1</span>)</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="IIFE-的作用1-为变量赋值"><a href="#IIFE-的作用1-为变量赋值" class="headerlink" title="IIFE 的作用1-为变量赋值"></a>IIFE 的作用1-为变量赋值</h3><p>为变量赋值：当给变量赋值需要一些较为复杂的计算时（如 <code>if</code> 语句），<strong>使用IIFE显得语法较为紧凑</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">var</span> sex = <span class="string">&#x27;男&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> title = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;小朋友&#x27;</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (sex == <span class="string">&#x27;男&#x27;</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&#x27;先生&#x27;</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&#x27;女士&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(title);<span class="comment">//小朋友</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="IIFE-的作用2-将全局变量变为局部变量"><a href="#IIFE-的作用2-将全局变量变为局部变量" class="headerlink" title="IIFE 的作用2 - 将全局变量变为局部变量"></a>IIFE 的作用2 - 将全局变量变为局部变量</h3><p>先看一个题目：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">      arr.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i); <span class="comment">//变量 i 是全局变量，所有函数都共享内存中的同一个变量i</span></span><br><span class="line">      &#125;);</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">2</span>]();<span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<p>IIFE 可以在一些场合（如 <code>for</code> 循环中）<strong>将全局变量变为局部变量</strong>，语法显得紧凑。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">      (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">        arr.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(i);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">2</span>]();<span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/21/js-basic-6/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;21&#x2F;js-basic-6&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;21&#x2F;js-basic-6&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/23/js-basic-7/"><i class="iconfont iconleft"></i>JS 7.DOM</a>
+    <a href="/2020/12/20/js-basic-5/">JS 5.数组<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">函数的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0"><span class="toc-text">什么是函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">语句执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%8F%90%E5%8D%87"><span class="toc-text">函数声明的提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8D%E8%83%BD%E6%8F%90%E5%8D%87"><span class="toc-text">函数表达式不能提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BC%98%E5%85%88%E6%8F%90%E5%8D%87"><span class="toc-text">函数优先提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E5%86%85%E7%BD%AE-sort-%E6%96%B9%E6%B3%95"><span class="toc-text">JavaScript 内置 sort() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%B7%B1%E5%85%8B%E9%9A%86"><span class="toc-text">实现深克隆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">变量作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%AE%E8%94%BD%E6%95%88%E5%BA%94"><span class="toc-text">遮蔽效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E8%80%83%E8%99%91%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">注意考虑变量声明提升的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E4%B9%9F%E6%98%AF%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">形参也是局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-text">作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%8A%A0-var-%E5%B0%86%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">不加 var 将定义全局变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E9%A2%98%E7%9B%AE%E5%BC%80%E5%A7%8B"><span class="toc-text">从一个题目开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85"><span class="toc-text">什么是闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E9%97%AD%E5%8C%85%E7%8E%B0%E8%B1%A1"><span class="toc-text">观察闭包现象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E9%9D%9E%E5%B8%B8%E5%AE%9E%E7%94%A8"><span class="toc-text">闭包非常实用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%94%A8%E9%80%941-%E8%AE%B0%E5%BF%86%E6%80%A7"><span class="toc-text">闭包的用途1-记忆性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%94%A8%E9%80%942-%E6%A8%A1%E6%8B%9F%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F"><span class="toc-text">闭包用途2-模拟私有变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%97%AD%E5%8C%85%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-text">使用闭包的注意点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%B8%80%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">闭包的一道面试题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IIFE"><span class="toc-text">IIFE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E6%88%90-IIFE-%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">形成 IIFE 的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IIFE-%E7%9A%84%E4%BD%9C%E7%94%A81-%E4%B8%BA%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-text">IIFE 的作用1-为变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IIFE-%E7%9A%84%E4%BD%9C%E7%94%A82-%E5%B0%86%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%8F%98%E4%B8%BA%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">IIFE 的作用2 - 将全局变量变为局部变量</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

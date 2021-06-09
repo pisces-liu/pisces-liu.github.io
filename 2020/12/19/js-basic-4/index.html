@@ -1,0 +1,693 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 4.流程控制语句 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="内容简介：if 语句，for 语句，while 语句，...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">JS 4.流程控制语句</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JS 4.流程控制语句</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 19, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>14388</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="if-语句的基本使用"><a href="#if-语句的基本使用" class="headerlink" title="if 语句的基本使用"></a><code>if</code> 语句的基本使用</h3><p><code>if</code>语句是最简单的<strong>条件语句</strong> ，也称<strong>选择语句</strong>。它通常结合 <code>else</code> 一起使用，表示**如果…就…否则…**。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (测试条件) &#123;</span><br><span class="line">	<span class="comment">// 语句块1</span></span><br><span class="line"> 	<span class="comment">// 当测试条件为真，则执行这里</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">// 语句块2</span></span><br><span class="line"> 	<span class="comment">// 当测试条件为假，则执行这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="if-语句举例1"><a href="#if-语句举例1" class="headerlink" title="if 语句举例1"></a><code>if</code> 语句举例1</h4><p>用户输入一个数字，<strong>如果</strong>这个数字是偶数，则弹出对话框显示”偶数“，<strong>否则</strong>弹出对话框显示“奇数”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个数&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">alert(a + <span class="string">&#x27;是偶数&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">alert(a + <span class="string">&#x27;是奇数&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="if-语句举例2"><a href="#if-语句举例2" class="headerlink" title="if 语句举例2"></a><code>if</code> 语句举例2</h4><p>用户输入年龄，<strong>判断</strong>用户是否可以申领驾驶证。申领驾驶证的年龄必须是18岁到70岁。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个数&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt;=<span class="number">18</span> &amp;&amp; a&lt;=<span class="number">70</span>) &#123;</span><br><span class="line">alert(a + <span class="string">&#x27;岁，可以领取驾照&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	alert(a + <span class="string">&#x27;岁，不可以领取驾照&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="else-可以省略"><a href="#else-可以省略" class="headerlink" title="else 可以省略"></a><code>else</code> 可以省略</h4><p>在 <code>if</code> 语句中 <code>else</code> 可以省略</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个数&#x27;</span>));</span><br><span class="line"><span class="keyword">if</span> (a === <span class="number">5</span>) &#123;</span><br><span class="line">	alert(a + <span class="string">&#x27;这是我喜欢的数字&#x27;</span>);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="看清楚哪些语句是if-语句中的语句"><a href="#看清楚哪些语句是if-语句中的语句" class="headerlink" title="看清楚哪些语句是if 语句中的语句"></a>看清楚哪些语句是<code>if</code> 语句中的语句</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个数&#x27;</span>));</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">if</span> (a &gt; <span class="number">5</span>) &#123;</span><br><span class="line">	alert(<span class="string">&#x27;这个数大于5&#x27;</span>);</span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line"> 	alert(<span class="string">&#x27;这个数是偶数&#x27;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">alert(<span class="string">&#x27;再见&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="单行if语句"><a href="#单行if语句" class="headerlink" title="单行if语句"></a>单行<code>if</code>语句</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个数&#x27;</span>));</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">if</span> (a &gt; <span class="number">5</span>) alert(<span class="string">&#x27;这个数大于5&#x27;</span>);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) alert(<span class="string">&#x27;这个数是偶数&#x27;</span>);</span><br><span class="line"></span><br><span class="line">alert(<span class="string">&#x27;再见&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>注意：当<code>if</code>语句只有一行的时候，这个语句的结尾必须加上<code>;</code>。</p>
+<h4 id="if-else-if-多条件分支"><a href="#if-else-if-多条件分支" class="headerlink" title="if else if 多条件分支"></a><code>if else if</code> 多条件分支</h4><p>例题：用户输入考试成绩，根据下表输出用户的成绩档次。</p>
+<table>
+<thead>
+<tr>
+<th align="center">分数</th>
+<th align="center">档次</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">85<code>~</code>100</td>
+<td align="center">优秀</td>
+</tr>
+<tr>
+<td align="center">70<code>~</code>84</td>
+<td align="center">良好</td>
+</tr>
+<tr>
+<td align="center">60<code>~</code>69</td>
+<td align="center">及格</td>
+</tr>
+<tr>
+<td align="center">0<code>~</code>59</td>
+<td align="center">不及格</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入成绩&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt;= <span class="number">85</span>) &#123;</span><br><span class="line">	alert(<span class="string">&#x27;优秀&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt;= <span class="number">70</span>) &#123;</span><br><span class="line">	alert(<span class="string">&#x27;良好&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">	alert(<span class="string">&#x27;及格&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	alert(<span class="string">&#x27;不及格&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="必须注意“否则如果”"><a href="#必须注意“否则如果”" class="headerlink" title="必须注意“否则如果”"></a>必须注意“否则如果”</h4><p><code>else if()</code> 条件分支<strong>”暗含“不符合之前所有的条件</strong>，要深刻理解什么叫做”否则如果“</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (测试条件<span class="number">1</span>) &#123;</span><br><span class="line"> 	<span class="comment">// 当测试条件1为真，则执行这里</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (测试条件<span class="number">2</span>) &#123;</span><br><span class="line"> 	<span class="comment">// 当测试条件1为假,测试2条件为真，则执行这里</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (测试条件<span class="number">3</span>) &#123;</span><br><span class="line"> 	<span class="comment">//当测试条件1为假，测试条件2为假，测试3条件为真，则执行这里</span></span><br><span class="line">&#125; </span><br><span class="line">......</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"> 	<span class="comment">// 当所有的测试条件为假，则执行这里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="if-语句练习"><a href="#if-语句练习" class="headerlink" title="if 语句练习"></a><code>if</code> 语句练习</h3><h4 id="BMI-肥胖指数计算"><a href="#BMI-肥胖指数计算" class="headerlink" title="BMI 肥胖指数计算"></a>BMI 肥胖指数计算</h4><p>BMI 指数（Body Mass Index，身体质量指数）是用体重（以公斤为单位）除以身高（以米为单位）的平方得出的数字，是目前国际上用来衡量人体的胖瘦程度以及是否健康的标准。</p>
+<table>
+<thead>
+<tr>
+<th>BMI值</th>
+<th>分档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>低于 18.5</td>
+<td>过瘦</td>
+</tr>
+<tr>
+<td>18.5<code>~</code>24(不含)</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>24<code>~</code>28(不含)</td>
+<td>过胖</td>
+</tr>
+<tr>
+<td>28<code>~</code>32(不含)</td>
+<td>肥胖</td>
+</tr>
+<tr>
+<td>大于等于32</td>
+<td>非常肥胖</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> weight = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入您的体重（单位：kg）&#x27;</span>));</span><br><span class="line"><span class="keyword">var</span> height = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入您的升高（单位m）&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算 BMI </span></span><br><span class="line"><span class="keyword">var</span> bmi = weight / <span class="built_in">Math</span>.pow(height, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">alert(<span class="string">&#x27;您的BMI是：&#x27;</span> + bmi);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (bmi &lt; <span class="number">18.5</span>) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;过瘦&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (bmi &lt; <span class="number">24</span>) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;正常&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (bmi &lt; <span class="number">28</span>) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;过胖&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (bmi &lt; <span class="number">32</span>) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;肥胖&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;非常肥胖&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="判断水仙花数"><a href="#判断水仙花数" class="headerlink" title="判断水仙花数"></a>判断水仙花数</h4><p>水仙花数是这样的一个 3 位数：<strong>它的每个数位的数字的立方和等于它本身</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">153 1^3 + 5^3 + 3^3 = 153 是水仙花数</span><br></pre></td></tr></table></figure>
+
+<h5 id="如何拆位"><a href="#如何拆位" class="headerlink" title="如何拆位"></a>如何拆位</h5><ol>
+<li><p>数学方法</p>
+<ol>
+<li>百位是原数字除以100取整</li>
+<li>十位是原数字除以10取整，再与10求模</li>
+<li>个位是原数字与10求模</li>
+</ol>
+</li>
+<li><p>字符串方法</p>
+<p>直接将原数字转为字符串，然后使用 <code>charAt()</code> 方法得到每个数位的值。</p>
+</li>
+</ol>
+<p>数学方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 要求用户输入一个三位数</span></span><br><span class="line"> <span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个三位数&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对用户输入的值。进行合法性验证</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">isNaN</span>(n) &amp;&amp; n &gt; <span class="number">99</span> &amp; n &lt;= <span class="number">999</span>) &#123;</span><br><span class="line">    <span class="comment">// 当输入的数字合法</span></span><br><span class="line">    <span class="comment">// 数学方法</span></span><br><span class="line">    <span class="comment">// 百位</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">Math</span>.floor(n / <span class="number">100</span>);</span><br><span class="line">    <span class="comment">// 十位</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(n / <span class="number">10</span> % <span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 个位</span></span><br><span class="line">    <span class="keyword">var</span> c = n % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(a, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(b, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(c, <span class="number">3</span>) === n) &#123;</span><br><span class="line">    	alert(<span class="string">&#x27;该数字是水仙花数&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    	alert(<span class="string">&#x27;该数字不是水仙花数&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	alert(<span class="string">&#x27;输入的数字不合法;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>字符串方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 要求用户输入一个三位数</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个三位数&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对用户输入的值。进行合法性验证</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">isNaN</span>(n) &amp;&amp; n &gt; <span class="number">99</span> &amp; n &lt;= <span class="number">999</span>) &#123;</span><br><span class="line">    <span class="comment">// 当输入的数字合法</span></span><br><span class="line">    <span class="comment">// 字符串方法</span></span><br><span class="line">    <span class="keyword">var</span> n_str = n.toString();</span><br><span class="line">    <span class="comment">// 百位</span></span><br><span class="line">    <span class="keyword">var</span> a = n_str.charAt(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 十位</span></span><br><span class="line">    <span class="keyword">var</span> b = n_str.charAt(<span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 个位</span></span><br><span class="line">    <span class="keyword">var</span> c = n_str.charAt(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(a, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(b, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(c, <span class="number">3</span>) === n) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;该数字是水仙花数&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">&#x27;该数字不是水仙花数&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;输入的数字不合法;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="游乐园门票计算"><a href="#游乐园门票计算" class="headerlink" title="游乐园门票计算"></a>游乐园门票计算</h4><p>某游乐园的门票价格如下表。请用户输入年龄和星期几，弹出对话框显示门票价格，星期几用阿拉伯数字0，1，2，3，4，5，6表示，其中0表示周日。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">年龄大于等于10岁</th>
+<th align="center">年龄小于10岁</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">平日</td>
+<td align="center">300</td>
+<td align="center">140</td>
+</tr>
+<tr>
+<td align="center">周末</td>
+<td align="center">500</td>
+<td align="center">210</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> day = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入周几：&#x27;</span>));</span><br><span class="line"> <span class="keyword">var</span> age = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入年龄：&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (day === <span class="number">0</span> || day === <span class="number">6</span>) &#123;</span><br><span class="line">    	alert(<span class="string">&#x27;您的门票价格为：500&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    	alert(<span class="string">&#x27;您的门票价格为：300&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (day === <span class="number">0</span> || day === <span class="number">6</span>) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;您的门票价格为：140&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">&#x27;您的门票价格为：210&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a><code>switch</code>语句</h3><p>除<code>if</code>语句之外，JS 还提供了另外一种选择语句：<code>switch</code> 语句。<code>switch</code> 语句的用途：<strong>当一个分量被分类讨论的情形</strong>。</p>
+<h4 id="显示每月对应的天数"><a href="#显示每月对应的天数" class="headerlink" title="显示每月对应的天数"></a>显示每月对应的天数</h4><p>要求用户输入一个1<code>~</code>12中的任意一个数字，显示这个月份的天数。</p>
+<p>如果是使用<code>if</code>语句的话：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> month = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;输入一个月份&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (month == <span class="number">1</span> || month == <span class="number">3</span> || month == <span class="number">5</span> || month == <span class="number">7</span> || month == <span class="number">8</span> || month == <span class="number">10</span> || month == <span class="number">12</span>) &#123;</span><br><span class="line">alert(<span class="string">&#x27;这个月有31天&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (month == <span class="number">4</span> || month == <span class="number">6</span> || month == <span class="number">9</span> || month == <span class="number">11</span>) &#123;</span><br><span class="line">alert(<span class="string">&#x27;这个月有30天&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (month == <span class="number">2</span>) &#123;</span><br><span class="line">alert(<span class="string">&#x27;这个月有28天或29天&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (month) &#123;   <span class="comment">// 在 switch() 的圆括号中一般是一个变量名，这个变量将会被 分类讨论</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:     <span class="comment">// case 表示”情况“，它后面没有圆括号，直接跟一个值。程序会依次将case后面的值与switch圆括号中的值进行全等比对，如果比对相同，这执行这条 case 冒号后面的语句。default表示默认情况。</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:		<span class="comment">// 多条 case 可以共用一个语句体</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">      	alert(<span class="string">&#x27;这个月有31天&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">        alert(<span class="string">&#x27;这个月有30天&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        alert(<span class="string">&#x27;这个月有28天或29天&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        alert(<span class="string">&#x27;这个月有28天或29天&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="break-非常重要"><a href="#break-非常重要" class="headerlink" title="break 非常重要"></a><code>break</code> 非常重要</h4><p><code>switch</code> 语句并不像 <code>if</code> 语句那样当执行了某一个分支之后会自动跳出 <code>if</code> 语句体，<strong>程序员必须主动调用<code>break</code>来跳出<code>switch</code>语句体</strong>。如果不书写 <code>break</code>，则后面的所有 <code>case</code>都将被视为匹配，直到遇到<code>break</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (a) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="number">88</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;D&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A</span></span><br><span class="line"><span class="comment">// B</span></span><br><span class="line"><span class="comment">// C</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="判断是否是闰年以及对应月份的天数"><a href="#判断是否是闰年以及对应月份的天数" class="headerlink" title="判断是否是闰年以及对应月份的天数"></a>判断是否是闰年以及对应月份的天数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> year = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;输入年份：&#x27;</span>));</span><br><span class="line"><span class="keyword">var</span> month = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;输入一个月份&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (month) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">        alert(<span class="string">&#x27;这个月有31天&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">        alert(<span class="string">&#x27;这个月有30天&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">if</span> (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span> || year % <span class="number">100</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">400</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            alert(<span class="string">&#x27;这个月有28天&#x27;</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">&#x27;这个月有29天&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p>JavaScript 中提供了一种叫做“三元运算”的语法形式，让给们可以方便地实现选择</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">条件表达式 ? 表达式<span class="number">1</span> : 表达式<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>问号前面是判断的条件，问号后面用冒号隔开两个表达式。<strong>当条件表达式为真时调用表达式1，为假时调用表达式2</strong>。三元运算符的用途：根据某个条件是否成立，在两个不同值中选择变量的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> type = age &gt;= <span class="number">18</span> ? <span class="string">&#x27;成年人&#x27;</span>:<span class="string">&#x27;未成年人&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(type);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>题目：在控制台依次逐行输出1，2，3，4，5…10。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">......</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码做的都是同样的事情。可以使用<code>for</code> 循环语句简化程序：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for 在英语中没有特别的含义，其名称来源于1950年代的早期汇编语言，现在几乎世界上所有编程语言中都用 for 表示循环语句。</p>
+<h4 id="for-语句的语法"><a href="#for-语句的语法" class="headerlink" title="for 语句的语法"></a><code>for</code> 语句的语法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for的圆括号中有三个表达式：</p>
+<ol>
+<li>表达式<code>var i = 1;</code> 表示定义一个“循环变量” <code>i</code>，并赋值为 1；</li>
+<li>表达式<code>i &lt;= 10;</code> 表示继续执行循环的条件，只要这个条件为真，则会一致执行；</li>
+<li>表达式<code>i++</code>用来更新循环变量，是循环变量的值月俩月趋向重点。</li>
+</ol>
+<h4 id="for-语句的执行机理"><a href="#for-语句的执行机理" class="headerlink" title="for 语句的执行机理"></a><code>for</code> 语句的执行机理</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>首先会执行 <code>var i = 1;</code></li>
+<li>然后判断 <code>i &lt;= 10;</code> 是否满足，如果满足则进入循环体，执行语句<code>console.log(i)</code>,如果不满足则退出循环。</li>
+<li>循环体中的语句执行完毕后，<strong>执行语句<code>i++</code></strong></li>
+<li>再次判断<code>i &lt;= 10;</code>是否满足，如果满足则进入循环体，执行<code>console.log(i)</code>,如果不满足则退出循环。</li>
+</ol>
+<h4 id="准确遍历-for-循环"><a href="#准确遍历-for-循环" class="headerlink" title="准确遍历 for 循环"></a>准确遍历 <code>for</code> 循环</h4><p>在平时，要将<code>for</code>循环的执行机理牢记于心。要会预测<code>for</code>循环的结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 3;i &lt;= 13; i += 3)&#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">//3</span><br><span class="line">//6</span><br><span class="line">//9</span><br><span class="line">//12</span><br><span class="line"></span><br><span class="line">for(var i = 15;i &gt; 2; i -= 3)&#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// 15</span><br><span class="line">// 12</span><br><span class="line">// 9</span><br><span class="line">// 6</span><br><span class="line">// 3</span><br><span class="line"></span><br><span class="line">for(var i = 2;i &lt; 12; i += 3)&#123;</span><br><span class="line">	i += 4;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// 6</span><br><span class="line">// 13</span><br><span class="line"></span><br><span class="line">for(var i = 1;i &lt; 10; i ++)&#123;</span><br><span class="line">&#125;</span><br><span class="line">console.log(i);</span><br><span class="line">// 10</span><br><span class="line"></span><br><span class="line">for(var i = 1;i &lt; 10; i --)&#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// 死循环</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h4><ol>
+<li><p>使用 <code>for</code> 语句在控制台中逐行输出18，14，10，6，2</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">18</span>;i &gt;= -<span class="number">6</span>;i -= <span class="number">4</span>)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>使用 <code>for</code> 语句在控制台中逐行输出 0，0.2，0.4，0.6，0.8，1</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt;= <span class="number">1</span>;i += <span class="number">0.2</span>)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">Number</span>(i.toFixed(<span class="number">2</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="for-循环算法题"><a href="#for-循环算法题" class="headerlink" title="for 循环算法题"></a><code>for</code> 循环算法题</h4><ol>
+<li><p>计算 1+2+3+……+99+100的和</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>, sum = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">      sum += i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure></li>
+<li><p>请问1<code>~</code>100中哪个数字除以3余1，除以4余2，除以5余3？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">1</span> &amp;&amp; i % <span class="number">4</span> == <span class="number">2</span> &amp;&amp; i % <span class="number">5</span> == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="while-循环语句"><a href="#while-循环语句" class="headerlink" title="while 循环语句"></a><code>while</code> 循环语句</h3><p> <code>while</code> 语句也是一种循环结构，是一种“不定范围”循环，和<code>for</code>循环各有不用的用武之地。几乎所有的编程语言，都同时提供<code>for</code>循环和<code>while</code> 循环。</p>
+<h4 id="while-循环的语法"><a href="#while-循环的语法" class="headerlink" title="while 循环的语法"></a><code>while</code> 循环的语法</h4><p><code>while</code> 语句事先不指定循环开始，结束的范围，只要测试条件满足，就一直执行循环体。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(测试条件)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="while-循环注意事项"><a href="#while-循环注意事项" class="headerlink" title="while 循环注意事项"></a><code>while</code> 循环注意事项</h4><p><code>while</code> 循环没有显示定义循环变量，必须<strong>自己在<code>while</code> 循环外先定义好循环变量</strong>，有时甚至可以没有循环变量。循环体内的语句，必须使循环测试条件<strong>趋向不成立</strong>，否则会死循环。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 输出 1 ~ 100 </span><br><span class="line">var i = 1;</span><br><span class="line"></span><br><span class="line">// while循环，while是“当”的意思 </span><br><span class="line">while (i &lt;= 100) &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="while-循环例题"><a href="#while-循环例题" class="headerlink" title="while 循环例题"></a><code>while</code> 循环例题</h4><ol>
+<li><p>计算 1+2+3+….+100</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">      sum += i;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure></li>
+<li><p>寻找满足 n 的平方大于 456789 的最小整数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(i*i&lt;=<span class="number">456789</span>)&#123;</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="更适合while-循环的场景"><a href="#更适合while-循环的场景" class="headerlink" title="更适合while 循环的场景"></a>更适合<code>while</code> 循环的场景</h4><ol>
+<li><p>寻找最小的满足 n^2 &gt; 456789 的整数 n</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (n*n&lt;<span class="number">456789</span>) &#123;</span><br><span class="line">	n++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(n);</span><br></pre></td></tr></table></figure></li>
+<li><p>小兔子拔萝卜，第1天拔1个，第2天拔2个，第3天拔3个，依次类推。请问小兔子多少天能把500个萝卜拔光？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (sum&lt;<span class="number">500</span>) &#123;</span><br><span class="line">    sum+=n;</span><br><span class="line">    n++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);<span class="comment">//528</span></span><br><span class="line"><span class="built_in">console</span>.log(n-<span class="number">1</span>);<span class="comment">//32</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><p><code>break</code> 表示立即终止循环，它只能用在循环语句中，在<code>for</code>循环和<code>while</code>循环中都可以使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1  2 3 4</span></span><br></pre></td></tr></table></figure>
+
+<p><code>break</code> 用在 <code>while</code> 语句中，通常和 <code>while(true)&#123;&#125;</code> 搭配使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n * n &gt; <span class="number">456789</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(n);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    n++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 676</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h4><p><code>continue</code> 用于<strong>跳过循环中的一个迭代</strong>，只继续执行循环中的下一个迭代。for 循环更经常使用<code>continue</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0  1 2 4</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do while 循环"></a><code>do while</code> 循环</h3><p><code>do while</code> 循环将循环执行条件写到了循环体的后面，这样以来，<strong>循环体一定会至少执行一次</strong>，然后再检测循环执行条件是否为 <code>true</code>，以此决定是否继续执行循环体。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	循环体</span><br><span class="line">&#125; <span class="keyword">while</span>(循环执行条件)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>输出 1<code>~</code>100:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(n);</span><br><span class="line">    n++;</span><br><span class="line">&#125; <span class="keyword">while</span> (n &lt;= <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="随机数函数"><a href="#随机数函数" class="headerlink" title="随机数函数"></a>随机数函数</h4><p>随机数函数，可以得到0到1之间的小数：<code>Math.random()</code></p>
+<h4 id="得到指定区间的整数"><a href="#得到指定区间的整数" class="headerlink" title="得到指定区间的整数"></a>得到指定区间的整数</h4><p>得到[a, b] 区间的整数，公式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (b - a + <span class="number">1</span>)) + a;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="do-while-小案例"><a href="#do-while-小案例" class="headerlink" title="do while 小案例"></a><code>do while</code> 小案例</h4><ol>
+<li><p>编写程序，随机生成两个变量dx和dy，他们均在[-4, 4] 区间随机取值，但要求dx和dy不能同时为0.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> dx = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (<span class="number">4</span> + <span class="number">4</span> + <span class="number">1</span>) - <span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> dy = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (<span class="number">4</span> + <span class="number">4</span> + <span class="number">1</span>) - <span class="number">4</span>);</span><br><span class="line">&#125; <span class="keyword">while</span> (dx != <span class="number">0</span> &amp;&amp; dy != <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(dx);</span><br><span class="line"><span class="built_in">console</span>.log(dy);</span><br></pre></td></tr></table></figure></li>
+<li><p>猜数字小游戏：随机生成一个2到99的数字，让用户猜测这个数字是几，用户输入自己的猜测，提示“输入的数字太大了”或“输入的数字太小了”，不断重复这个过程，直到猜出这数字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 随机生成一个数字</span></span><br><span class="line"><span class="keyword">var</span> answer = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (<span class="number">98</span>) + <span class="number">2</span>);</span><br><span class="line"><span class="keyword">var</span> min = <span class="number">1</span>, max = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 让用户输入一个数字</span></span><br><span class="line">    <span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个&#x27;</span> + min + <span class="string">&#x27;~&#x27;</span> + max + <span class="string">&#x27;之间的数字：&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 验证用户输入的数字是否再范围内</span></span><br><span class="line">    <span class="keyword">if</span> (n &lt;= min || n &gt;= max) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;你输入的数字不再范围内，请重新输入&#x27;</span>);</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; answer) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;输入的数字太大了&#x27;</span>)</span><br><span class="line">        max = n;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; answer) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;输入的数字太小了&#x27;</span>)</span><br><span class="line">        min = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">while</span> (n != answer)</span><br><span class="line">    alert(<span class="string">&#x27;猜对了&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h3><ol>
+<li><p>算法（Algorithm）是指<strong>解决方案的准确而完整的描述</strong>，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。也就是说，<strong>能够对一定规范的输入，在有限时间内获得所要求的输出</strong>。</p>
+</li>
+<li><p>算法就是把一个问题，拆解为<strong>计算机能够一步一步执行的步骤</strong>。</p>
+</li>
+<li><p>计算机的流程控制语句：循序执行，选择语句，循环。</p>
+</li>
+</ol>
+<h4 id="优秀算法的要求"><a href="#优秀算法的要求" class="headerlink" title="优秀算法的要求"></a>优秀算法的要求</h4><ol>
+<li>正确性</li>
+<li>健壮性</li>
+<li>可读性</li>
+</ol>
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><p>例：计算1到100的和</p>
+<ol>
+<li>定义变量sum</li>
+<li>从1到100遍历数字，用i表示，把每个数字i加到sum中</li>
+<li>打印显示sum</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">      sum += i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="算法如何培养？"><a href="#算法如何培养？" class="headerlink" title="算法如何培养？"></a>算法如何培养？</h4><p>多敲，多练，多总结。经典的业务需求场景要熟记心间。</p>
+<h3 id="累加器和累乘器"><a href="#累加器和累乘器" class="headerlink" title="累加器和累乘器"></a>累加器和累乘器</h3><h4 id="累加器题目"><a href="#累加器题目" class="headerlink" title="累加器题目"></a>累加器题目</h4><p>由用户输入输入数字n，计算下面算式的值。<code>3/2+4/3+...+n+1/n;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个值(最小为2)：&#x27;</span>))</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;yua</span><br><span class="line">	sum+=(i+<span class="number">1</span>)/i;</span><br><span class="line">&#125;</span><br><span class="line">alert(sum.toFixed(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="累乘器题目"><a href="#累乘器题目" class="headerlink" title="累乘器题目"></a>累乘器题目</h4><p>用户输入数字 n ，计算 n 的阶乘：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个值：&#x27;</span>))</span><br><span class="line"><span class="keyword">var</span> res = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    res *= i;</span><br><span class="line">&#125;</span><br><span class="line">alert(res);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="同时使用累加器和累乘器的题目"><a href="#同时使用累加器和累乘器的题目" class="headerlink" title="同时使用累加器和累乘器的题目"></a>同时使用累加器和累乘器的题目</h4><p>【某大厂面试题】圆周率Π 可以有下面的莱布尼茨级公式计算出来，请由用户输入参数 n，计算圆周率。<br><code>Π/2 = 1+1/3+1*2/3*5+1*2*3/3*5*7 +...+1*2*...*n/3*5*...*(2n+1)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;请输入一个值：&#x27;</span>))</span><br><span class="line"><span class="keyword">var</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> item = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    item *= i / (<span class="number">2</span> * i + <span class="number">1</span>)</span><br><span class="line">    res += item;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert((res + <span class="number">1</span>) * <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="穷举法是什么"><a href="#穷举法是什么" class="headerlink" title="穷举法是什么"></a>穷举法是什么</h3><ol>
+<li>计算机最突出的能力是计算，它没有总结归纳，逻辑推理的能力。所以人们使用计算机解决问题的时候，要“扬长避短”–<strong>充分发挥计算机的计算优势，而不要让他进行逻辑推理。</strong>穷举法就是这样的一种算法思想。</li>
+<li>穷举法，顾名思义，是指根据题目的条件确定答案的大致范围，并<strong>在此范围内对所有可能的情况逐一验证</strong>直到全部情况验证完毕，</li>
+</ol>
+<h4 id="穷举法例题"><a href="#穷举法例题" class="headerlink" title="穷举法例题"></a>穷举法例题</h4><ol>
+<li>寻找在 1 <code>~</code> 100当中既能被3整除，也能被5整除的数字 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>用户输入一个数字，在控制台显示这个数字的全部约数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="built_in">Number</span>(prompt(<span class="string">&#x27;输入一个数字：&#x27;</span>));</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>寻找全部的水仙花数。水仙花数是这样的一个3位数：它的每个数位的数字的立方和等于它本身。 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">100</span>; i &lt;= <span class="number">999</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> a = i.toString().charAt(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">var</span> b = i.toString().charAt(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">var</span> c = i.toString().charAt(<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Math</span>.pow(a, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(b, <span class="number">3</span>) + <span class="built_in">Math</span>.pow(c, <span class="number">3</span>) == i) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="循环的嵌套"><a href="#循环的嵌套" class="headerlink" title="循环的嵌套"></a>循环的嵌套</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i, j);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="循环嵌套的题目"><a href="#循环嵌套的题目" class="headerlink" title="循环嵌套的题目"></a>循环嵌套的题目</h4><ol>
+<li>请找出1<code>~</code>100的所有质数。质数：只能够被1和它本身整除的数字，最小的质数是2。比如：2，3，5，7，11，13，17，19，23，29… <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 穷举法</span></span><br><span class="line"><span class="attr">outer</span>: <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line"><span class="comment">// 内层循环开始从2开始尝试除i，如果能够整除，说明它不是质数，那就可以筛选下一个数字了。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">2</span>; j &lt; i; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果条件成立，说明数字i不是质数，因为它找到了除1和它自身之外的约数了。测试下一个数字</span></span><br><span class="line">    <span class="comment">// continue 表示放弃这个数字，开始迭代下个数字。continue它负责的是它所在的最内层的for循环</span></span><br><span class="line">    <span class="comment">// 要给外层for循环加上label，然后在continue的后面加上这个label，</span></span><br><span class="line">    <span class="comment">// 这样就表示立即开始迭代外层 for 循环的下一个数字了，而不是内层 for循环。</span></span><br><span class="line">    <span class="keyword">continue</span> outer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>有雉兔同笼，上有35头，下有94足，问雉兔几何？<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">35</span>; i++) &#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt;= <span class="number">35</span>; j++) &#123;</span><br><span class="line">     <span class="keyword">if</span> (i + j == <span class="number">35</span> &amp;&amp; <span class="number">2</span> * i + <span class="number">4</span> * j == <span class="number">94</span>) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">&#x27;鸡&#x27;</span> + i + <span class="string">&#x27;兔&#x27;</span> + j);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> 方法二：</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">35</span>; i++) &#123;</span><br><span class="line">     <span class="keyword">var</span> j = <span class="number">35</span> - i;</span><br><span class="line">     <span class="keyword">if</span> (<span class="number">2</span> * i + <span class="number">4</span> * j == <span class="number">94</span>) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">&#x27;鸡&#x27;</span> + i + <span class="string">&#x27;兔&#x27;</span> + j);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/12/19/js-basic-4/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;19&#x2F;js-basic-4&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;19&#x2F;js-basic-4&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/12/20/js-basic-5/"><i class="iconfont iconleft"></i>JS 5.数组</a>
+    <a href="/2020/12/16/js-basic-3/">JS 3.表达式与操作符<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">if 语句的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0"><span class="toc-text">if 语句练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="toc-text">switch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">while 循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#do-while-%E5%BE%AA%E7%8E%AF"><span class="toc-text">do while 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%AE%97%E6%B3%95"><span class="toc-text">什么是算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8%E5%92%8C%E7%B4%AF%E4%B9%98%E5%99%A8"><span class="toc-text">累加器和累乘器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%B7%E4%B8%BE%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">穷举法是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B5%8C%E5%A5%97"><span class="toc-text">循环的嵌套</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
