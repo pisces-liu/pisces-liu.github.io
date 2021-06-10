@@ -17,7 +17,7 @@
 
 
 let 定义...">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Liu Liu">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
@@ -96,8 +96,8 @@ let 定义...">
         motto: {
           default: '我在开了灯的床头下，想问问自己的心啊。',
           typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
+          api: 'https://v1.hitokoto.cn/?c=f&encode=text',
+          data_contents: ''
         },
       },
       qrcode: {
@@ -109,7 +109,7 @@ let 定义...">
         enable: true
       },
       scrollbar: {
-        type: 'default'
+        type: 'simple'
       },
       notification: {
         enable: false,
@@ -206,32 +206,32 @@ let 定义...">
       <section class="content">
         <p><code>let</code> 定义的是变量，<code>const</code> 定义的是常量。</p>
 <p>在 ES5 里面定义一个常量:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">window</span>, <span class="string">&#x27;PI&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">3.14</span>,</span><br><span class="line">  <span class="attr">writable</span>: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(PI) <span class="comment">// 3.14</span></span><br><span class="line">PI = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(PI) <span class="comment">// 3.14</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-built_in">window</span>, <span class="hljs-string">&#x27;PI&#x27;</span>, &#123;<br>  <span class="hljs-attr">value</span>: <span class="hljs-number">3.14</span>,<br>  <span class="hljs-attr">writable</span>: <span class="hljs-literal">false</span><br>&#125;)<br><span class="hljs-built_in">console</span>.log(PI) <span class="hljs-comment">// 3.14</span><br>PI = <span class="hljs-number">5</span>;<br><span class="hljs-built_in">console</span>.log(PI) <span class="hljs-comment">// 3.14</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>上面的方法很麻烦，在ES6 里面可以使用 <code>const</code> 进行声明常量：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">5</span>;</span><br><span class="line">a = <span class="number">6</span>; </span><br><span class="line"><span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">5</span>;<br>a = <span class="hljs-number">6</span>; <br><span class="hljs-comment">// Uncaught TypeError: Assignment to constant variable.</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>在使用 <code>const</code> 声明常量的时候，需要在定义的时候就初始化：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a;</span><br><span class="line">a = <span class="number">5</span>;</span><br><span class="line"><span class="comment">// Uncaught SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a;<br>a = <span class="hljs-number">5</span>;<br><span class="hljs-comment">// Uncaught SyntaxError: Missing initializer in const declaration</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p><code>const</code> 和 <code>let</code> 这种声明方式有很多的相同的点。 <code>const</code> 声明的常量具有块级作用域：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line"><span class="keyword">const</span> a = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// Uncaught ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) &#123;<br><span class="hljs-keyword">const</span> a = <span class="hljs-number">5</span>;<br>&#125;<br><span class="hljs-built_in">console</span>.log(a) <span class="hljs-comment">// Uncaught ReferenceError: a is not defined</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>同时 <code>const</code> 声明的常量也不存在变量声明提升特性，还存在暂时性死区的特性。我们使用 <code>const</code> 的时候，需要在常量声明之后再去使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a)</span><br><span class="line">	<span class="keyword">const</span> a = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Uncaught ReferenceError: Cannot access &#x27;a&#x27; before initialization</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) &#123;<br>	<span class="hljs-built_in">console</span>.log(a)<br>	<span class="hljs-keyword">const</span> a = <span class="hljs-number">5</span>;<br>&#125;<br><span class="hljs-comment">// Uncaught ReferenceError: Cannot access &#x27;a&#x27; before initialization</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>以上是使用 <code>const</code> 声明基本数据类型的情况，接下来我们使用 <code>const</code> 声明复杂引用类型：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span></span><br><span class="line">obj.school = <span class="string">&#x27;MIT&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123;name: &quot;tom&quot;, age: 19, school: &quot;MIT&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>	<span class="hljs-attr">age</span>: <span class="hljs-number">19</span><br>&#125;<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span><br>obj.school = <span class="hljs-string">&#x27;MIT&#x27;</span>;<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19, school: &quot;MIT&quot;&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p>记得我们在前面说过 <code>const</code> 定义的是常量，那为什么在上面的代码中，我们又可以改变 <code>obj</code> 这个常量的值呢？</p>
 <p>在搞清楚这个问题之前，我们先来看一下 JS 储存变量的方式。</p>
@@ -239,19 +239,19 @@ let 定义...">
 <p>回到刚刚的问题中，<code>const</code> 声明的常量不能改变，准确的来说是常量的内存地址不能被改变。当我们修改被 <code>const</code> 声明的引用类型的常量的时候，我们修改的只不过是地址里面存储的值，而不是修改常量的地址。</p>
 <p>那么我们能让引用类型的常量也不能修改吗？</p>
 <p>可以使用 <code>Object.freeze()</code> 方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj)</span><br><span class="line">obj.school = <span class="string">&#x27;MIT&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">19</span><br>&#125;<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span><br><span class="hljs-built_in">Object</span>.freeze(obj)<br>obj.school = <span class="hljs-string">&#x27;MIT&#x27;</span>;<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p>注意： <code>Object.freeze()</code> 方法只能冻结<strong>对象</strong>，不能冻结数组。虽然其能冻结对象的属性，但是它也只能冻结对象浅层的属性，一旦对象的属性具有嵌套的时候，它就失去作用了：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">    <span class="attr">study</span>:&#123;</span><br><span class="line">        <span class="attr">majory</span>:<span class="string">&#x27;english&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj)</span><br><span class="line">obj.school = <span class="string">&#x27;MIT&#x27;</span>;</span><br><span class="line">obj.study.majory = <span class="string">&#x27;math&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(obj) </span><br><span class="line"><span class="comment">// &#123;name: &quot;tom&quot;, age: 19, study: &#123;…&#125;&#125;</span></span><br><span class="line"><span class="comment">// age: 19</span></span><br><span class="line"><span class="comment">// name: &quot;tom&quot;</span></span><br><span class="line"><span class="comment">// study:</span></span><br><span class="line"><span class="comment">// majory: &quot;math&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">19</span>,<br>    <span class="hljs-attr">study</span>:&#123;<br>        <span class="hljs-attr">majory</span>:<span class="hljs-string">&#x27;english&#x27;</span><br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19&#125;</span><br><span class="hljs-built_in">Object</span>.freeze(obj)<br>obj.school = <span class="hljs-string">&#x27;MIT&#x27;</span>;<br>obj.study.majory = <span class="hljs-string">&#x27;math&#x27;</span><br><span class="hljs-built_in">console</span>.log(obj) <br><span class="hljs-comment">// &#123;name: &quot;tom&quot;, age: 19, study: &#123;…&#125;&#125;</span><br><span class="hljs-comment">// age: 19</span><br><span class="hljs-comment">// name: &quot;tom&quot;</span><br><span class="hljs-comment">// study:</span><br><span class="hljs-comment">// majory: &quot;math&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>假如我们需要继续冻结对象上面的属性呢？那我们继续使用 <code>Object.freeze()</code> 方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.freeze(obj.study)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">Object</span>.freeze(obj.study)<br></code></pre></td></tr></table></figure>
       </section>
       <section class="extra">
         
           <ul class="copyright">
   
-    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文作者：</strong>Liu Liu</li>
     <li><strong>本文链接：</strong><a href="http://example.com/2021/03/10/es6-02-const/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;03&#x2F;10&#x2F;es6-02-const&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;03&#x2F;10&#x2F;es6-02-const&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
@@ -299,39 +299,18 @@ let 定义...">
 
 <footer class="footer">
   <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/zhaoo "
+        href="https://github.com/pisces-liu "
         target="_blank"
         class="footer-social-item"
         onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  icongithub-fill "></i>
       </a><a 
-        href="mailto:izhaoo@163.com "
+        href="mailto:studyliuliu@163.com "
         target="_blank"
         class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOver="this.style.color=#EB7A77" 
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  iconmail"></i>
       </a></div>
   
@@ -348,6 +327,10 @@ let 定义...">
     <i class="iconfont iconcaret-up"></i>
   </div>
   
+  
+    <div class="scrollbar j-scrollbar">
+  <div class="scrollbar-current j-scrollbar-current"></div>
+</div>
   
   
     

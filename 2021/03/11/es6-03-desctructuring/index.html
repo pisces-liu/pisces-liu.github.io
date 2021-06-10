@@ -12,7 +12,7 @@
   <meta name="google" content="notranslate" />
   
   <meta name="description" content="解构赋值：按照一定模式，从数组和对象中提取值，对变量进...">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Liu Liu">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
@@ -91,8 +91,8 @@
         motto: {
           default: '我在开了灯的床头下，想问问自己的心啊。',
           typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
+          api: 'https://v1.hitokoto.cn/?c=f&encode=text',
+          data_contents: ''
         },
       },
       qrcode: {
@@ -104,7 +104,7 @@
         enable: true
       },
       scrollbar: {
-        type: 'default'
+        type: 'simple'
       },
       notification: {
         enable: false,
@@ -200,100 +200,100 @@
     <section class="main">
       <section class="content">
         <h3 id="1-数组解构赋值"><a href="#1-数组解构赋值" class="headerlink" title="1. 数组解构赋值"></a>1. 数组解构赋值</h3><p>当我们想将数组里面的值取出来的话，我们可能会这么做：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> a = arr[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> b = arr[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> c = arr[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-keyword">let</span> a = arr[<span class="hljs-number">0</span>]<br><span class="hljs-keyword">let</span> b = arr[<span class="hljs-number">1</span>]<br><span class="hljs-keyword">let</span> c = arr[<span class="hljs-number">2</span>]<br><span class="hljs-built_in">console</span>.log(a, b, c) <span class="hljs-comment">// 1 2 3</span><br></code></pre></td></tr></table></figure>
 
 <p>ES6 里面可以对数组进行解构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-built_in">console</span>.log(a, b, c) <span class="hljs-comment">// 1 2 3</span><br></code></pre></td></tr></table></figure>
 
 <p>上面的代码中只是一个简单的一维数组，现在让我们来看看多维数组能进行解构吗？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, [c, d]] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d) <span class="comment">// 1 2 3 4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, [c, d]] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br><span class="hljs-built_in">console</span>.log(a, b, c, d) <span class="hljs-comment">// 1 2 3 4</span><br></code></pre></td></tr></table></figure>
 
 <p>上面数组中的变量都有一一对应的值，现在让我改一下，让它们没有一一对应的值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, [c]] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, [c]] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br><span class="hljs-built_in">console</span>.log(a, b, c) <span class="hljs-comment">// 1 2 3</span><br></code></pre></td></tr></table></figure>
 
 <p>上面的代码中 <code>c</code> 对应的数值是 3，而右边数组里面的 <code>4</code> 没有变量与之对应。 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 [3, 4]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br><span class="hljs-built_in">console</span>.log(a, b, c) <span class="hljs-comment">// 1 2 [3, 4]</span><br></code></pre></td></tr></table></figure>
 
 <p> <code>c</code> 对应的是数组了，已经不是某一个具体的值了。</p>
 <p>再来看一段代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d) <span class="comment">// 1 2 [3, 4] undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c, d] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br><span class="hljs-built_in">console</span>.log(a, b, c, d) <span class="hljs-comment">// 1 2 [3, 4] undefined</span><br></code></pre></td></tr></table></figure>
 
 <p>我们已经知道了，变量 <code>c</code> 对应的已经是数组 <code>[3,4]</code> 了。那么 变量 <code>d</code> 此时没有对应的数值，所以它的值就只能是 <code>undefined</code> 了。</p>
 <p>那么我们能对变量 <code>c</code> 进行初始赋值吗？可以的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d = <span class="number">5</span>] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d) <span class="comment">// 1 2 [3, 4] 5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c, d = <span class="hljs-number">5</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br><span class="hljs-built_in">console</span>.log(a, b, c, d) <span class="hljs-comment">// 1 2 [3, 4] 5</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>这种解构模式是<strong>惰性</strong>的。左边的变量没有赋初始值的时候，就会以右边数组里面的值为准，左边的变量有被赋初始值的话，就以初始值为准。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d = <span class="number">5</span>] = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>], <span class="number">6</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d) <span class="comment">// 1 2 [3, 4] 6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c, d = <span class="hljs-number">5</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">6</span>]<br><span class="hljs-built_in">console</span>.log(a, b, c, d) <span class="hljs-comment">// 1 2 [3, 4] 6</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="2-对象的解构赋值"><a href="#2-对象的解构赋值" class="headerlink" title="2. 对象的解构赋值"></a>2. 对象的解构赋值</h3><p>当我们想将对象里面的值取出来的话，我们可能会这么做：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> userName = user.name</span><br><span class="line"><span class="keyword">let</span> userAge = user.age</span><br><span class="line"><span class="built_in">console</span>.log(userName, userAge) <span class="comment">// tom 10</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> user = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">10</span><br>&#125;<br><span class="hljs-keyword">let</span> userName = user.name<br><span class="hljs-keyword">let</span> userAge = user.age<br><span class="hljs-built_in">console</span>.log(userName, userAge) <span class="hljs-comment">// tom 10</span><br></code></pre></td></tr></table></figure>
 
 <p>ES6 也可以对象进行解构赋值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line"><span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line"><span class="attr">age</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; name, age &#125; = user</span><br><span class="line"><span class="built_in">console</span>.log(name, age) <span class="comment">// tom 10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; userName, userAge &#125; = user</span><br><span class="line"><span class="built_in">console</span>.log(userName, userAge) <span class="comment">// undefined undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> user = &#123;<br><span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br><span class="hljs-attr">age</span>: <span class="hljs-number">10</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123; name, age &#125; = user<br><span class="hljs-built_in">console</span>.log(name, age) <span class="hljs-comment">// tom 10</span><br><br><span class="hljs-keyword">let</span> &#123; userName, userAge &#125; = user<br><span class="hljs-built_in">console</span>.log(userName, userAge) <span class="hljs-comment">// undefined undefined</span><br></code></pre></td></tr></table></figure>
 
 <p>对象的解构赋值的变量名称需要与对象原本的属性一样。</p>
 <p>那我们可以将 <code>name</code> 的 <code>age</code> 的顺序进行颠倒吗？ 我们来看看：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; age, name &#125; = user</span><br><span class="line"><span class="built_in">console</span>.log(name, age) <span class="comment">// tom 10</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> user = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">10</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123; age, name &#125; = user<br><span class="hljs-built_in">console</span>.log(name, age) <span class="hljs-comment">// tom 10</span><br></code></pre></td></tr></table></figure>
 
 <p>从结果来看是可以的，那么为什么可以进行颠倒呢？我们知道对象是由键值对组成的，对象的 <code>key</code> 和 <code>value</code> 又是唯一的。在对象进行解构的时候，它们是通过 <code>key</code> 的名称去对应的，而不是通过顺序去对应的。</p>
 <p><strong>数组解构的过程中是通过下标去对应的。数组是通过顺序去对应的，对象是通过键名 <code>key</code> 进行对应的 。</strong></p>
 <p>怎样改变变量的名称呢？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">name</span>: userName, <span class="attr">age</span>: userAge &#125; = user</span><br><span class="line"><span class="built_in">console</span>.log(userName, userAge) <span class="comment">// tom 10</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> user = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">10</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123; <span class="hljs-attr">name</span>: userName, <span class="hljs-attr">age</span>: userAge &#125; = user<br><span class="hljs-built_in">console</span>.log(userName, userAge) <span class="hljs-comment">// tom 10</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="3-字符串的解构赋值"><a href="#3-字符串的解构赋值" class="headerlink" title="3. 字符串的解构赋值"></a>3. 字符串的解构赋值</h3><p>怎样取到一个字符串里面的每个值呢？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;javascript&#x27;</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;javascript&#x27;</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; str.length; i++) &#123;<br>  <span class="hljs-built_in">console</span>.log(str[i])<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>字符串的遍历和数组的遍历是类似的，既然如此，那么字符串的解构赋值和数组的解构赋值会不会也是一样。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;java&#x27;</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c, d] = str</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d); <span class="comment">// j a v a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;java&#x27;</span><br><span class="hljs-keyword">let</span> [a, b, c, d] = str<br><span class="hljs-built_in">console</span>.log(a, b, c, d); <span class="hljs-comment">// j a v a</span><br></code></pre></td></tr></table></figure>
 
 
 
 
 
 <h3 id="4-解构赋值的应用场景"><a href="#4-解构赋值的应用场景" class="headerlink" title="4. 解构赋值的应用场景"></a>4. 解构赋值的应用场景</h3><p>数组解构中赋默认值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c = <span class="number">8</span>] = [<span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 4 5 8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> [a, b, c = <span class="hljs-number">8</span>] = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-built_in">console</span>.log(a, b, c) <span class="hljs-comment">// 4 5 8</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>对象解构中赋默认值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">  <span class="comment">// age: 10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; name, age = <span class="number">18</span> &#125; = user</span><br><span class="line"><span class="built_in">console</span>.log(name, age) <span class="comment">// tom 18</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> user = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>  <span class="hljs-comment">// age: 10</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123; name, age = <span class="hljs-number">18</span> &#125; = user<br><span class="hljs-built_in">console</span>.log(name, age) <span class="hljs-comment">// tom 18</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>对惰性赋值的理解：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>) </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> [a = foo()] = []  <span class="comment">// hello </span></span><br><span class="line"><span class="keyword">let</span> [b = foo()] = [<span class="number">1</span>] <span class="comment">// 无输出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123; <br>	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;hello&#x27;</span>) <br>&#125; <br><span class="hljs-keyword">let</span> [a = foo()] = []  <span class="hljs-comment">// hello </span><br><span class="hljs-keyword">let</span> [b = foo()] = [<span class="hljs-number">1</span>] <span class="hljs-comment">// 无输出</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>当函数的参数是数组的时候进行解构赋值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">funnction <span class="function"><span class="title">foo</span>(<span class="params">[a,b,c]</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a, b, c)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">foo(arr)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">funnction <span class="hljs-function"><span class="hljs-title">foo</span>(<span class="hljs-params">[a,b,c]</span>)</span>&#123;<br>	<span class="hljs-built_in">console</span>.log(a, b, c)<br>&#125;<br><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br>foo(arr)<br></code></pre></td></tr></table></figure>
 
 
 
 <p>函数的参数是对象的时候进行解构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">&#123; name, age, school = <span class="string">&#x27;MIT&#x27;</span> &#125;</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(name, age, school)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;tom&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">22</span>,</span><br><span class="line">    <span class="attr">school</span>: <span class="string">&#x27;HB&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">&#123; name, age, school = <span class="hljs-string">&#x27;MIT&#x27;</span> &#125;</span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(name, age, school)<br>&#125;<br><span class="hljs-keyword">let</span> obj = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;tom&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">22</span>,<br>    <span class="hljs-attr">school</span>: <span class="hljs-string">&#x27;HB&#x27;</span><br>&#125;<br>foo(obj)<br></code></pre></td></tr></table></figure>
 
 
 
 <p>对函数的返回值进行解构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> user = &#123;</span><br><span class="line">    <span class="attr">uname</span>: <span class="string">&#x27;liuliu&#x27;</span>,</span><br><span class="line">    <span class="attr">uage</span>: <span class="number">20</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> user</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; uname, uage &#125; = foo()</span><br><span class="line"><span class="built_in">console</span>.log(uname, uage) <span class="comment">// liuliu 20</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">let</span> user = &#123;<br>    <span class="hljs-attr">uname</span>: <span class="hljs-string">&#x27;liuliu&#x27;</span>,<br>    <span class="hljs-attr">uage</span>: <span class="hljs-number">20</span><br>  &#125;<br>  <span class="hljs-keyword">return</span> user<br>&#125;<br><span class="hljs-keyword">let</span> &#123; uname, uage &#125; = foo()<br><span class="hljs-built_in">console</span>.log(uname, uage) <span class="hljs-comment">// liuliu 20</span><br></code></pre></td></tr></table></figure>
 
 
 
 <p>将接收的json字符串解构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jsonStr = <span class="string">&#x27;&#123;&quot;a&quot;:&quot;javascript&quot;,&quot;b&quot;:&quot;typescript&quot;&#125;&#x27;</span></span><br><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.parse(jsonStr)</span><br><span class="line"><span class="built_in">console</span>.log(json) <span class="comment">// &#123; a: &#x27;javascript&#x27;, b: &#x27;typescript&#x27; &#125;</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = json</span><br><span class="line"><span class="built_in">console</span>.log(a, b) <span class="comment">//javascript typescript</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> jsonStr = <span class="hljs-string">&#x27;&#123;&quot;a&quot;:&quot;javascript&quot;,&quot;b&quot;:&quot;typescript&quot;&#125;&#x27;</span><br><span class="hljs-keyword">let</span> json = <span class="hljs-built_in">JSON</span>.parse(jsonStr)<br><span class="hljs-built_in">console</span>.log(json) <span class="hljs-comment">// &#123; a: &#x27;javascript&#x27;, b: &#x27;typescript&#x27; &#125;</span><br><span class="hljs-keyword">let</span> &#123; a, b &#125; = json<br><span class="hljs-built_in">console</span>.log(a, b) <span class="hljs-comment">//javascript typescript</span><br></code></pre></td></tr></table></figure>
       </section>
       <section class="extra">
         
           <ul class="copyright">
   
-    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文作者：</strong>Liu Liu</li>
     <li><strong>本文链接：</strong><a href="http://example.com/2021/03/11/es6-03-desctructuring/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;03&#x2F;11&#x2F;es6-03-desctructuring&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;03&#x2F;11&#x2F;es6-03-desctructuring&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
@@ -341,39 +341,18 @@
 
 <footer class="footer">
   <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/zhaoo "
+        href="https://github.com/pisces-liu "
         target="_blank"
         class="footer-social-item"
         onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  icongithub-fill "></i>
       </a><a 
-        href="mailto:izhaoo@163.com "
+        href="mailto:studyliuliu@163.com "
         target="_blank"
         class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOver="this.style.color=#EB7A77" 
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  iconmail"></i>
       </a></div>
   
@@ -390,6 +369,10 @@
     <i class="iconfont iconcaret-up"></i>
   </div>
   
+  
+    <div class="scrollbar j-scrollbar">
+  <div class="scrollbar-current j-scrollbar-current"></div>
+</div>
   
   
     

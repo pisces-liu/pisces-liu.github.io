@@ -15,7 +15,7 @@
 
 
 J...">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Liu Liu">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
@@ -94,8 +94,8 @@ J...">
         motto: {
           default: '我在开了灯的床头下，想问问自己的心啊。',
           typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
+          api: 'https://v1.hitokoto.cn/?c=f&encode=text',
+          data_contents: ''
         },
       },
       qrcode: {
@@ -107,7 +107,7 @@ J...">
         enable: true
       },
       scrollbar: {
-        type: 'default'
+        type: 'simple'
       },
       notification: {
         enable: false,
@@ -238,7 +238,7 @@ J...">
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量是计算机语言中能储存计算结果或能表示值抽象概念。变量不是数值本身，它们仅仅是一个用于存储数值的容器</p>
 <h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><p>要想使用变量，第一件事就是声明它，并给它赋值: <code>var a = 5;</code> ，使用 <code>var</code> 关键字定义变量，等号表示赋值。<br>当变量被赋值后，就可以使用了: <code>console.log(a);</code></p>
 <h3 id="改变变量的值"><a href="#改变变量的值" class="headerlink" title="改变变量的值"></a>改变变量的值</h3><p>变量的值是可以被改变的，这个时候不需要使用 <code>var</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">// 定义变量a 并赋初始值为10</span></span><br><span class="line">a = <span class="number">18</span>; <span class="comment">// 更改变量a的值为 18</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>; <span class="hljs-comment">// 定义变量a 并赋初始值为10</span><br>a = <span class="hljs-number">18</span>; <span class="hljs-comment">// 更改变量a的值为 18</span><br><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">//18</span><br></code></pre></td></tr></table></figure>
 <h3 id="变量的合法命名"><a href="#变量的合法命名" class="headerlink" title="变量的合法命名"></a>变量的合法命名</h3><p>标识符的命名规则，函数，类名，对象的属性等也要遵守这个规则：</p>
 <ol>
 <li>只能是数字，字母，下划线，$ 组成，并且<strong>不能以数字开头</strong>。</li>
@@ -246,10 +246,10 @@ J...">
 <li>变量名大小写敏感，a 和 A 两个是不同的变量。</li>
 </ol>
 <h3 id="变量的常见错误"><a href="#变量的常见错误" class="headerlink" title="变量的常见错误"></a>变量的常见错误</h3><p>不用 <code>var</code> 定义，而直接将值赋予它，虽不会引发错误，但会<strong>产生作用域问题</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 不会输出 10，只会输出 undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 不会输出 10，只会输出 undefined</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;<br></code></pre></td></tr></table></figure>
 <h3 id="同时输出多个变量"><a href="#同时输出多个变量" class="headerlink" title="同时输出多个变量"></a>同时输出多个变量</h3><p>使用逗号同时声明和初始化两个变量: <code>var a = 0, b= 0;</code></p>
 <h3 id="变量声明提升"><a href="#变量声明提升" class="headerlink" title="变量声明提升"></a>变量声明提升</h3><p>变量声明的提升: 你可以<strong>提前使用一个稍后才声明的变量</strong>，而不会引发异常。在执行所有代码前， JS 有预解析阶段，会预先解读所有的变量。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量声明提升只提升定义，不提升值。</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 先使用变量，输出 undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">12</span>; <span class="comment">// 后定义变量</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 变量声明提升只提升定义，不提升值。</span><br><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 先使用变量，输出 undefined</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-number">12</span>; <span class="hljs-comment">// 后定义变量</span><br></code></pre></td></tr></table></figure>
 <p>注意：</p>
 <ol>
 <li>变量声明的提升是JavaScript的特性， 所以经常出面试题。</li>
@@ -260,7 +260,7 @@ J...">
         
           <ul class="copyright">
   
-    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文作者：</strong>Liu Liu</li>
     <li><strong>本文链接：</strong><a href="http://example.com/2020/12/14/js-basic-1/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;14&#x2F;js-basic-1&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;12&#x2F;14&#x2F;js-basic-1&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
@@ -308,39 +308,18 @@ J...">
 
 <footer class="footer">
   <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/zhaoo "
+        href="https://github.com/pisces-liu "
         target="_blank"
         class="footer-social-item"
         onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  icongithub-fill "></i>
       </a><a 
-        href="mailto:izhaoo@163.com "
+        href="mailto:studyliuliu@163.com "
         target="_blank"
         class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOver="this.style.color=#EB7A77" 
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  iconmail"></i>
       </a></div>
   
@@ -357,6 +336,10 @@ J...">
     <i class="iconfont iconcaret-up"></i>
   </div>
   
+  
+    <div class="scrollbar j-scrollbar">
+  <div class="scrollbar-current j-scrollbar-current"></div>
+</div>
   
   
     

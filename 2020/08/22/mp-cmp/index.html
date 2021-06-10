@@ -14,7 +14,7 @@
   <meta name="description" content="1. 新建组件
 新建文件夹 components。
 在...">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Liu Liu">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
@@ -93,8 +93,8 @@
         motto: {
           default: '我在开了灯的床头下，想问问自己的心啊。',
           typing: true,
-          api: 'https://v2.jinrishici.com/one.json',
-          data_contents: '["data","content"]'
+          api: 'https://v1.hitokoto.cn/?c=f&encode=text',
+          data_contents: ''
         },
       },
       qrcode: {
@@ -106,7 +106,7 @@
         enable: true
       },
       scrollbar: {
-        type: 'default'
+        type: 'simple'
       },
       notification: {
         enable: false,
@@ -204,34 +204,34 @@
         <h4 id="2-引用组件"><a href="#2-引用组件" class="headerlink" title="2. 引用组件"></a>2. 引用组件</h4></li>
 </ol>
 <p>我们有一个 classic 页面文件夹，在 <code>classic.json</code> 里面就可以引入组件。<code>&quot;l-like&quot;</code> 是组件名称，可以自定义，其后面的是组件的路径。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;usingComponents&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;l-like&quot;</span>: <span class="string">&quot;../components/like/index&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<br>  <span class="hljs-string">&quot;usingComponents&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;l-like&quot;</span>: <span class="hljs-string">&quot;../components/like/index&quot;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>不仅仅可以在一个页面里面引入组件，当一个组件在多个页面中使用时，可以直接在 <code>app.json</code> 里面引入，这样就可以直接在其他的页面引入了。</p>
 <h4 id="3-使用组件"><a href="#3-使用组件" class="headerlink" title="3. 使用组件"></a>3. 使用组件</h4><p>使用组件和使用标签是一样的，我们在页面文件 <code>classic.wxml</code> 使用刚刚定义的组件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">l-like</span>&gt;</span><span class="tag">&lt;/<span class="name">l-like</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">l-like</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">l-like</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="4-相对路径和绝对路径"><a href="#4-相对路径和绝对路径" class="headerlink" title="4. 相对路径和绝对路径"></a>4. 相对路径和绝对路径</h4><p>小程序中使用绝对路径是 <code>/</code> .使用相对路径 <code>../</code> 返回上一级路径</p>
 <h4 id="5-组件只能继承极少数全局样式"><a href="#5-组件只能继承极少数全局样式" class="headerlink" title="5.组件只能继承极少数全局样式"></a>5.组件只能继承极少数全局样式</h4><p>只有 font color 属性会从组件外继承到组件内。</p>
 <h4 id="6-组件最好不要有留白间距"><a href="#6-组件最好不要有留白间距" class="headerlink" title="6.组件最好不要有留白间距"></a>6.组件最好不要有留白间距</h4><p>组件最好不要留有空白间距，因为这个会让组件变大。使用 <code>line-height</code> 可以消除字体的留白间距。</p>
 <p>给元素设置了<code>display: flex</code> 之后，容器的子元素虽然失去了block属性的作用，但是其本身的block特征并没有消失，设置 <code>inline-flex</code> 可以让元素的宽度自适应</p>
 <h4 id="7-给组件添加事件"><a href="#7-给组件添加事件" class="headerlink" title="7.给组件添加事件"></a>7.给组件添加事件</h4><p>绑定事件：<br><code>bind:tap=&quot;onLike&quot;</code> 也可以使用 <code>catch:tap=&quot;onLike&quot;</code><br>bind 不会阻止事件向上冒泡，catch 会阻止事件向上冒泡。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view bind:tap=<span class="string">&quot;onLike&quot;</span>&gt;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;view bind:tap=<span class="hljs-string">&quot;onLike&quot;</span>&gt;&lt;/view&gt;<br></code></pre></td></tr></table></figure>
 
 <h4 id="8-数据的使用"><a href="#8-数据的使用" class="headerlink" title="8. 数据的使用"></a>8. 数据的使用</h4><p>使用数据的原则，如果数据仅是组件内部使用的话，那么就将数据定义在 <code>data</code> 里面，如果要与外部发生交互的话，那么就将定义在 <code>properties</code> 里面。</p>
 <p>属性的定义：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">properties: &#123;</span><br><span class="line">    <span class="attr">count</span>:&#123;</span><br><span class="line">      <span class="comment">// 必须要填的属性</span></span><br><span class="line">      <span class="attr">type</span>:<span class="built_in">Boolean</span>,</span><br><span class="line">      <span class="comment">// 非必需，属性的初始值，</span></span><br><span class="line">      <span class="attr">value</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="comment">// 非必须，</span></span><br><span class="line">      <span class="function"><span class="title">observer</span>(<span class="params">newVal, oldVal, changedPath</span>)</span> &#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript">properties: &#123;<br>    <span class="hljs-attr">count</span>:&#123;<br>      <span class="hljs-comment">// 必须要填的属性</span><br>      <span class="hljs-attr">type</span>:<span class="hljs-built_in">Boolean</span>,<br>      <span class="hljs-comment">// 非必需，属性的初始值，</span><br>      <span class="hljs-attr">value</span>: <span class="hljs-literal">false</span>,<br>      <span class="hljs-comment">// 非必须，</span><br>      <span class="hljs-function"><span class="hljs-title">observer</span>(<span class="hljs-params">newVal, oldVal, changedPath</span>)</span> &#123;<br>      &#125;<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure>
 
 <p>使用方式：<br>无论是定义的属性或者是数据的使用方式都是一样的。<br>在 <code>index.js</code> 里面定义</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">  <span class="attr">properties</span>: &#123;</span><br><span class="line">    <span class="attr">count</span>:&#123;</span><br><span class="line">      <span class="attr">type</span>:<span class="built_in">Number</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">like</span>:&#123;</span><br><span class="line">      <span class="attr">type</span>:<span class="built_in">Boolean</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">yesSrc</span>:<span class="string">&#x27;images/like.png&#x27;</span>,</span><br><span class="line">    <span class="attr">noSrc</span>:<span class="string">&#x27;images/like@dis.png&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">      <span class="function"><span class="title">onLike</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 获取属性 count</span></span><br><span class="line">        <span class="keyword">let</span> count = <span class="built_in">this</span>.properties.count</span><br><span class="line">        <span class="keyword">let</span> like = <span class="built_in">this</span>.properties.like</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 先改变 like 的状态</span></span><br><span class="line">        like = !like</span><br><span class="line">        <span class="comment">// 根据 like 的状态改变 count 数</span></span><br><span class="line">        count = like?count+<span class="number">1</span>:count-<span class="number">1</span></span><br><span class="line">        <span class="comment">// 更新数据 使用 this.setData</span></span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          count,</span><br><span class="line">          like,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Component(&#123;<br>  <span class="hljs-attr">properties</span>: &#123;<br>    <span class="hljs-attr">count</span>:&#123;<br>      <span class="hljs-attr">type</span>:<span class="hljs-built_in">Number</span><br>    &#125;,<br>    <span class="hljs-attr">like</span>:&#123;<br>      <span class="hljs-attr">type</span>:<span class="hljs-built_in">Boolean</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">yesSrc</span>:<span class="hljs-string">&#x27;images/like.png&#x27;</span>,<br>    <span class="hljs-attr">noSrc</span>:<span class="hljs-string">&#x27;images/like@dis.png&#x27;</span><br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>      <span class="hljs-function"><span class="hljs-title">onLike</span>(<span class="hljs-params"></span>)</span>&#123;<br>        <span class="hljs-comment">// 获取属性 count</span><br>        <span class="hljs-keyword">let</span> count = <span class="hljs-built_in">this</span>.properties.count<br>        <span class="hljs-keyword">let</span> like = <span class="hljs-built_in">this</span>.properties.like<br><br>        <span class="hljs-comment">// 先改变 like 的状态</span><br>        like = !like<br>        <span class="hljs-comment">// 根据 like 的状态改变 count 数</span><br>        count = like?count+<span class="hljs-number">1</span>:count-<span class="hljs-number">1</span><br>        <span class="hljs-comment">// 更新数据 使用 this.setData</span><br>        <span class="hljs-built_in">this</span>.setData(&#123;<br>          count,<br>          like,<br>        &#125;)<br>      &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <p>在 <code>index.wxml</code> 中使用：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">bind:tap</span>=<span class="string">&quot;onLike&quot;</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span>  <span class="attr">class</span>=<span class="string">&quot;img&quot;</span> <span class="attr">src</span>=<span class="string">&quot;&#123;&#123;like?yesSrc:noSrc&#125;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>&#123;&#123;count&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">bind:tap</span>=<span class="hljs-string">&quot;onLike&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">image</span>  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;img&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;&#123;like?yesSrc:noSrc&#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>&#123;&#123;count&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
       </section>
       <section class="extra">
         
           <ul class="copyright">
   
-    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文作者：</strong>Liu Liu</li>
     <li><strong>本文链接：</strong><a href="http://example.com/2020/08/22/mp-cmp/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;08&#x2F;22&#x2F;mp-cmp&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;08&#x2F;22&#x2F;mp-cmp&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
@@ -279,39 +279,18 @@
 
 <footer class="footer">
   <div class="footer-social"><a 
-        href="tencent://message/?Menu=yes&uin=894519210 "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#12B7F5'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconQQ "></i>
-      </a><a 
-        href="javascript:; "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#09BB07'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconwechat-fill "></i>
-      </a><a 
-        href="https://www.instagram.com/izhaoo/ "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#DA2E76'" 
-        onMouseOut="this.style.color='#33333D'">
-          <i class="iconfont  iconinstagram "></i>
-      </a><a 
-        href="https://github.com/zhaoo "
+        href="https://github.com/pisces-liu "
         target="_blank"
         class="footer-social-item"
         onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  icongithub-fill "></i>
       </a><a 
-        href="mailto:izhaoo@163.com "
+        href="mailto:studyliuliu@163.com "
         target="_blank"
         class="footer-social-item"
-        onMouseOver="this.style.color=#FF3B00" 
-        onMouseOut="this.style.color='#33333D'">
+        onMouseOver="this.style.color=#EB7A77" 
+        onMouseOut="this.style.color='#fff'">
           <i class="iconfont  iconmail"></i>
       </a></div>
   
@@ -328,6 +307,10 @@
     <i class="iconfont iconcaret-up"></i>
   </div>
   
+  
+    <div class="scrollbar j-scrollbar">
+  <div class="scrollbar-current j-scrollbar-current"></div>
+</div>
   
   
     
