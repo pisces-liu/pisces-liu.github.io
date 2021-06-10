@@ -1,314 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>my-blog</title><meta name="author" content="Liu Liu"><meta name="copyright" content="Liu Liu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="禅-静">
+<meta property="og:type" content="website">
+<meta property="og:title" content="my-blog">
+<meta property="og:url" content="https://pisces-liu.github.io/page/2/index.html">
+<meta property="og:site_name" content="my-blog">
+<meta property="og:description" content="禅-静">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Liu Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pisces-liu.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'my-blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-06-10 14:19:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-<!DOCTYPE html>
-<html lang="en" color-mode=light>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hexo</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="google" content="notranslate" />
-  
-  
-  <meta name="author" content="Liu Liu">
-  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
-  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
-  
-    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
-    <meta rel="msapplication-TileColor" content="#000000">
-  
-
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
-    
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
-
-  
-
-  
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-
-  
-
-  
-    
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
-
-      
-        
-        
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
-
-      
-  
-
-  <script>
-    var CONFIG = window.CONFIG || {};
-    var ZHAOO = window.ZHAOO || {};
-    CONFIG = {
-      isHome: true,
-      fancybox: true,
-      pjax: false,
-      lazyload: {
-        enable: true,
-        only_post: 'false',
-        loading: '[object Object]'
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
       },
-      donate: {
-        enable: true,
-        alipay: 'https://pic.izhaoo.com/alipay.jpg',
-        wechat: 'https://pic.izhaoo.com/wechat.jpg'
-      },
-      galleries: {
-        enable: true
-      },
-      fab: {
-        enable: true,
-        always_show: false
-      },
-      carrier: {
-        enable: true
-      },
-      daovoice: {
-        enable: false
-      },
-      preview: {
-        background: {
-          default: '',
-          api: ''
-        },
-        motto: {
-          default: '我在开了灯的床头下，想问问自己的心啊。',
-          typing: true,
-          api: 'https://v1.hitokoto.cn/?c=f&encode=text',
-          data_contents: ''
-        },
-      },
-      qrcode: {
-        enable: true,
-        type: 'url',
-        image: 'https://pic.izhaoo.com/weapp-code.jpg',
-      },
-      toc: {
-        enable: true
-      },
-      scrollbar: {
-        type: 'simple'
-      },
-      notification: {
-        enable: false,
-        delay: 4500,
-        list: '',
-        page_white_list: '',
-        page_black_list: ''
-      },
-      search: {
-        enable: false,
-        path: ''
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
     }
-  </script>
-
   
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body class="lock-screen">
-  <div class="loading"></div>
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-
-  <nav class="navbar">
-    <div class="left">
-      
-      
-        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
-      
-      
-        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
-      
-      
-    </div>
-    <div class="center"> </div>
-    <div class="right">
-      <i class="iconfont iconmenu j-navbar-menu"></i>
-    </div>
-    
-      <div id="qrcode-navbar"></div>
-    
-  </nav>
-
-  
-  
-
-<nav class="menu">
-  <div class="menu-container">
-    <div class="menu-close">
-      <i class="iconfont iconbaseline-close-px"></i>
-    </div>
-    <ul class="menu-content"><li class="menu-item">
-        <a href="/ " class="underline "> 首页</a>
-      </li><li class="menu-item">
-        <a href="/galleries/ " class="underline "> 摄影</a>
-      </li><li class="menu-item">
-        <a href="/archives/ " class="underline "> 归档</a>
-      </li><li class="menu-item">
-        <a href="/tags/ " class="underline "> 标签</a>
-      </li><li class="menu-item">
-        <a href="/categories/ " class="underline "> 分类</a>
-      </li><li class="menu-item">
-        <a href="/about/ " class="underline "> 关于</a>
-      </li></ul>
-    
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-    
-  </div>
-</nav>
-  <main id="main">
-  
-    <div class="preview">
-  <!-- <nav class="navbar j-navbar-menu">
-    <i class="iconfont iconmenu"></i>
-  </nav> -->
-  <div class="preview-image">
-    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-              <div class="preview-overlay">
-                <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                  <defs>
-                    <path id="gentle-wave"
-                      d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                  </defs>
-                  <g class="preview-parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-background-rgb),0.7"></use>
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-background-rgb),0.5)"></use>
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-background-rgb),0.3)"></use>
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--color-background)"></use>
-                  </g>
-                </svg>
-              </div>
-              
-  </div>
-  <div class="preview-motto-wrapper">
-    <h2 class="preview-motto" id="motto">
-      
-    </h2>
-    
-      <span class="preview-cursor">_</span>
-      
-  </div>
-  <div class="preview-scroll">
-    <a href="#container" class="smooth-scroll"><i class="iconfont iconMouse"></i></a>
-  </div>
-</div>
-  
-  <div class="container" id="container">
-    <section class="row post">
-  
-    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/bg.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">my-blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">my-blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/16/js-basic-3/" title="JS 3.表达式与操作符">     <img class="post_bg" src="https://images.pexels.com/photos/1036657/pexels-photo-1036657.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS 3.表达式与操作符"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/16/js-basic-3/" title="JS 3.表达式与操作符">JS 3.表达式与操作符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-15T16:00:00.000Z" title="发表于 2020-12-16 00:00:00">2020-12-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">这篇内容有 JS 表达式，操作符，逻辑表达式，短路计算。
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/16/js-basic-3/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/16/js-basic-3/" title="JS 3.表达式与操作符" >JS 3.表达式与操作符</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">这篇内容有 JS 表达式，操作符，逻辑表达式，短路计算。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 16, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>4883</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-  
-    
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/15/js-basic-2/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/15/js-basic-2/" title="JS 2.基本数据类型" >JS 2.基本数据类型</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">内容简介：数据类型简介和检测，基本数据类型，数据类型的转换。
-JavaScript中的基本数据类型有： 数字类型，字符串类型，布尔类型，undefined类型，null</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 15, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>5819</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-  
-    
+1 表达式和操作符12345 + 3 // 5+3 整体是一个表达式// 5 是操作数// + 是运算符// 3 是操作数
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/14/js-basic-1/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/14/js-basic-1/" title="JS 1.语法与变量" >JS 1.语法与变量</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">本篇包含 JavaScript 的历史与简介。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 14, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>1669</span>
-      </div>
-    </div>
-  </div>
-</div>
+2 表达式种类
+算术
+关系
+逻辑
+赋值
+综合
 
-  
-    
+3 算术运算符
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/11/CSS3-basic-2/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/11/CSS3-basic-2/" title="CSS3基础(第二周内容)" >CSS3基础(第二周内容)</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">这是学习 CSS3 第二周内容的笔记。内容有：
+
+意义
+运算符
+
+
+
+加
++
+
+
+减
+-
+
+
+乘
+*
+
+
+除
+/
+
+
+取余
+%
+
+
+3.1 加减乘除加减的符号和数学一致，乘法是 * 号，除法是 / 。默认情况下，乘除法的优先级要高于加法和减法；必要时可以使用圆括号来改变运算的顺序。
+12341 + 2 * 3; //7(1 + 2) * 3; // 91 + 2/4 // 1.5((1 + 2) * 3 + 4 ) / 2 // 6.5
+
+3.2 加号的两种作用加号有 加法 和 连字符 两种作用。如果加号两边的操作数都是数字，则为 加法 ,否则为 连字符
+1231 + 2 // 31 + &#x27;2&#x27; //&#x27;12&#x27;&#x27;1&#x27; + &#x27;2&#x27; //&#x27;12&#x27;
+
+3.3 取余运算取余运算也叫做“”求模 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/15/js-basic-2/" title="JS 2.基本数据类型">     <img class="post_bg" src="https://images.pexels.com/photos/1980720/pexels-photo-1980720.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS 2.基本数据类型"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/15/js-basic-2/" title="JS 2.基本数据类型">JS 2.基本数据类型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-14T16:00:00.000Z" title="发表于 2020-12-15 00:00:00">2020-12-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">内容简介：数据类型简介和检测，基本数据类型，数据类型的转换。
+JavaScript中的基本数据类型有： 数字类型，字符串类型，布尔类型，undefined类型，null
+
+
+基本数据类型JavaScript 中两大数据类型
+基本数据类型
+复杂数据类型
+
+typeof 运算符使用 typeof 运算符可以检测值或者变量的类型
+12typeof 5; // numbertypeof &#x27;javascript&#x27;; // string
+
+
+
+5钟基本数据类型的 typeof 检测结果
+
+
+
+类型名
+typeof 检测结果
+值举例
+
+
+
+数字类型
+number
+3
+
+
+字符串类型
+string
+“java”
+
+
+布尔类型
+boolean
+true
+
+
+undefined类型
+undefined
+undefined
+
+
+null类型
+Object
+null
+
+
+Number（数字）类型所有的数字不分大小，不分整浮，不分正负，都是数字类型。
+123typeof 925; // numbertypeof -6; // numbertypeof 9.25; // number
+
+
+
+小 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/14/js-basic-1/" title="JS 1.语法与变量">     <img class="post_bg" src="https://images.pexels.com/photos/1980720/pexels-photo-1980720.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS 1.语法与变量"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/14/js-basic-1/" title="JS 1.语法与变量">JS 1.语法与变量</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-13T16:00:00.000Z" title="发表于 2020-12-14 00:00:00">2020-12-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">本篇包含 JavaScript 的历史与简介。
+
+
+JavaScript的简介JavaScript的历史1995年由 Brendan Eich（布兰登·艾奇）发明，前身是 LiveScript.
+ECMAScript 是 JavaScript 的标准1997年，欧洲计算机制造商协会（ECMA） 设置了JavaScript的标准，命名为  ECMAScript 。ECMAScript 规范了 JavaScript，同样 JavaScript 实现了 ECMAScript。
+JavaScript 体系完整的 JavaScript 包含：
+
+语言核心（ECMAScript5，6，7，8，9）
+DOM
+BOM
+
+JavaScript 的语言风格和特性
+类 C 语言的风格，简单好学。
+弱类型，易编写。
+
+JavaScript 的基础使用JavaScript 的书写位置
+在 &lt;body&gt; 中的 &lt;script&gt; 标签内部书写 JavaScript 代码。
+将代码单独储存为 .js 格式文件，然后在 HTML 文件中使用 &lt;script src=&quot;&quot; ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/11/CSS3-basic-2/" title="CSS3基础(第二周内容)">     <img class="post_bg" src="https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS3基础(第二周内容)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/11/CSS3-basic-2/" title="CSS3基础(第二周内容)">CSS3基础(第二周内容)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-10T16:00:00.000Z" title="发表于 2020-12-11 00:00:00">2020-12-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">这是学习 CSS3 第二周内容的笔记。内容有：
 
 浮动的基本概念
 
@@ -324,257 +271,113 @@ BFC规范和浏览器差异
 
 固定定位
 
-</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 11, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>7944</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-  
-    
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/07/CSS3-basic-1/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/07/CSS3-basic-1/" title="CSS3基础(第一周内容)" >CSS3基础(第一周内容)</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">这是学习 CSS3 第一周内容的笔记。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 07, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>18064</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-  
-    
+一.  浮动与定位1. 浮动的基本概念和使用
+浮动用来实现并排。
+浮动使用要点：要浮动，并排的盒子都要设置浮动。
+父盒子要有足够的宽度，否则子盒子会掉下去。
+浮动的顺序贴靠特性：子盒子会按照顺序进行贴靠，如果没有足够空间，则会寻找在前一个兄弟元素。
+浮动的元素一定能设置宽高：浮动的元素不再区分块级元素，行内元素，已经脱离了标准文档流，一律能够设置宽高，即使它是span或者a标签。
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/05/html5-basic/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/05/html5-basic/" title="HTML5基础学习" >HTML5基础学习</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">大三放寒假了，准备把前端基础的知识点重新学习一遍。这个是慕课网前端工程师2020版的学习笔记，仅供自己学习记录。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 05, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>7045</span>
-      </div>
-    </div>
-  </div>
-</div>
+2.使用浮动实现网页布局注意事项：
 
-  
-    
+垂直显示的盒子，不要设置浮动，只有并排显示的盒子才要设置浮动！
+“大盒子带着小盒子跑”，一个大盒子中，又是一个小天地，内部可以继续使用浮动。
+不要节约盒子（div）的使用。
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/04/Life-02/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/04/Life-02/" title="秦风·无衣" >秦风·无衣</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">今天看最近的热播剧《大秦赋》，里面的秦昭襄王归天的时候，以及后面为他举行丧礼的时候会唱一首歌，听的时候很激昂，歌词的内容大概是：：岂曰无衣？与子同袍。王于兴师，修我戈矛…开始还以为是楚辞里面的诗...</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 04, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2545</span>
-      </div>
-    </div>
-  </div>
-</div>
+3.BFC规范和浏览器差异BFC（Box Formatting Context，块级格式化上下文）是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+3.1 从一个现象说起
+一个盒子不设置 heigh ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/07/CSS3-basic-1/" title="CSS3基础(第一周内容)">     <img class="post_bg" src="https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS3基础(第一周内容)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/07/CSS3-basic-1/" title="CSS3基础(第一周内容)">CSS3基础(第一周内容)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-06T16:00:00.000Z" title="发表于 2020-12-07 00:00:00">2020-12-07</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">这是学习 CSS3 第一周内容的笔记。
 
-  
-    
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/09/01/Life-01/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/09/01/Life-01/" title="电视剧《摩天大楼》观后感" >电视剧《摩天大楼》观后感</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">今天看完了《摩天大楼》。这个电视剧的前15集还算很精彩，第十六集也就是最后一集为了能够过审，让最后的结局太牵强了。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>September 01, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>755</span>
-      </div>
-    </div>
-  </div>
-</div>
+一：基础入门0.目录
+CSS3 简介
 
-  
-    
+CSS3 基本使用
 
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/08/22/mp-cmp/" class="post-image">
-      <img   class="lazyload" data-original="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/08/22/mp-cmp/" title="在小程序中使用自定义组件" >在小程序中使用自定义组件</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">1. 新建组件
+CSS3 的书写位置。
+CSS3 的基本语法。
+
+
+
+1.CSS3 简介
+CSS（cascading style sheet，层叠样式表）是用来给 HTML 标签添加样式的语言。
+CSS3 是 CSS 的最新版本，增加了大量的样式，动画，3D特性和移动端特性等。
+
+2.前端三层
+
+
+
+语言
+功能
+
+
+
+结构层
+HTML
+搭建结构，放置部件，描述语义
+
+
+样式层
+CSS
+美化页面，实现布局
+
+
+行为层
+JavaScript
+实现交互效果，数据收发，表单验证等。
+
+
+3.CSS 使样式和结构分离
+CSS 使样式和结构分离，样式和结构不用“杂糅着写”，而是彼此分开：HTML就负责结构，CSS 负责样式。
+HTML 和 CSS 怎样结合呢？“选择器”就是两者的纽带。
+
+4.CSS 的本质CSS 就是样式的“清单”，要书写合适的选择器，然后把指定元素的样式“一条一条罗列”出来
+1234567891011.tool&#123;    width: 266px;    position: abs ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/05/html5-basic/" title="HTML5基础学习">     <img class="post_bg" src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML5基础学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/05/html5-basic/" title="HTML5基础学习">HTML5基础学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-04T16:00:00.000Z" title="发表于 2020-12-05 00:00:00">2020-12-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/">前端工程师 2020</a></span></div><div class="content">大三放寒假了，准备把前端基础的知识点重新学习一遍。这个是慕课网前端工程师2020版的学习笔记，仅供自己学习记录。
+
+
+一. HTML 语法与基础标签前端开发主要技术介绍
+HTML5： 搭建网页结构的语言，增加了很多的移动端的支持，简单好学。
+CSS3： 样式表，美化网页的语言，增加了很多动画，过渡等新特性，要记的单词非常多，不过非常有意思。
+JavaScript：前端开发工程师最重要的“看家语言”，JS 功底的好坏，决定了职业高度，学习的时候需要下苦功夫。
+Vue.js / React.js: 从 2016 年前后开始流行的前端框架，采用模块化开发，数据驱动，声明式编程，只要前期“马步扎稳”，后面“武功招式”随便学。
+
+HTTP 协议
+HTP协议（Hypertext Transfer Protocol, 超文本传输协议）是互联网数据传输的常见协议。
+一次 HTTP 事勿是由“HTTP请求”和“HTTP响应”构成。
+网址前的 http:// 就表示用 http 协议请求页面。
+
+认识 HTML5 骨架1234567891011&lt;!DOCTYPE html&gt; &lt;html  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/04/Life-02/" title="秦风·无衣">     <img class="post_bg" src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="秦风·无衣"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/04/Life-02/" title="秦风·无衣">秦风·无衣</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-03T16:00:00.000Z" title="发表于 2020-12-04 00:00:00">2020-12-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></span></div><div class="content">今天看最近的热播剧《大秦赋》，里面的秦昭襄王归天的时候，以及后面为他举行丧礼的时候会唱一首歌，听的时候很激昂，歌词的内容大概是：：岂曰无衣？与子同袍。王于兴师，修我戈矛…开始还以为是楚辞里面的诗句，翻了翻楚辞，没有找到，最后上网搜了下，才知道是《诗经》里面的。
+
+
+下面是百度百科对它的介绍：秦风·无衣《秦风·无衣》是中国古代第一部诗歌总集《诗经》中的一首诗。这是一首激昂慷慨、同仇敌忾的战歌，表现了秦国军民团结互助、共御外侮的高昂士气和乐观精神。全诗风格矫健爽朗，采用了重章叠唱的形式，抒写将士们在大敌当前、兵临城下之际，以大局为重，与周王室保持一致，一听“王于兴师”，磨刀擦枪，舞戈挥戟，奔赴前线共同杀敌的英雄主义气概和爱国主义精神。
+秦风⑴·无衣岂曰无衣？与子同袍⑵。王于兴师⑶，修我戈矛⑷，与子同仇⑸！岂曰无衣？与子同泽⑹。王于兴师，修我矛戟，与子偕作⑺！岂曰无衣？与子同裳⑻。王于兴师，修我甲兵⑼，与子偕行⑽！ [1]
+词句注释⑴秦风：《诗经》十五国风之一，今存十篇。⑵袍：长袍，即今之斗篷。⑶王：此指秦君。一说指周天子。于：语助词。兴师：起兵。⑷修：整治。⑸同仇：同伴。仇，匹偶。一说共同 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/01/Life-01/" title="电视剧《摩天大楼》观后感">     <img class="post_bg" src="https://images.pexels.com/photos/1191377/pexels-photo-1191377.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电视剧《摩天大楼》观后感"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/01/Life-01/" title="电视剧《摩天大楼》观后感">电视剧《摩天大楼》观后感</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-31T16:00:00.000Z" title="发表于 2020-09-01 00:00:00">2020-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></span></div><div class="content">今天看完了《摩天大楼》。这个电视剧的前15集还算很精彩，第十六集也就是最后一集为了能够过审，让最后的结局太牵强了。
+
+电视剧讲述了家庭的悲剧导致家庭里面的每个人最后都生活的很痛苦。以后找另一半还是要经过非常认真的考虑的。因为个人的不成熟的决定导致错误的结果影响到了下一代确实很不幸也很失败。
+电视剧为了最后能够过审特意制造一个很具有正义的结局，这是我们所有的电影和电视剧的一个特色了。这也是没有办法的办法，毕竟传播生活是美好的这样的一个观念是会让我们相对积极一点的活下去。
+但是人只要是活着就必须会经历苦难，这是我们每个人都逃不过去的。这些剧集的结局大都是美好的，但是我们的生活确实不可能是这么的美好，所以我们经常对我们的生活产生了误解，网上就产生了段子说要经历社会的毒打才会知道什么是真正的生活。
+回到这部电视剧，假如电视剧只有前15集，那我估计我们每个人看完之后的最大感慨应该就是对于家庭暴力的思考，以及对那些正在受着家庭暴力的伤害的人的保护了。但是电视剧最后的大结局还是老的套路，坏人最后还是被绳之以法了。这样的话，那么我们这些在看电视剧的人还需要做什么呢，一笑而过吗？
+当然我自己并没有觉得特 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/08/22/mp-cmp/" title="在小程序中使用自定义组件">     <img class="post_bg" src="https://images.pexels.com/photos/1191377/pexels-photo-1191377.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在小程序中使用自定义组件"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/22/mp-cmp/" title="在小程序中使用自定义组件">在小程序中使用自定义组件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-21T16:00:00.000Z" title="发表于 2020-08-22 00:00:00">2020-08-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></span></div><div class="content">1. 新建组件
 新建文件夹 components。
 在 components 里新建 like 文件夹。
-在 like 文件夹上右键，新建 components 就可以快速创建一个组件了。</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 22, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2201</span>
-      </div>
-    </div>
-  </div>
-</div>
+在 like 文件夹上右键，新建 components 就可以快速创建一个组件了。
+2. 引用组件
 
-  
-</section>
-    <section class="paginator">
-  
-    <a class="extend prev" rel="prev" href="/">&lt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">&gt;</a>
-  
-</section>
-  </div>
-</main>
-  
+我们有一个 classic 页面文件夹，在 classic.json 里面就可以引入组件。&quot;l-like&quot; 是组件名称，可以自定义，其后面的是组件的路径。
+12345&#123;  &quot;usingComponents&quot;: &#123;    &quot;l-like&quot;: &quot;../components/like/index&quot;  &#125;&#125;
 
-<footer class="footer">
-  <div class="footer-social"><a 
-        href="https://github.com/pisces-liu "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color= '#9f7be1'" 
-        onMouseOut="this.style.color='#000'">
-          <i class="iconfont  icongithub-fill "></i>
-      </a><a 
-        href="mailto:studyliuliu@163.com "
-        target="_blank"
-        class="footer-social-item"
-        onMouseOver="this.style.color=#EB7A77" 
-        onMouseOut="this.style.color='#000'">
-          <i class="iconfont  iconmail"></i>
-      </a></div>
-  
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
-  
-</footer>
-  
-      <div class="fab fab-plus">
-    <i class="iconfont iconplus"></i>
-  </div>
-  
-  
-  <div class="fab fab-up">
-    <i class="iconfont iconcaret-up"></i>
-  </div>
-  
-  
-    <div class="scrollbar j-scrollbar">
-  <div class="scrollbar-current j-scrollbar-current"></div>
-</div>
-  
-  
-    
-<script src="/js/color-mode.js"></script>
+不仅仅可以在一个页面里面引入组件，当一个组件在多个页面中使用时，可以直接在 app.json 里面引入，这样就可以直接在其他的页面引入了。
+3. 使用组件使用组件和使用标签是一样的，我们在页面文件 classic.wxml 使用刚刚定义的组件
+1&lt;l-like&gt;&lt;/l-like&gt;
 
-  
-  
-</body>
-
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-
-
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-
-
-
-
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-  
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
-
-
-
-<script src="/js/utils.js"></script>
-<script src="/js/script.js"></script>
-
-
-
-
-
-
-
-  <script>
-    (function () {
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-      } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-      }
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html>
+4. 相对路径和绝对路径小程序中使用绝对路径是 / .使用相 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Liu Liu</div><div class="author-info__description">禅-静</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/03/C-PTA/" title="PTA--题目"><img src="https://images.pexels.com/photos/1036657/pexels-photo-1036657.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PTA--题目"/></a><div class="content"><a class="title" href="/2021/05/03/C-PTA/" title="PTA--题目">PTA--题目</a><time datetime="2021-05-02T16:00:00.000Z" title="发表于 2021-05-03 00:00:00">2021-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/11/es6-03-desctructuring/" title="ES6 3.解构赋值"><img src="https://images.pexels.com/photos/1980720/pexels-photo-1980720.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 3.解构赋值"/></a><div class="content"><a class="title" href="/2021/03/11/es6-03-desctructuring/" title="ES6 3.解构赋值">ES6 3.解构赋值</a><time datetime="2021-03-10T16:00:00.000Z" title="发表于 2021-03-11 00:00:00">2021-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/10/es6-02-const/" title="ES6 2.const"><img src="https://images.pexels.com/photos/1029615/pexels-photo-1029615.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 2.const"/></a><div class="content"><a class="title" href="/2021/03/10/es6-02-const/" title="ES6 2.const">ES6 2.const</a><time datetime="2021-03-09T16:00:00.000Z" title="发表于 2021-03-10 00:00:00">2021-03-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/09/es6-01-let/" title="ES6 1.let"><img src="https://images.pexels.com/photos/1191377/pexels-photo-1191377.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 1.let"/></a><div class="content"><a class="title" href="/2021/03/09/es6-01-let/" title="ES6 1.let">ES6 1.let</a><time datetime="2021-03-08T16:00:00.000Z" title="发表于 2021-03-09 00:00:00">2021-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/24/vue3-basic-1/" title="Vue3.0 basic"><img src="https://images.pexels.com/photos/1106476/pexels-photo-1106476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3.0 basic"/></a><div class="content"><a class="title" href="/2020/12/24/vue3-basic-1/" title="Vue3.0 basic">Vue3.0 basic</a><time datetime="2020-12-23T16:00:00.000Z" title="发表于 2020-12-24 00:00:00">2020-12-24</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Node/"><span class="card-category-list-name">Node</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/c/"><span class="card-category-list-name">c</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-2020/"><span class="card-category-list-name">前端工程师 2020</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">小程序</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/"><span class="card-category-list-name">杂记</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.37em; color: #99a4b2">CSS</a> <a href="/tags/HTML/" style="font-size: 1.1em; color: #999">HTML</a> <a href="/tags/JavaScript/" style="font-size: 1.5em; color: #99a9bf">JavaScript</a> <a href="/tags/NodeJS/" style="font-size: 1.1em; color: #999">NodeJS</a> <a href="/tags/Vue/" style="font-size: 1.1em; color: #999">Vue</a> <a href="/tags/c/" style="font-size: 1.1em; color: #999">c</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.1em; color: #999">小程序</a> <a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 1.23em; color: #999ea6">杂记</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">20</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-06-10T06:19:22.360Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Liu Liu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
